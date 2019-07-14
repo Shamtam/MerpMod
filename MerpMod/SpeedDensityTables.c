@@ -93,6 +93,12 @@ ThreeDTable VolumetricEfficiencyTable1  SPEEDDENSITYDATA = {
 //!! VE table 2
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+//float VE_COLS2[24] SPEEDDENSITYDATA = 
+//{100,200,300,400,500,600,700,800,900,1000,1100,1200,1300,1400,1500,1600,1700,1800,1900,2000,2100,2200,2300,2400};
+
+//float VE_ROWS2[24] SPEEDDENSITYDATA =
+//{500,800,1200,1600,2000,2400,2800,3200,3600,4000,4200,4400,4600,4800,5000,5200,5400,5600,5800,6000,6400,6800,7200,7600};
+
 short VE_DATA2[576] SPEEDDENSITYDATA =
 {7150,	7449,	9958,	10351,	10665,	10794,	10943,	11089,	11177,	11242,	11307,	11383,	11459,	11535,	11611,	11687,	11763,	11839,	11915,	11991,	12067,	12143,	12219,	12295,
 7398,	7646,	9694,	10132,	10499,	10716,	10956,	11076,	11190,	11255,	11320,	11396,	11472,	11548,	11624,	11700,	11776,	11852,	11928,	12004,	12080,	12156,	12232,	12308,
@@ -228,6 +234,8 @@ ThreeDTable SDDeltaMapTable SPEEDDENSITYDATA = {
 ThreeDTable VolumetricEfficiencyRamTable  SPEEDDENSITYDATA = {
 	.columnCount = 24,
 	.rowCount = 24,
+//	.columnHeaderArray = &(pRamVariables.VERamCols),
+//	.rowHeaderArray = &(pRamVariables.VERamRows),
 	.columnHeaderArray = VE_COLS,
 	.rowHeaderArray = VE_ROWS,
 	.tableCells = &(pRamVariables.VERamData),

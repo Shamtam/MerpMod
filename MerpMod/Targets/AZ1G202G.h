@@ -181,7 +181,6 @@
 #define TestModeBitMask ((unsigned char)0x01)
 #define pDefogFlags ((unsigned char*)0xFFFF67B7)
 #define DefogBitMask ((unsigned char)0x01)
-#define pSSMResetByte ((unsigned char*)0xFFFF2D8E)
 
 /////////////////////
 // NonSpecific Engine params

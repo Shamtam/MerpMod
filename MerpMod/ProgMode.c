@@ -14,7 +14,7 @@
 
 #include "EcuHacks.h"
 
-#if PROG_MODE
+#if PROG_MODE && CRUISE_CONTROL
 
 void ProgModeMapSwitch(unsigned char toggleType)  ROMCODE;
 void ProgModeBlendModeAdjust(unsigned char toggleType)	ROMCODE;
@@ -347,7 +347,7 @@ void ProgModeHardReset(unsigned char toggleType)
 		if(pRamVariables.HardResetFlag <=0)
 		{
 			pRamVariables.HardResetFlag = HardResetFlagEnabled;
-			*pSSMResetByte = 0x40;
+//			*pSSMResetByte = 0x40;
 		}
 		
 	}
@@ -356,7 +356,7 @@ void ProgModeHardReset(unsigned char toggleType)
 		if(pRamVariables.HardResetFlag >= 1 )
 		{
 			pRamVariables.HardResetFlag = HardResetFlagDisabled;
-			*pSSMResetByte = 0x40;
+//			*pSSMResetByte = 0x40;
 		}
 	}
 	pRamVariables.ProgModeValue = pRamVariables.HardResetFlag;

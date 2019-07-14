@@ -14,7 +14,7 @@
 
 //Tests for Programming mode
 #include "EcuHacks.h"
-#if PROG_MODE
+#if PROG_MODE && CRUISE_CONTROL
 void ProgModeEntryTest() __attribute__ ((section ("Misc")));
 void ProgModeUnitTests() __attribute__ ((section ("Misc")));
 void TestProgModeListener(int c) __attribute__ ((section ("Misc")));

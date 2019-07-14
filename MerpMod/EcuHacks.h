@@ -38,16 +38,17 @@ SHORT TERM:
 #define REVLIMDATA __attribute__ ((section ("RomHole_RevLimTables"),aligned(4)))
 #define SPEEDDENSITYDATA __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4)))
 #define TIMINGDATA __attribute__ ((section ("RomHole_TimingHackTables"),aligned(4)))
-#define SWITCHDATA __attribute__ ((section ("RomHole_MapSwitchTables"),aligned(4))) 
+#define SWITCHDATA __attribute__ ((section ("RomHole_MapSwitchTables"),aligned(4)))
 #define RAMTUNEDATA __attribute__ ((section ("RomHole_MapSwitchTables"),aligned(4)))  
 #define FUELDATA __attribute__ ((section ("RomHole_POLFHackTables"),aligned(4))) 
 #define BOOSTDATA __attribute__ ((section ("RomHole_BoostHackTables"),aligned(4)))
 #define PORTDATA __attribute__ ((section ("RomHole_PortLoggerTables"),aligned(4)))
 
+
+
 //Select ECU Target!!
 #include "TargetHeader.h"
 #include "TargetConfig.h"
-#include "GitVersion.h"
 
 #if defined(pResumeFlags) && defined(pCoastFlags)
 #if LC_ADJUST || CEL_HACKS || PROG_MODE
@@ -212,13 +213,15 @@ SHORT TERM:
 #define MOD_CONFIG_ID CONCAT(STRI(MOD_CONFIG),STRI(.MOD_BUILD))
 #endif
 
-#define MOD_IDENTIFIER CONCAT(   CONCAT(  STRI(ECU_CALIBRATION_ID)  ,  STRI(.MeRpMoD.)  )   ,   CONCAT_THREE( CONCAT( MOD_CONFIG_ID , STRI(.) ) , STRI( GITVERSION ) , CONCAT ( STRI(.) , STRI( MOD_DATE ) ) )  )
+//#define MOD_IDENTIFIER CONCAT_THREE(   CONCAT(  STRI(ECU_CALIBRATION_ID)  ,  STRI(.MeRpMoD.)  )   ,   CONCAT( MOD_CONFIG_ID , STRI(.v) )   ,   STRI(MOD_DATE)    )
 #define ModInfo CONCAT_THREE(STRI(VinInfo ),STRI(SdInfo ),CONCAT_THREE(STRI(BlendInfo ),STRI(RevLimInfo ),CONCAT_THREE(STRI(LcAdjInfo ),STRI(CelInfo ),CONCAT(STRI(PolfInfo ),STRI(BoostInfo ))))) //ProgInfo SparkCutInfo  BoostInfo Timingfo SubKcaInfo PolfInfo PgwgInfo InjectorInfo MemoryInfo VeRamTuningInfo PolfRamTuningInfo TimingRamTuningInfo PgwgRamTuningInfo WgdcRamTuningInfo
 #define ModLabel CONCAT_THREE(STRI(VinLabel),STRI(SdLabel),CONCAT_THREE(STRI(BlendLabel),STRI(RevLimLabel),CONCAT_THREE(STRI(LcAdjLabel),STRI(CelLabel),CONCAT(STRI(PolfLabel),STRI(BoostLabel))))) //ProgLabel SparkCutLabel  BoostLabel Timingfo SubKcaLabel PgwgLabel InjectorLabel MemoryLabel VeRamTuningLabel PolfRamTuningLabel TimingRamTuningLabel PgwgRamTuningLabel WgdcRamTuningLabel
 
 #include "IDATranslation.h"
-#include "RamVariables.h"
 #include "Externs.h"
+#include "RamVariables.h"
+
+extern RamVariables pRamVariables;
 
 #define CONCAT(x,y) CONCAT_DO(x,y)
 #define CONCAT_DO(x,y) x y

@@ -29,7 +29,7 @@ float TimingHack()
 	float subIam;
 	float iam;
 	float timingLookup;
-
+	
 	subIam = HighPass(1 - IAM, 0.0f);
 
 	if(pRamVariables.TimingLookupMAPLoad==LoadLookup)	
@@ -41,21 +41,25 @@ float TimingHack()
 		timingLookup = (*pManifoldAbsolutePressure - 760)*.01933677;
 	}
 
-	pRamVariables.MaxSubtractiveKCA = HighPass(BlendAndSwitchCurve(KnockCorrectionRetardTableGroup, timingLookup, *pEngineSpeed, KnockControlBlendCurveSwitch),0.0f);
-	
+//		pRamVariables.MaxSubtractiveKCA = HighPass(BlendAndSwitchCurve(KnockCorrectionRetardTableGroup, *pEngineLoad, *pEngineSpeed, KnockControlBlendCurveSwitch),0.0f);
+		pRamVariables.MaxSubtractiveKCA = HighPass(BlendAndSwitchCurve(KnockCorrectionRetardTableGroup, timingLookup, *pEngineSpeed, KnockControlBlendCurveSwitch),0.0f);
+	 
 	pRamVariables.SubtractiveKCA = subIam *  pRamVariables.MaxSubtractiveKCA;
 	
 #if TIMING_RAM_TUNING
 	if(pRamVariables.WGDCMaxRamFlag = 0x01)
 	{
-		OutputValue = Pull3DHooked(&TimingRamTable, timingLookup, *pEngineSpeed);
+
+//			OutputValue = Pull3DHooked(&TimingRamTable, *pEngineLoad, *pEngineSpeed);
+			OutputValue = Pull3DHooked(&TimingRamTable, timingLookup, *pEngineSpeed);
+
 	}
 	else
 	{
 #endif
-
-	OutputValue = BlendAndSwitchCurve(TimingTableGroup, timingLookup, *pEngineSpeed, TimingBlendCurveSwitch);
-	pRamVariables.BaseTiming = OutputValue;
+		
+//			OutputValue = BlendAndSwitchCurve(TimingTableGroup, *pEngineLoad, *pEngineSpeed, TimingBlendCurveSwitch);
+			OutputValue = BlendAndSwitchCurve(TimingTableGroup, timingLookup, *pEngineSpeed, TimingBlendCurveSwitch);
 		
 #if TIMING_RAM_TUNING
 	}
@@ -76,20 +80,20 @@ float TimingHack()
 
 	OutputValue -= Abs(pRamVariables.SubtractiveKCA);
 	
-	pRamVariables.FinalTiming = OutputValue;
+	pRamVariables.BaseTimingTarget = OutputValue;
 	
 	if(pRamVariables.TimingHackEnabled == HackEnabled)
-	{
-		pRamVariables.TimingOutput = OutputValue;
-		pRamVariables.FBKCRetardValue = BlendCurve(FBKCRetardValue1,FBKCRetardValue2,KnockControlBlendCurveSwitch);
-		pRamVariables.FBKCRetardValueAlternate = BlendCurve(FBKCRetardValueAlternate1,FBKCRetardValueAlternate2,KnockControlBlendCurveSwitch);
-	}
+		{
+			pRamVariables.BaseTimingOutput = OutputValue;
+			pRamVariables.FBKCRetardValue = BlendCurve(FBKCRetardValue1,FBKCRetardValue2,KnockControlBlendCurveSwitch);
+			pRamVariables.FBKCRetardValueAlternate = BlendCurve(FBKCRetardValueAlternate1,FBKCRetardValueAlternate2,KnockControlBlendCurveSwitch);
+		}
 	else
-	   {
-		pRamVariables.TimingOutput = Pull3DHooked((void*)PrimaryOEMTimingTable, *pEngineLoad, *pEngineSpeed);	
-		pRamVariables.FBKCRetardValue = *dFBKCRetardValue;
-		pRamVariables.FBKCRetardValueAlternate = *dFBKCRetardValueAlternate;
-	}
+		{
+			pRamVariables.BaseTimingOutput = Pull3DHooked((void*)PrimaryOEMTimingTable, *pEngineLoad, *pEngineSpeed);	
+	    	pRamVariables.FBKCRetardValue = *dFBKCRetardValue;
+			pRamVariables.FBKCRetardValueAlternate = *dFBKCRetardValueAlternate;
+		}
 
 	
 		

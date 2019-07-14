@@ -59,7 +59,7 @@ void GenericTests()
 	TimingHackUnitTests();
 #endif
 
-#if PROG_MODE
+#if PROG_MODE && CRUISE_CONTROL
 	ProgModeUnitTests();
 #endif
 

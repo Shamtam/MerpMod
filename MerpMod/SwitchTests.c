@@ -12,23 +12,16 @@
     GNU General Public License for more details.
 */
 
+//Tests for Switch code
+
 #include "EcuHacks.h"
 
-#if PROG_MODE
-///////////////
-//PROGRAMMING MODE TABLES
-////////////////////////////////
+void SwitchUnitTests() __attribute__ ((section ("Misc")));
+void SwitchUnitTests()
+{
+	PopulateRamVariables();
 
-//TODO: use this stuff??		
-float BlendIncrement PROGMODEDATA = 0.01f;
-float RevLimitIncrement PROGMODEDATA = 250.0f;
-float RevLimitMax PROGMODEDATA = 9500.0f;
-float RevLimitMin PROGMODEDATA = 4000.0f;			
-float FFSIncrement PROGMODEDATA = 250.0f;
-float FFSMax PROGMODEDATA = 9000.0f;
-float FFSMin PROGMODEDATA = 3000.0f;					
-float LCIncrement PROGMODEDATA =100.0f;
-float LCMax PROGMODEDATA = 8000.0f;
-float LCMin PROGMODEDATA = 2000.0f;
 
-#endif
+
+}	
+	

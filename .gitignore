@@ -1,5 +1,4 @@
 #gitignore
-MerpMod/Gitversion.h
 [Dd]ebug/
 [Mm]erp[Mm]od/[Rr]elease/
 [Mm]erp[Mm]od/[Tt]esting/
@@ -28,6 +27,7 @@ MerpMod/.*
 ##########
 *.patch
 !Release/*/*.patch
+*.map
 *.bin
 *.gld
 *.glg

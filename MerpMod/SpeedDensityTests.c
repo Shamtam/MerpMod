@@ -113,6 +113,19 @@ void SpeedDensityUnitTests()
 	extern short VE_DATA1[];
 	
 	int i;
+/*	float* fpoint = pRamVariables.VERamCols;
+	for (i=0; i < 24; i++)
+	{
+	*fpoint = VE_COLS[i];
+	fpoint += 0x1;
+	}
+	fpoint = pRamVariables.VERamRows;
+	for (i=0; i < 24; i++)
+	{
+	*fpoint = VE_ROWS[i];
+	fpoint += 0x1;
+	}
+*/
 	short* spoint = pRamVariables.VERamData;
 	for (i=0; i < 576; i++)
 	{

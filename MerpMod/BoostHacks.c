@@ -87,7 +87,7 @@ EcuHacksMain();
 	pRamVariables.WGDCInitialTarget = PGWGInitial;
 	pRamVariables.WGDCMaxTarget = PGWGMax;
 	
-	if(pRamVariables.BoostHackEnable == HackEnabled)
+	if(pRamVariables.BoostHackEnabled == HackEnabled)
 	{
 		#if PROG_MODE
 		if(pRamVariables.ValetMode == ValetModeEnabled)
@@ -122,7 +122,7 @@ EcuHacksMain();
 		//TODO: Might need to use conditionals here! Do some roms use Requested Torque lookups??
 		#if TARGETBOOST_THROTTLEPLATE
 		pRamVariables.WGDCInitialOutput = Pull3DHooked((void*)OEMWGDCInitialTable, *pThrottlePlate, *pEngineSpeed);
-		pRamVariables.WGDCMaxOutput = Pull3DHooked((void*)OEMWGDCMaxTable, *pThrottlePlate, *pEngineSpeed);	
+		pRamVariables.WGDCMaxOutput = Pull3DHooked((void*)OEMWGDCMaxTable, *pThrottlePlate, *pEngineSpeed);
 		#else
 		pRamVariables.WGDCInitialOutput = Pull3DHooked((void*)OEMWGDCInitialTable, *pReqTorque, *pEngineSpeed);
 		pRamVariables.WGDCMaxOutput = Pull3DHooked((void*)OEMWGDCMaxTable, *pReqTorque, *pEngineSpeed);
@@ -192,7 +192,7 @@ void TargetBoostHack()
 	
 	pRamVariables.TargetBoostTarget = PGTB;
 	
-	if(pRamVariables.BoostHackEnable == HackEnabled)
+	if(pRamVariables.BoostHackEnabled == HackEnabled)
 	{
 		if(pRamVariables.ValetMode == ValetModeEnabled)
 		{
@@ -207,7 +207,7 @@ void TargetBoostHack()
 	{		
 		//TODO: Need to use conditionals here! Some roms use Requested Torque lookups!
 		#if TARGETBOOST_THROTTLEPLATE
-		pRamVariables.TargetBoostOutput = Pull3DHooked((void*)OEMTargetBoostTable, *pThrottlePlate, *pEngineSpeed);			
+		pRamVariables.TargetBoostOutput = Pull3DHooked((void*)OEMTargetBoostTable, *pThrottlePlate, *pEngineSpeed);
 		#else
 		pRamVariables.TargetBoostOutput = Pull3DHooked((void*)OEMTargetBoostTable, *pReqTorque, *pEngineSpeed);			
 		#endif

@@ -19,7 +19,7 @@
 float ComputeMassAirFlow(TwoDTable* MafScalingTable, float MafVoltage)
 {	
 	pRamVariables.MafFromSensor = Pull2DHooked(MafScalingTable,MafVoltage);	
-
+	
 	pRamVariables.MafFromDualSensorScaling = BlendCurve(Pull2DHooked(&MafScalingTable1,MafVoltage),Pull2DHooked(&MafScalingTable2,MafVoltage),MassAirFlowScalingBlendCurveSwitch);
  
 

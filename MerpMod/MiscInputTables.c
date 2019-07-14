@@ -16,7 +16,8 @@
 
 #if SWITCH_HACKS
 
-unsigned char WideBandLambdaInputMode SWITCHDATA = WideBandLambdaInputModeUndefined;
+//unsigned char WideBandLambdaInputMode SWITCHDATA = WideBandLambdaInputModeUndefined;
+unsigned char WideBandLambdaInputMode SWITCHDATA = 3;
 float WidebandSensorSmoothingFactor SWITCHDATA = 1.0f;
 unsigned short LeanBoostDelay SWITCHDATA = 25;
 float LeanBoostAFRThreshold SWITCHDATA = 0.85f;

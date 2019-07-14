@@ -1,6 +1,6 @@
 /*
 	Copyright (C) 2012-2013 Merrill A. Myers III merrillamyersiii@gmail.com
-
+	
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
@@ -23,7 +23,7 @@ void UpdateMapBlendRatio(float inputVoltage)
 			if(pRamVariables.MapBlendOutOfRangeCounter == 0)
 			{
 				//counter has hit zero, fall back to default mapblend and trigger cel flash
-				if(MapBlendFailSafe == FailToDefaultBlendRatio)
+				if(MapBlendFailSafe == FailToDefaultBlendRatio) 
 					pRamVariables.MapBlendRatio = Smooth(MapBlendSmoothingFactor,DefaultMapBlendRatio,pRamVariables.MapBlendRatio);
 					pRamVariables.FailSafeMapBlendSwitch = 1;
 				}
@@ -31,8 +31,8 @@ void UpdateMapBlendRatio(float inputVoltage)
 			}
 			else if(*pManifoldRelativePressure < MapBlendBoostContentLock)
 			{
-				//within range, boost is under content lock value, all good.
-				pRamVariables.MapBlendRatio = Smooth(MapBlendSmoothingFactor,Pull2DHooked(&MapBlendScaling,inputVoltage),pRamVariables.MapBlendRatio);
+				//within range, boost is under content lock value, all good. 
+				pRamVariables.MapBlendRatio = Smooth(MapBlendSmoothingFactor,Pull2DHooked(&MapBlendScaling,inputVoltage),pRamVariables.MapBlendRatio); 
 				pRamVariables.MapBlendOutOfRangeCounter = MapBlendCount; //  reset the counter
 				pRamVariables.FailSafeMapBlendSwitch = 0;
 			}
@@ -40,7 +40,7 @@ void UpdateMapBlendRatio(float inputVoltage)
 			{
 				pRamVariables.MapBlendOutOfRangeCounter = MapBlendCount; //  reset the counter
 				pRamVariables.FailSafeMapBlendSwitch = 0;
-			}
+			}	
 }
 
 float GetBlendCurveRatio(unsigned char curve)
@@ -63,16 +63,16 @@ float GetBlendCurveRatio(unsigned char curve)
 		default:
 			return pRamVariables.MapBlendRatio;
 		break;
-	}
+	}	
 }
 
 float BlendAndSwitchCurve(TableGroup tg, float xLookup, float yLookup, unsigned char curve)
 {
 	float OutputValue;
 	float ThisMapBlendRatio;
-
-	ThisMapBlendRatio = GetBlendCurveRatio(curve);
-/*
+	
+	ThisMapBlendRatio = GetBlendCurveRatio(curve);	
+/*	
 	switch(curve)
 	{
 		case BlendCurve1:
@@ -92,11 +92,11 @@ float BlendAndSwitchCurve(TableGroup tg, float xLookup, float yLookup, unsigned 
 			ThisMapBlendRatio = pRamVariables.MapBlendRatio;
 		break;
 	}
-*/
+*/	
 	if(ThisMapBlendRatio < 0.01)
 	{
 		OutputValue = SwitchSelect(tg.Map1, xLookup, yLookup);
-
+		
 	}
 	else if(ThisMapBlendRatio > 0.99)
 	{
@@ -105,7 +105,7 @@ float BlendAndSwitchCurve(TableGroup tg, float xLookup, float yLookup, unsigned 
 	else
 	{
 		float Value1;
-
+		
 		Value1 = SwitchSelect(tg.Map1, xLookup, yLookup);
 
 		Value1 *= (1 - ThisMapBlendRatio);
@@ -115,7 +115,7 @@ float BlendAndSwitchCurve(TableGroup tg, float xLookup, float yLookup, unsigned 
 		float Value2;
 		//Pull3d for Timing Map 1
 		Value2 = SwitchSelect(tg.Map2, xLookup, yLookup);
-
+		
 		Value2 *= ThisMapBlendRatio;
 
 		//Blend
@@ -129,9 +129,9 @@ float BlendCurve(float firstValue, float secondValue, unsigned char curve)
 {
 	float OutputValue;
 	float ThisMapBlendRatio;
-
-	ThisMapBlendRatio = GetBlendCurveRatio(curve);
-/*
+	
+	ThisMapBlendRatio = GetBlendCurveRatio(curve);	
+/*	
 	switch(curve)
 	{
 		case BlendCurve1:
@@ -151,12 +151,12 @@ float BlendCurve(float firstValue, float secondValue, unsigned char curve)
 			ThisMapBlendRatio = pRamVariables.MapBlendRatio;
 		break;
 	}
-*/
+*/	
 
 	if(ThisMapBlendRatio < 0.01)
 	{
 		OutputValue = firstValue;
-
+		
 	}
 	else if(ThisMapBlendRatio > 0.99)
 	{
@@ -166,14 +166,14 @@ float BlendCurve(float firstValue, float secondValue, unsigned char curve)
 	{
 
 		//Blend
-
+		
 		firstValue *= (1 - ThisMapBlendRatio);
-
+		
 		secondValue *= ThisMapBlendRatio;
 
 		OutputValue = (firstValue + secondValue);
 	}
-	return OutputValue;
+	return OutputValue;	
 }
 
 float BlendAndSwitch(TableGroup tg, float xLookup, float yLookup)
@@ -182,7 +182,7 @@ float BlendAndSwitch(TableGroup tg, float xLookup, float yLookup)
 	if(pRamVariables.MapBlendRatio < 0.01)
 	{
 		OutputValue = SwitchSelect(tg.Map1, xLookup, yLookup);
-
+		
 	}
 	else if(pRamVariables.MapBlendRatio > 0.99)
 	{
@@ -191,7 +191,7 @@ float BlendAndSwitch(TableGroup tg, float xLookup, float yLookup)
 	else
 	{
 		float Value1;
-
+		
 		Value1 = SwitchSelect(tg.Map1, xLookup, yLookup);
 
 		Value1 *= (1 - pRamVariables.MapBlendRatio);
@@ -201,7 +201,7 @@ float BlendAndSwitch(TableGroup tg, float xLookup, float yLookup)
 		float Value2;
 		//Pull3d for Timing Map 1
 		Value2 = SwitchSelect(tg.Map2, xLookup, yLookup);
-
+		
 		Value2 *= pRamVariables.MapBlendRatio;
 
 		//Blend
@@ -219,11 +219,11 @@ float SwitchSelect(TableSubSet tss, float xLookup, float yLookup)
 			case MapSwitch3:
 			OutputValue = Pull3DHooked(tss.TableSS, xLookup, yLookup);
 			break;
-
+			
 			case MapSwitch2:
 			OutputValue = Pull3DHooked(tss.TableS, xLookup, yLookup);
 			break;
-
+			
 			default:
 			OutputValue = Pull3DHooked(tss.TableI, xLookup, yLookup);
 			break;
@@ -237,21 +237,21 @@ float SwitchSelect(TableSubSet tss, float xLookup, float yLookup)
 void MapSwitchSiDriveCheck()
 {
 	pRamVariables.SIDriveMode = *pSiDrive;
-
+	
 	switch(pRamVariables.SIDriveMode)
 	{
 			case SiDriveSS:
 				pRamVariables.MapSwitch = MapSwitch3;
 			break;
-
+			
 			case SiDriveSSAlt:
 				pRamVariables.MapSwitch = MapSwitch3;
 			break;
-
+			
 			case SiDriveS:
 				pRamVariables.MapSwitch = MapSwitch2;
 			break;
-
+		
 			default:
 				pRamVariables.MapSwitch = MapSwitch1;
 			break;

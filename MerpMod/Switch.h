@@ -33,7 +33,6 @@
 #define POLF_HACKS 1		//	
 #define PGWG_HACKS 1		//
 #define INJECTOR_HACKS 1	//
-#define REQTORQUE_HACKS 1	//
 #define E85_HACKS 1			//
 #define AVCS_HACKS 1		//
 							//
@@ -43,12 +42,16 @@
 //		RAMTUNING FLAGS		//
 //////////////////////////////
 							//
-#define RAM_PERSIST 1		//
-#define VE_RAMTUNING 0		//
-#define POLF_RAMTUNING 0	//
-#define TIMING_RAMTUNING 0	//
-#define PGWG_RAMTUNING 0	//
-#define WGDC_RAMTUNING 0	//
+#define RAM_PERSIST 0		//
+#define VE_RAMTUNING 1		//
+#define POLF_RAMTUNING 1	//
+#define TIMING_RAMTUNING 1	//
+#define PGWG_RAMTUNING 1	//
+#define WGDC_RAMTUNING 1	//
 #define AVCS_RAMTUNING 1	//
+#define MAF_RAMTUNING 0 	//
+#define TIPIN_RAMTUNING 0	//
+#define RAM_HOLE_SCANNER 1  //
+#define RAMTUNE_AUTOCOPY 1	//
 							//
 //////////////////////////////	

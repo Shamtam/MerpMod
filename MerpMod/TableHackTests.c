@@ -27,17 +27,27 @@ void TimingHackUnitTests()
 {
 	PopulateRamVariables();
 	
-	*pEngineSpeed = 3000;
+	*pEngineSpeed = 2800;
 	*pEngineLoad = 1.0;
 	*pVehicleSpeed = 1.0;
-	
-	pRamVariables.MapSwitchingInputMode = MapSwitchingInputModeSiDrive;
-	pRamVariables.TGVLeftVolts = 1;
+
+pRamVariables.MapSwitchingInputMode = MapSwitchingInputModeSiDrive;
+pRamVariables.TGVLeftVolts = 1;
+InputUpdate();
+
+
+
+
+
+//	*pSiDrive = 1;
 	InputUpdate();
+//	*pSiDrive = 2;
+	InputUpdate();
+		
 	pRamVariables.TimingHackEnabled = HackEnabled;
 	pRamVariables.TimingHackInitFlag = 0x00;
-	pRamVariables.MapBlendRatio = 0.5;				//default is 0
-	pRamVariables.LCTimingLock = 10;		//default is 20
+	pRamVariables.MapBlendRatio = 0.0;				//default is 0
+	pRamVariables.LCTimingLock = 20;		//default is 20
 	
 	TimingHack();
 	
@@ -47,16 +57,16 @@ void TimingHackUnitTests()
 	Assert(pRamVariables.LCTimingLock == DefaultLCTimingLock, "check timing lock default value");
 	Assert(pRamVariables.MapBlendRatio == DefaultBlend, "Check default blending value");
 	Assert(pRamVariables.TimingHackInitFlag == 0x01, "Check Timing init flag is set");
-	Assert(AreCloseEnough(pRamVariables.TimingOutput, -12.96875), "check timing map 1 is used");
+	Assert(AreCloseEnough(pRamVariables.BaseTimingOutput,11.99219), "check timing map 1 is used");
 	
 	pRamVariables.MapBlendRatio = 1;
 	TimingHack();
-	Assert(pRamVariables.TimingOutput == -20, "check timing map 1 is used");
+	Assert(pRamVariables.BaseTimingOutput == -20, "check timing map 1 is used");
 	
 	
 	pRamVariables.MapBlendRatio = 0.5;
 	TimingHack();
-	Assert(pRamVariables.TimingOutput == ((-12.96875 - 20)/2), "check timing map 1 is used");
+	Assert(pRamVariables.BaseTimingOutput == ((-12.96875 - 20)/2), "check timing map 1 is used");
 	
 	pRamVariables.LCTimingMode = LCTimingModeLocked;		//Set locked timing, default is +20
 	
@@ -74,10 +84,10 @@ void PolfHackUnitTests()
 	PopulateRamVariables();
 	
 	*pEngineSpeed = 3000;
-	*pEngineLoad = 1.0;
+	*pEngineLoad = 2.0;
 	*pThrottlePlate = 0;
 
-	pRamVariables.PolfHackEnabled = HackEnabled;
+pRamVariables.PolfHackEnabled = HackEnabled;
 
 	POLFHack();
 	Assert(pRamVariables.MapBlendRatio == DefaultBlend, "Check for init Blend");
@@ -89,7 +99,7 @@ void PolfHackUnitTests()
 	float ftff = 0;
 	Assert(AreCloseEnough(pRamVariables.PolfOutput, ftff), "Check IAM Failsafe Map is used");
 	
-	*pEngineSpeed = 7000;
+	*pEngineSpeed = 7200;
 	POLFHack();
 	ftff = 0.3203125;
 	Assert(AreCloseEnough(pRamVariables.PolfOutput, ftff), "Check IAM Failsafe Map is used");
@@ -110,15 +120,15 @@ void PolfHackUnitTests()
 	float ft2 = 0;
 	Assert(AreCloseEnough(pRamVariables.PolfOutput, ft2), "Check map 2 is used");
 	
-	*pEngineSpeed = 7000;
+	*pEngineSpeed = 7200;
 	pRamVariables.MapBlendRatio = 1;
 	POLFHack();
-	ft2 = 0.3203125;
+	ft2 = 2.0345542501727712508638562543193;
 	Assert(AreCloseEnough(pRamVariables.PolfOutput, ft2), "Check map 2 is used");
 	
 	pRamVariables.MapBlendRatio = 0.5;
 	POLFHack();
-	float ftb = 0.3203125;
+	float ftb = 2.0345542501727712508638562543193;
 	Assert(AreCloseEnough(pRamVariables.PolfOutput, ftb), "Check Blending Value");
 	
 	pRamVariables.LCFuelMode = LCFuelModeLocked; //Lock the fueling target

@@ -157,7 +157,7 @@
 /////////////////
 #if BOOST_HACKS
 
-unsigned char DefaultBoostHackEnable BOOSTDATA = HackDisabled;
+unsigned char DefaultBoostHackEnabled BOOSTDATA = HackDisabled;
 
 float RPMLockWGDC BOOSTDATA = 3000.0f;
 float ThrottleLockWGDC BOOSTDATA = 85.0f;
@@ -219,11 +219,18 @@ TableGroup TargetBoostTableGroup BOOSTDATA = {
 ///////////////
 //PGWG TABLE 1 i
 ///////////////
-ThreeDTable PGWGTable1i __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4)));
 float PGWGCols[6] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
 {1,2,3,4,5,6};
 float PGWGRows[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
 {COMPWGDC_ROWS};
+
+
+
+ThreeDTable PGWGTable1i __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4)));
+//float PGWGCols1i[6] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{1,2,3,4,5,6};
+//float PGWGRows1i[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{COMPWGDC_ROWS};
 short PGWGData1i[96] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) =
 {25600,	25600,	25600,	25600,	25600,	25600,
 25600,	25600,	25600,	25600,	25600,	25600,
@@ -257,6 +264,10 @@ ThreeDTable PGWGTable1i __attribute__ ((section ("RomHole_SpeedDensityTables"),a
 //PGWG TABLE 2 i
 ///////////////
 ThreeDTable PGWGTable2i __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4)));
+//float PGWGCols2i[6] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{1,2,3,4,5,6};
+//float PGWGRows2i[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{COMPWGDC_ROWS};
 short PGWGData2i[96] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) =
 {25600,	25600,	25600,	25600,	25600,	25600,
 25600,	25600,	25600,	25600,	25600,	25600,
@@ -290,6 +301,10 @@ ThreeDTable PGWGTable2i __attribute__ ((section ("RomHole_SpeedDensityTables"),a
 //PGWG TABLE 1 s
 ///////////////
 ThreeDTable PGWGTable1s __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4)));
+//float PGWGCols1s[6] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{1,2,3,4,5,6};
+//float PGWGRows1s[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{COMPWGDC_ROWS};
 short PGWGData1s[96] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) =
 {25600,	25600,	25600,	25600,	25600,	25600,
 25600,	25600,	25600,	25600,	25600,	25600,
@@ -323,6 +338,10 @@ ThreeDTable PGWGTable1s __attribute__ ((section ("RomHole_SpeedDensityTables"),a
 //PGWG TABLE 2 s
 ///////////////
 ThreeDTable PGWGTable2s __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4)));
+//float PGWGCols2s[6] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{1,2,3,4,5,6};
+//float PGWGRows2s[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{COMPWGDC_ROWS};
 short PGWGData2s[96] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) =
 {25600,	25600,	25600,	25600,	25600,	25600,
 25600,	25600,	25600,	25600,	25600,	25600,
@@ -355,6 +374,10 @@ ThreeDTable PGWGTable2s __attribute__ ((section ("RomHole_SpeedDensityTables"),a
 //PGWG TABLE 1 ss
 ///////////////
 ThreeDTable PGWGTable1ss __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4)));
+//float PGWGCols1ss[6] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{1,2,3,4,5,6};
+//float PGWGRows1ss[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{COMPWGDC_ROWS};
 short PGWGData1ss[96] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) =
 {25600,	25600,	25600,	25600,	25600,	25600,
 25600,	25600,	25600,	25600,	25600,	25600,
@@ -388,6 +411,10 @@ ThreeDTable PGWGTable1ss __attribute__ ((section ("RomHole_SpeedDensityTables"),
 //PGWG TABLE 2 ss
 ///////////////
 ThreeDTable PGWGTable2ss __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4)));
+//float PGWGCols2ss[6] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{1,2,3,4,5,6};
+//float PGWGRows2ss[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{COMPWGDC_ROWS};
 short PGWGData2ss[96] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) =
 {25600,	25600,	25600,	25600,	25600,	25600,
 25600,	25600,	25600,	25600,	25600,	25600,
@@ -421,6 +448,10 @@ ThreeDTable PGWGTable2ss __attribute__ ((section ("RomHole_SpeedDensityTables"),
 //PGWG TABLE VALET MODE
 ///////////////
 ThreeDTable PGWGTableValetMode __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4)));
+//float PGWGColsVM[6] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{1,2,3,4,5,6};
+//float PGWGRowsVM[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{COMP_ROWS};
 short PGWGDataVM[96] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) =
 {0,0,0,0,0,0,
 0,0,0,0,0,0,
@@ -456,6 +487,8 @@ ThreeDTable PGWGTableValetMode __attribute__ ((section ("RomHole_SpeedDensityTab
 ThreeDTable PGWGRamTable __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = {
 	.columnCount = 6,
 	.rowCount = 16,
+//	.columnHeaderArray = &(pRamVariables.PGWGRamCols),
+//	.rowHeaderArray = &(pRamVariables.PGWGRamRows),
 	.columnHeaderArray = PGWGCols,
 	.rowHeaderArray = PGWGRows,
 	.tableCells = &(pRamVariables.PGWGRamData),
@@ -467,11 +500,17 @@ ThreeDTable PGWGRamTable __attribute__ ((section ("RomHole_SpeedDensityTables"),
 ///////////////
 //PGTB TABLE 1i
 ///////////////
-ThreeDTable PGTBTable1i __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4)));
 float PGTBCols[6] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
 {1,2,3,4,5,6};
 float PGTBRows[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
 {COMPTB_ROWS};
+
+
+ThreeDTable PGTBTable1i __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4)));
+//float PGTBCols1i[6] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{1,2,3,4,5,6};
+//float PGTBRows1i[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{COMPTB_ROWS};
 short PGTBData1i[96] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) =
 {1975,	1975,	1975,	1975,	1975,	1975,
 1975,	1975,	1975,	1975,	1975,	1975,
@@ -505,6 +544,10 @@ ThreeDTable PGTBTable1i __attribute__ ((section ("RomHole_SpeedDensityTables"),a
 //PGTB TABLE 2i
 ///////////////
 ThreeDTable PGTBTable2i __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4)));
+//float PGTBCols2i[6] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{1,2,3,4,5,6};
+//float PGTBRows2i[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{COMPTB_ROWS};
 short PGTBData2i[96] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) =
 {2001,	2001,	2001,	2001,	2001,	2001,
 2001,	2001,	2001,	2001,	2001,	2001,
@@ -538,6 +581,10 @@ ThreeDTable PGTBTable2i __attribute__ ((section ("RomHole_SpeedDensityTables"),a
 //PGTB TABLE 1s
 ///////////////
 ThreeDTable PGTBTable1s __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4)));
+//float PGTBCols1s[6] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{1,2,3,4,5,6};
+//float PGTBRows1s[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{COMPTB_ROWS};
 short PGTBData1s[96] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) =
 {1975,	1975,	1975,	1975,	1975,	1975,
 1975,	1975,	1975,	1975,	1975,	1975,
@@ -571,6 +618,10 @@ ThreeDTable PGTBTable1s __attribute__ ((section ("RomHole_SpeedDensityTables"),a
 //PGTB TABLE 2s
 ///////////////
 ThreeDTable PGTBTable2s __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4)));
+//float PGTBCols2s[6] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{1,2,3,4,5,6};
+//float PGTBRows2s[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{COMPTB_ROWS};
 short PGTBData2s[96] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) =
 {2001,	2001,	2001,	2001,	2001,	2001,
 2001,	2001,	2001,	2001,	2001,	2001,
@@ -604,6 +655,10 @@ ThreeDTable PGTBTable2s __attribute__ ((section ("RomHole_SpeedDensityTables"),a
 //PGTB TABLE 1ss
 ///////////////
 ThreeDTable PGTBTable1ss __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4)));
+//float PGTBCols1ss[6] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{1,2,3,4,5,6};
+//float PGTBRows1ss[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{COMPTB_ROWS};
 short PGTBData1ss[96] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) =
 {1975,	1975,	1975,	1975,	1975,	1975,
 1975,	1975,	1975,	1975,	1975,	1975,
@@ -637,6 +692,10 @@ ThreeDTable PGTBTable1ss __attribute__ ((section ("RomHole_SpeedDensityTables"),
 //PGTB TABLE 2ss
 ///////////////
 ThreeDTable PGTBTable2ss __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4)));
+//float PGTBCols2ss[6] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{1,2,3,4,5,6};
+//float PGTBRows2ss[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{COMPTB_ROWS};
 short PGTBData2ss[96] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) =
 {2001,	2001,	2001,	2001,	2001,	2001,
 2001,	2001,	2001,	2001,	2001,	2001,
@@ -670,6 +729,10 @@ ThreeDTable PGTBTable2ss __attribute__ ((section ("RomHole_SpeedDensityTables"),
 //PGTB TABLE VALET MODE
 ///////////////
 ThreeDTable PGTBTableValetMode __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4)));
+//float PGTBColsVM[6] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{1,2,3,4,5,6};
+//float PGTBRowsVM[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{COMP_ROWS};
 short PGTBDataVM[96] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) =
 {760,760,760,760,760,760,
 760,760,760,760,760,760,
@@ -705,6 +768,8 @@ ThreeDTable PGTBTableValetMode __attribute__ ((section ("RomHole_SpeedDensityTab
 ThreeDTable PGTBRamTable __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = {
 	.columnCount = 6,
 	.rowCount = 16,
+//	.columnHeaderArray = &(pRamVariables.PGTBRamCols),
+//	.rowHeaderArray = &(pRamVariables.PGTBRamRows),
 	.columnHeaderArray = PGTBCols,
 	.rowHeaderArray = PGTBRows,
 	.tableCells = &(pRamVariables.PGTBRamData),
@@ -716,12 +781,17 @@ ThreeDTable PGTBRamTable __attribute__ ((section ("RomHole_SpeedDensityTables"),
 ///////////////////
 //WGDC Initial Table 1i LUT
 ///////////////////
-ThreeDTable WGDCInitialTable1i __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4)));
 float WGDCInitialCols[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
 {COMPWGDC_COLS};
 float WGDCInitialRows[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
 {COMPWGDC_ROWS};
 
+
+ThreeDTable WGDCInitialTable1i __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4)));
+//float WGDCInitialCols1i[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{COMPWGDC_COLS};
+//float WGDCInitialRows1i[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{COMPWGDC_ROWS};
 short WGDCInitialData1i[256] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) =
 {COMPWGDCINIT1_DATA};
 
@@ -739,6 +809,10 @@ ThreeDTable WGDCInitialTable1i __attribute__ ((section ("RomHole_SpeedDensityTab
 //WGDC Initial Table 2 LUT
 ///////////////////
 ThreeDTable WGDCInitialTable2i __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4)));
+//float WGDCInitialCols2i[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{COMPWGDC_COLS};
+//float WGDCInitialRows2i[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{COMPWGDC_ROWS};
 short WGDCInitialData2i[256] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) =
 {COMPWGDCINIT2_DATA};
 
@@ -757,6 +831,10 @@ ThreeDTable WGDCInitialTable2i __attribute__ ((section ("RomHole_SpeedDensityTab
 //WGDC Initial Table 1s LUT
 ///////////////////
 ThreeDTable WGDCInitialTable1s __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4)));
+//float WGDCInitialCols1s[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{COMPWGDC_COLS};
+//float WGDCInitialRows1s[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{COMPWGDC_ROWS};
 short WGDCInitialData1s[256] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) =
 {COMPWGDCINIT1_DATA};
 
@@ -774,6 +852,10 @@ ThreeDTable WGDCInitialTable1s __attribute__ ((section ("RomHole_SpeedDensityTab
 //WGDC Initial Table 2s LUT
 ///////////////////
 ThreeDTable WGDCInitialTable2s __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4)));
+//float WGDCInitialCols2s[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{COMPWGDC_COLS};
+//float WGDCInitialRows2s[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{COMPWGDC_ROWS};
 short WGDCInitialData2s[256] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) =
 {COMPWGDCINIT2_DATA};
 
@@ -791,6 +873,10 @@ ThreeDTable WGDCInitialTable2s __attribute__ ((section ("RomHole_SpeedDensityTab
 //WGDC Initial Table 1ss LUT
 ///////////////////
 ThreeDTable WGDCInitialTable1ss __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4)));
+//float WGDCInitialCols1ss[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{COMPWGDC_COLS};
+//float WGDCInitialRows1ss[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{COMPWGDC_ROWS};
 short WGDCInitialData1ss[256] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) =
 {COMPWGDCINIT1_DATA};
 
@@ -808,6 +894,10 @@ ThreeDTable WGDCInitialTable1ss __attribute__ ((section ("RomHole_SpeedDensityTa
 //WGDC Initial Table 2ss LUT
 ///////////////////
 ThreeDTable WGDCInitialTable2ss __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4)));
+//float WGDCInitialCols2ss[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{COMPWGDC_COLS};
+//float WGDCInitialRows2ss[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{COMPWGDC_ROWS};
 short WGDCInitialData2ss[256] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) =
 {COMPWGDCINIT2_DATA};
 
@@ -829,6 +919,8 @@ ThreeDTable WGDCInitialTable2ss __attribute__ ((section ("RomHole_SpeedDensityTa
 ThreeDTable WGDCInitialRamTable __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = {
 	.columnCount = 16,
 	.rowCount = 16,
+//	.columnHeaderArray = &(pRamVariables.WGDCInitialRamCols),
+//	.rowHeaderArray = &(pRamVariables.WGDCInitialRamRows),
 	.columnHeaderArray = WGDCInitialCols,
 	.rowHeaderArray = WGDCInitialRows,
 	.tableCells = &(pRamVariables.WGDCInitialRamData),
@@ -840,11 +932,18 @@ ThreeDTable WGDCInitialRamTable __attribute__ ((section ("RomHole_SpeedDensityTa
 ///////////////////
 //WGDC Max Table 1i LUT
 ///////////////////
-ThreeDTable WGDCMaxTable1i __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4)));
+
 float WGDCMaxCols[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
 {COMPWGDC_COLS};
 float WGDCMaxRows[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
 {COMPWGDC_ROWS};
+
+ThreeDTable WGDCMaxTable1i __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4)));
+
+//float WGDCMaxCols1i[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{COMPWGDC_COLS};
+//float WGDCMaxRows1i[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{COMPWGDC_ROWS};
 
 short WGDCMaxData1i[256] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) =
 {COMPWGDCMAX1_DATA};
@@ -863,6 +962,10 @@ ThreeDTable WGDCMaxTable1i __attribute__ ((section ("RomHole_SpeedDensityTables"
 //WGDC Max Table 2i LUT
 ///////////////////
 ThreeDTable WGDCMaxTable2i __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4)));
+//float WGDCMaxCols2i[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{COMPWGDC_COLS};
+//float WGDCMaxRows2i[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{COMPWGDC_ROWS};
 short WGDCMaxData2i[256] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) =
 {COMPWGDCMAX2_DATA};
 
@@ -881,6 +984,10 @@ ThreeDTable WGDCMaxTable2i __attribute__ ((section ("RomHole_SpeedDensityTables"
 //WGDC Max Table 1s LUT
 ///////////////////
 ThreeDTable WGDCMaxTable1s __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4)));
+//float WGDCMaxCols1s[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{COMPWGDC_COLS};
+//float WGDCMaxRows1s[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{COMPWGDC_ROWS};
 short WGDCMaxData1s[256] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) =
 {COMPWGDCMAX1_DATA};
 
@@ -898,6 +1005,10 @@ ThreeDTable WGDCMaxTable1s __attribute__ ((section ("RomHole_SpeedDensityTables"
 //WGDC Max Table 2s LUT
 ///////////////////
 ThreeDTable WGDCMaxTable2s __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4)));
+//float WGDCMaxCols2s[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{COMPWGDC_COLS};
+//float WGDCMaxRows2s[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{COMPWGDC_ROWS};
 short WGDCMaxData2s[256] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) =
 {COMPWGDCMAX2_DATA};
 
@@ -915,6 +1026,10 @@ ThreeDTable WGDCMaxTable2s __attribute__ ((section ("RomHole_SpeedDensityTables"
 //WGDC Max Table 1ss LUT
 ///////////////////
 ThreeDTable WGDCMaxTable1ss __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4)));
+//float WGDCMaxCols1ss[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{COMPWGDC_COLS};
+//float WGDCMaxRows1ss[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{COMPWGDC_ROWS};
 short WGDCMaxData1ss[256] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) =
 {COMPWGDCMAX1_DATA};
 
@@ -932,6 +1047,10 @@ ThreeDTable WGDCMaxTable1ss __attribute__ ((section ("RomHole_SpeedDensityTables
 //WGDC Max Table 2ss LUT
 ///////////////////
 ThreeDTable WGDCMaxTable2ss __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4)));
+//float WGDCMaxCols2ss[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{COMPWGDC_COLS};
+//float WGDCMaxRows2ss[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{COMPWGDC_ROWS};
 short WGDCMaxData2ss[256] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) =
 {COMPWGDCMAX2_DATA};
 
@@ -953,6 +1072,8 @@ ThreeDTable WGDCMaxTable2ss __attribute__ ((section ("RomHole_SpeedDensityTables
 ThreeDTable WGDCMaxRamTable __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = {
 	.columnCount = 16,
 	.rowCount = 16,
+//	.columnHeaderArray = &(pRamVariables.WGDCMaxRamCols),
+//	.rowHeaderArray = &(pRamVariables.WGDCMaxRamRows),
 	.columnHeaderArray = WGDCMaxCols,
 	.rowHeaderArray = WGDCMaxRows,
 	.tableCells = &(pRamVariables.WGDCMaxRamData),
@@ -964,12 +1085,18 @@ ThreeDTable WGDCMaxRamTable __attribute__ ((section ("RomHole_SpeedDensityTables
 ///////////////////
 //Target Boost Table 1i
 ///////////////////
-ThreeDTable TargetBoostTable1i __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4)));
+
 float TBCols[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
 {COMPTB_COLS};
 float TBRows[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
 {COMPTB_ROWS};
 
+
+ThreeDTable TargetBoostTable1i __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4)));
+//float TBCols1i[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{COMPTB_COLS};
+//float TBRows1i[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{COMPTB_ROWS};
 short TBData1i[256] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) =
 {COMPTB1_DATA};
 
@@ -987,6 +1114,10 @@ ThreeDTable TargetBoostTable1i __attribute__ ((section ("RomHole_SpeedDensityTab
 //Target Boost Table 2i
 ///////////////////
 ThreeDTable TargetBoostTable2i __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4)));
+//float TBCols2i[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{COMPTB_COLS};
+//float TBRows2i[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{COMPTB_ROWS};
 short TBData2i[256] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) =
 {COMPTB2_DATA};
 
@@ -1005,6 +1136,10 @@ ThreeDTable TargetBoostTable2i __attribute__ ((section ("RomHole_SpeedDensityTab
 //Target Boost Table 1s
 ///////////////////
 ThreeDTable TargetBoostTable1s __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4)));
+//float TBCols1s[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{COMPTB_COLS};
+//float TBRows1s[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{COMPTB_ROWS};
 short TBData1s[256] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) =
 {COMPTB1_DATA};
 
@@ -1022,6 +1157,10 @@ ThreeDTable TargetBoostTable1s __attribute__ ((section ("RomHole_SpeedDensityTab
 //Target Boost Table 2s
 ///////////////////
 ThreeDTable TargetBoostTable2s __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4)));
+//float TBCols2s[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{COMPTB_COLS};
+//float TBRows2s[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{COMPTB_ROWS};
 short TBData2s[256] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) =
 {COMPTB2_DATA};
 
@@ -1039,6 +1178,10 @@ ThreeDTable TargetBoostTable2s __attribute__ ((section ("RomHole_SpeedDensityTab
 //Target Boost Table 1ss
 ///////////////////
 ThreeDTable TargetBoostTable1ss __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4)));
+//float TBCols1ss[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{COMPTB_COLS};
+//float TBRows1ss[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{COMPTB_ROWS};
 short TBData1ss[256] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) =
 {COMPTB1_DATA};
 
@@ -1056,6 +1199,10 @@ ThreeDTable TargetBoostTable1ss __attribute__ ((section ("RomHole_SpeedDensityTa
 //Target Boost Table 2ss
 ///////////////////
 ThreeDTable TargetBoostTable2ss __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4)));
+//float TBCols2ss[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{COMPTB_COLS};
+//float TBRows2ss[16] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = 
+//{COMPTB_ROWS};
 short TBData2ss[256] __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) =
 {COMPTB2_DATA};
 
@@ -1068,6 +1215,7 @@ ThreeDTable TargetBoostTable2ss __attribute__ ((section ("RomHole_SpeedDensityTa
 	.tableType = UInt16Table3D,
 	.multiplier = 0.000061037f,	
 	.offset = 0 };				//! /32767  (0-? range, 16bit precision)
+
 #endif
 	
 #endif

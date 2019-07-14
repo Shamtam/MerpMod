@@ -14,8 +14,6 @@
 
 #include "enums.h"
 
-extern RamVariables pRamVariables;
-
 //////////////////////////
 //Function Prototypes
 //////////////////////////
@@ -67,9 +65,9 @@ float Pull2DRamHookFrontO2Scaling(float* table, float xLookup) ROMCODE;
 float Pull3DRamHook(float* table, float xLookup, float yLookup) ROMCODE;
 float Pull3DRamHookStartupEnrich1(float* table, float xLookup, float yLookup) ROMCODE;
 float Pull2DRamHookIntakeTempCompensation(float* table, float xLookup) ROMCODE;
-float Pull3DHookReqTorque(ThreeDTable* table, float xLookup, float yLookup) ROMCODE;
 float Pull3DRamHookAVCSLookup(float* table, float xLookup, float yLookup) ROMCODE;
 void VinCheck() ROMCODE;
+void AutoPopulateRamTables() ROMCODE;
 
 void ProgModeListener()  ROMCODE;
 void ProgModeMain()  ROMCODE;
@@ -167,7 +165,7 @@ extern float DefaultLCFuelEnrichMultiplier;
 extern TwoDTable FrontOxygenSensorScaling1;
 extern TwoDTable FrontOxygenSensorScaling2;
 
-extern unsigned char DefaultBoostHackEnable;
+extern unsigned char DefaultBoostHackEnabled;
 extern TableGroup PGWGTableGroup;
 extern ThreeDTable PGWGTable1i;
 extern ThreeDTable PGWGTable2i;
@@ -382,14 +380,13 @@ extern float DefaultFlatFootShiftSpeedThreshold;
 extern float DefaultFlatFootShiftRpmThreshold;
 extern float LCAdjustStep;
 
-#if PROG_MODE
 extern float ValetModeRevLim;
-extern float ValetModeReqTorqueLimit;
-#endif
 
 extern unsigned char DefaultRamTuneTableBlend;
 extern unsigned char DefaultRamTuneTableSwitch;
 extern ThreeDTable AVCSRamTable;
+
+
 
 #if VIN_HACKS
 extern const VinBlockStruct VinBlock;
@@ -400,6 +397,23 @@ extern unsigned char Licensee[];
 extern unsigned char DefaultMapSwitch;
 extern float DefaultMapBlendRatio;
 
+
+
+/*
+extern float LeftTGVInputSmoothingFactor;
+extern float RightTGVInputSmoothingFactor;
+
+extern float LeftTGVInputMultiplier;
+extern float RightTGVInputMultiplier;
+extern float RearO2InputMultiplier;
+
+extern float LeftTGVInputOffset;
+extern float RightTGVInputOffset;
+extern float RearO2InputOffset;
+
+extern float LeftTGVInputThreshold;
+extern float RightTGVInputThreshold;
+*/
 extern float BlendInputMinimumVolts;
 extern float BlendInputMaximumVolts;
 extern unsigned char MapBlendFailSafe;
@@ -450,6 +464,9 @@ extern float FuelPressureDeltaThreshold;
 
 extern TwoDTable WideBandScaling;
 extern TwoDTable FuelPressureScaling;
+
+
+
 #endif
 
 extern long RomHoleEndMarker;

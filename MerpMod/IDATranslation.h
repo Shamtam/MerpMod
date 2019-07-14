@@ -12,6 +12,7 @@
     GNU General Public License for more details.
 */
 
+//#define pRamVariables             ((RamVariables*)pRamHoleStart)
 #define SUB_KCA_HOOK_OLDVAL pKcaIam
 
 #if WGDC_HOOK_DEFINED
@@ -67,6 +68,7 @@
 #elif defined(tPolfKcaAlt) //TODO FIX THIS FOR NEWER CARS!!!!!
 #define PrimaryOEMPolfTable tPolfKcaAlt
 #endif
+
 
 #ifdef tBaseTiming
 #define PrimaryOEMTimingTable tBaseTiming

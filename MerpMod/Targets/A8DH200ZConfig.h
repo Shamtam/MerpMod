@@ -4,7 +4,7 @@
 //////////////////////////////
 
 #define AUTO_TRANS 0
-#define SD_DMAP		0
+#define SD_DMAP	0
 #define TARGETBOOST_THROTTLEPLATE 1
 					
 #define ECU_IDENTIFIER_CHARS (10)

@@ -89,7 +89,7 @@ unsigned char pad2[8];
 //MODID
 long modidop;
 long modidoffset;
-unsigned char modid[100];
+unsigned char modid[60];
 unsigned char padmod[8];
 //ECUID
 long ecuidop;
@@ -488,7 +488,7 @@ const MetaReplace POLFHook METADATA =
 		op: OpReplace4Bytes,
 		address: hTableBaseTiming,
 		oldval: tBaseTiming,
-		newval: (int)&(pRamVariables.TimingOutput),
+		newval: (int)&(pRamVariables.BaseTimingOutput),
 		name: STR(Timing Table Hook)
 	};
 #else
@@ -497,7 +497,7 @@ const MetaReplace POLFHook METADATA =
 		op: OpReplace4Bytes,
 		address: hTableBaseTimingPCruise,
 		oldval: tBaseTimingPCruise,
-		newval: (int)&(pRamVariables.TimingOutput),
+		newval: (int)&(pRamVariables.BaseTimingOutput),
 		name: STR(Base Timing Primary Cruise Table Hook)
 	};
 	const MetaReplace BaseTimingPNonCruiseTablePatch METADATA =
@@ -505,7 +505,7 @@ const MetaReplace POLFHook METADATA =
 		op: OpReplace4Bytes,
 		address: hTableBaseTimingPNonCruise,
 		oldval: tBaseTimingPNonCruise,
-		newval: (int)&(pRamVariables.TimingOutput),
+		newval: (int)&(pRamVariables.BaseTimingOutput),
 		name: STR(Base Timing Primary Non Cruise Table Hook)
 	};
 	const MetaReplace BaseTimingRCruiseAvcsTablePatch METADATA =
@@ -513,7 +513,7 @@ const MetaReplace POLFHook METADATA =
 		op: OpReplace4Bytes,
 		address:hTableBaseTimingRCruiseAvcs,
 		oldval: tBaseTimingRCruiseAvcs,
-		newval: (int)&(pRamVariables.TimingOutput),
+		newval: (int)&(pRamVariables.BaseTimingOutput),
 		name: STR(Base Timing Reference Cruise AVCS Table Hook)
 	};
 	const MetaReplace BaseTimingRNonCruiseAvcsTablePatch METADATA =
@@ -521,7 +521,7 @@ const MetaReplace POLFHook METADATA =
 		op: OpReplace4Bytes,
 		address:hTableBaseTimingRNonCruiseAvcs,
 		oldval: tBaseTimingRNonCruiseAvcs,
-		newval: (int)&(pRamVariables.TimingOutput),
+		newval: (int)&(pRamVariables.BaseTimingOutput),
 		name: STR(Base Timing Reference Non Cruise AVCS Table Hook)
 	};
 #endif
@@ -621,22 +621,6 @@ const MetaReplace POLFHook METADATA =
 	};
 #endif
 
-#endif
-
-#if REQTORQUE_HACKS && PROG_MODE
-//////////////////////////////////
-//				             	//
-//     REQUESTED TORQUE HACKS	//
-//				            	//
-//////////////////////////////////
-	const MetaReplace ReqTorqueHookPull METADATA =
-	{
-		op: OpReplace4Bytes,
-		address: hPull3DReqTorque,
-		oldval: sPull3DFloat,
-		newval: (int)Pull3DHookReqTorque,
-		name: STR(Requested Torque Pull3D Hook)
-	};
 #endif
 
 #if E85_HACKS

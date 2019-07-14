@@ -31,8 +31,9 @@ unsigned short MapBlendCount SWITCHDATA = 45;
 float MapBlendSmoothingFactor SWITCHDATA = 0.05f;
 float MapSwitchSmoothingFactor SWITCHDATA = 1.0f;
 float MapBlendBoostContentLock SWITCHDATA = 760;
-unsigned char DefaultMapBlendingInputMode SWITCHDATA = MapBlendingInputModeUndefined;
-unsigned char DefaultMapSwitchingInputMode  SWITCHDATA = MapSwitchingInputModeUndefined;
+
+unsigned char DefaultMapBlendingInputMode SWITCHDATA = MapBlendingInputModeTGVLeft;
+unsigned char DefaultMapSwitchingInputMode  SWITCHDATA = MapSwitchingInputModeSiDrive;
 
 unsigned char OpenLoopFuelingBlendCurveSwitch SWITCHDATA = BlendCurve1;
 unsigned char ClosedLoopFuelingBlendCurveSwitch SWITCHDATA = BlendCurve1;
@@ -42,8 +43,39 @@ unsigned char WastegateDutyBlendCurveSwitch SWITCHDATA = BlendCurve3;
 unsigned char BoostBlendCurveSwitch SWITCHDATA = BlendCurve3;
 unsigned char MassAirFlowScalingBlendCurveSwitch SWITCHDATA = BlendCurve4;
 unsigned char SpeedDensityBlendCurveSwitch SWITCHDATA = BlendCurve4;
-//TODO TEST pull2d function here!
 
+//TODO TEST pull2d function here!
+/*
+float INPUT1_SCALING_ROWS[11] SWITCHDATA =
+{0,0.5,1,1.5,2,2.5,3,3.5,4,4.5,5};
+
+short INPUT1_SCALING_DATA[11] SWITCHDATA =
+{0,6554,13107,19661,26214,32768,39321,45875,52428,58982,65535};
+
+TwoDTable TGVLeftScaling  SWITCHDATA = {
+	.columnCount = 11,
+	.tableType = UInt16Table2D,
+	.columnHeaderArray = INPUT1_SCALING_ROWS,
+	.tableCells = INPUT1_SCALING_DATA,
+	.multiplier = 0.00001525902f,	//todo unit test these
+	.offset = 0.0 };
+//! 1/65535  (0-1.00 range, 16bit precision)
+
+float INPUT2_SCALING_ROWS[11] SWITCHDATA =
+{0,0.5,1,1.5,2,2.5,3,3.5,4,4.5,5};
+
+short INPUT2_SCALING_DATA[11] SWITCHDATA =
+{0,6554,13107,19661,26214,32768,39321,45875,52428,58982,65535};
+
+TwoDTable TGVRightScaling  SWITCHDATA = {
+	.columnCount = 11,
+	.tableType = UInt16Table2D,//TODO: CHECK that these are consistent between 2d/3d tables!
+	.columnHeaderArray = INPUT2_SCALING_ROWS,
+	.tableCells = INPUT2_SCALING_DATA,
+	.multiplier = 0.00001525902f,	//todo unit test these
+	.offset = 0.0 };
+//! 1/65535  (0-1.00 range, 16bit precision)
+*/
 float MAP_BLEND_SCALING_ROWS[11] SWITCHDATA =
 {0,0.5,1,1.5,2,2.5,3,3.5,4,4.5,5};
 
