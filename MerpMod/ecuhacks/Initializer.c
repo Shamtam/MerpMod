@@ -166,6 +166,10 @@ pRamVariables.CruiseCoastLast = TestCruiseCoastSwitch();
 #if AVCS_HACKS
 	pRamVariables.AVCSLookupMAPLoad = DefaultAVCSLookupMAPLoad;
 #endif
+#if RAM_HOLE_SCANNER
+	pRamVariables.ScannedAddress = (pRamHoleStart - 0xFFFF0000);
+#endif
+
 #if DYN_RAMTUNING
     unsigned long *p;
     p = (unsigned long*) ((char*) pRamHoleEnd + 1);

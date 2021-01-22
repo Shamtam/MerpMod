@@ -210,47 +210,6 @@ typedef struct
 	float WGDCMaxOutput;
 #endif
 
-
-#if VE_RAMTUNING
-//VE RAMTUNING
-	unsigned char VERamFlag;
-	short VERamData[576];
-#endif
-
-#if TIMING_RAMTUNING
-//VE RAMTUNING
-	unsigned char TimingRamFlag;
-	unsigned char TimingRamData[576];
-#endif
-
-#if POLF_RAMTUNING
-//VE RAMTUNING
-	unsigned char POLFRamFlag;
-	unsigned char POLFRamData[576];
-#endif
-
-
-#if PGWG_RAMTUNING
-	//PGWG RAMTUNING
-	unsigned char PGWGRamFlag;
-	short PGWGRamData[96];
-	short PGTBRamData[96];
-#endif
-
-
-#if WGDC_RAMTUNING
-	//WGDC RAMTUNIN
-	unsigned char WGDCInitialRamFlag;
-	short WGDCInitialRamData[256];
-	unsigned char WGDCMaxRamFlag;
-	short WGDCMaxRamData[256];
-#endif
-
-#if AVCS_RAMTUNING
-	unsigned char AVCSRamFlag;
-	short AVCSRamData[342];
-#endif
-
 #if PORT_LOGGER
 	unsigned char testchar1;
 	unsigned char testchar2;

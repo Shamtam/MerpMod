@@ -365,7 +365,6 @@
 "C:\Dev\MerpMod\MerpMod\tables\MapSwitchTables.c" "User" "C source file|tables" 2 
 "C:\Dev\MerpMod\MerpMod\tables\MiscInputTables.c" "User" "C source file|tables" 2 
 "C:\Dev\MerpMod\MerpMod\tables\ProgModeTables.c" "User" "C source file|tables" 2 
-"C:\Dev\MerpMod\MerpMod\tables\RamTuneTables.c" "User" "C source file|tables" 2 
 "C:\Dev\MerpMod\MerpMod\tables\RevLimiterTables.c" "User" "C source file|tables" 2 
 "C:\Dev\MerpMod\MerpMod\tables\SpeedDensityTables.c" "User" "C source file|tables" 2 
 "C:\Dev\MerpMod\MerpMod\tables\TimingHackTables.c" "User" "C source file|tables" 2 
@@ -495,7 +494,6 @@
 "C:\Dev\MerpMod\MerpMod\tables\MapSwitchTables.c" "0e3443d895fc6d10" 10 
 "C:\Dev\MerpMod\MerpMod\tables\MiscInputTables.c" "0e3443d895fc6d10" 10 
 "C:\Dev\MerpMod\MerpMod\tables\ProgModeTables.c" "0e3443d895fc6d10" 10 
-"C:\Dev\MerpMod\MerpMod\tables\RamTuneTables.c" "0e3443d895fc6d10" 10 
 "C:\Dev\MerpMod\MerpMod\tables\RevLimiterTables.c" "0e3443d895fc6d10" 10 
 "C:\Dev\MerpMod\MerpMod\tables\SpeedDensityTables.c" "0e3443d895fc6d10" 10 
 "C:\Dev\MerpMod\MerpMod\tables\TimingHackTables.c" "0e3443d895fc6d10" 10 
@@ -509,7 +507,7 @@
 "C:\Dev\MerpMod\MerpMod\tests\TableHackTests.c" "0e3443d895fc6d10" 10 
 "C:\Dev\MerpMod\MerpMod\tests\TestUtilities.c" "0e3443d895fc6d10" 10 
 [OPTIONS_A2UI001L_CreateEnv]
-"Single Shot" "0de899a352fc6d10" 8 
+"Single Shot" "0c0a608f95317d10" 8 
 [OPTIONS_A2UI001L_GNU Assembler]
 "Assembly source file" "00d2355d11fc6d10" 5 
 "C:\Dev\MerpMod\MerpMod\asm\DynamicRamtunePatch.s" "0ef927b8b1fc6d10" 5 
@@ -547,7 +545,6 @@
 "C:\Dev\MerpMod\MerpMod\tables\MapSwitchTables.c" "0c261254f1fc6d10" 2 
 "C:\Dev\MerpMod\MerpMod\tables\MiscInputTables.c" "0c261254f1fc6d10" 2 
 "C:\Dev\MerpMod\MerpMod\tables\ProgModeTables.c" "0c261254f1fc6d10" 2 
-"C:\Dev\MerpMod\MerpMod\tables\RamTuneTables.c" "0c261254f1fc6d10" 2 
 "C:\Dev\MerpMod\MerpMod\tables\RevLimiterTables.c" "0c261254f1fc6d10" 2 
 "C:\Dev\MerpMod\MerpMod\tables\SpeedDensityTables.c" "0c261254f1fc6d10" 2 
 "C:\Dev\MerpMod\MerpMod\tables\TimingHackTables.c" "0c261254f1fc6d10" 2 
@@ -562,19 +559,19 @@
 "C:\Dev\MerpMod\MerpMod\tests\TestUtilities.c" "0c261254f1fc6d10" 2 
 "Preprocess Assembly file" "0c261254f1fc6d10" 3 
 [OPTIONS_A2UI001L_GNU Library Generator]
-"Single Shot" "0de899a352fc6d10" 7 
+"Single Shot" "0c0a608f95317d10" 7 
 [OPTIONS_A2UI001L_GNU Linker]
-"Single Shot" "0de899a352fc6d10" 6 
+"Single Shot" "0c0a608f95317d10" 6 
 [OPTIONS_A2UI001L_Git Hash]
-"Single Shot" "08614ef5eed07d10" 0 
+"Single Shot" "0c0a608f95317d10" 0 
 [OPTIONS_A2UI001L_LibGen]
-"Single Shot" "090233a835fc6d10" 9 
+"Single Shot" "0c0a608f95317d10" 9 
 [OPTIONS_A2UI001L_Link]
-"Single Shot" "0e3443d895fc6d10" 9 
+"Single Shot" "0c0a608f95317d10" 9 
 [OPTIONS_A2UI001L_TargetSelection]
 "Single Shot" "0de1faed18ec6d10" 1 
 [OPTIONS_A2UI001L_UpdateTestRom]
-"Single Shot" "0de899a352fc6d10" 12 
+"Single Shot" "0c0a608f95317d10" 12 
 [OPTIONS_A2UI001L]
 "" 0 
 "$(CONFIGNAME) $(BUILDCONFIG) $(MMVERSION)" 1 
@@ -643,7 +640,6 @@
 "C:\Dev\MerpMod\MerpMod\tables\MapSwitchTables.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
 "C:\Dev\MerpMod\MerpMod\tables\MiscInputTables.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
 "C:\Dev\MerpMod\MerpMod\tables\ProgModeTables.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
-"C:\Dev\MerpMod\MerpMod\tables\RamTuneTables.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
 "C:\Dev\MerpMod\MerpMod\tables\RevLimiterTables.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
 "C:\Dev\MerpMod\MerpMod\tables\SpeedDensityTables.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
 "C:\Dev\MerpMod\MerpMod\tables\TimingHackTables.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
@@ -705,7 +701,6 @@
 "C:\Dev\MerpMod\MerpMod\tables\MapSwitchTables.c" "0e3443d895fc6d10" 10 
 "C:\Dev\MerpMod\MerpMod\tables\MiscInputTables.c" "0e3443d895fc6d10" 10 
 "C:\Dev\MerpMod\MerpMod\tables\ProgModeTables.c" "0e3443d895fc6d10" 10 
-"C:\Dev\MerpMod\MerpMod\tables\RamTuneTables.c" "0e3443d895fc6d10" 10 
 "C:\Dev\MerpMod\MerpMod\tables\RevLimiterTables.c" "0e3443d895fc6d10" 10 
 "C:\Dev\MerpMod\MerpMod\tables\SpeedDensityTables.c" "0e3443d895fc6d10" 10 
 "C:\Dev\MerpMod\MerpMod\tables\TimingHackTables.c" "0e3443d895fc6d10" 10 
@@ -719,7 +714,7 @@
 "C:\Dev\MerpMod\MerpMod\tests\TableHackTests.c" "0e3443d895fc6d10" 10 
 "C:\Dev\MerpMod\MerpMod\tests\TestUtilities.c" "0e3443d895fc6d10" 10 
 [OPTIONS_AZ1G202G_CreateEnv]
-"Single Shot" "0de899a352fc6d10" 8 
+"Single Shot" "0c0a608f95317d10" 8 
 [OPTIONS_AZ1G202G_GNU Assembler]
 "Assembly source file" "00d2355d11fc6d10" 5 
 "C:\Dev\MerpMod\MerpMod\asm\DynamicRamtunePatch.s" "0ef927b8b1fc6d10" 5 
@@ -757,7 +752,6 @@
 "C:\Dev\MerpMod\MerpMod\tables\MapSwitchTables.c" "0c261254f1fc6d10" 2 
 "C:\Dev\MerpMod\MerpMod\tables\MiscInputTables.c" "0c261254f1fc6d10" 2 
 "C:\Dev\MerpMod\MerpMod\tables\ProgModeTables.c" "0c261254f1fc6d10" 2 
-"C:\Dev\MerpMod\MerpMod\tables\RamTuneTables.c" "0c261254f1fc6d10" 2 
 "C:\Dev\MerpMod\MerpMod\tables\RevLimiterTables.c" "0c261254f1fc6d10" 2 
 "C:\Dev\MerpMod\MerpMod\tables\SpeedDensityTables.c" "0c261254f1fc6d10" 2 
 "C:\Dev\MerpMod\MerpMod\tables\TimingHackTables.c" "0c261254f1fc6d10" 2 
@@ -772,19 +766,19 @@
 "C:\Dev\MerpMod\MerpMod\tests\TestUtilities.c" "0c261254f1fc6d10" 2 
 "Preprocess Assembly file" "0c261254f1fc6d10" 3 
 [OPTIONS_AZ1G202G_GNU Library Generator]
-"Single Shot" "0de899a352fc6d10" 7 
+"Single Shot" "0c0a608f95317d10" 7 
 [OPTIONS_AZ1G202G_GNU Linker]
-"Single Shot" "0de899a352fc6d10" 6 
+"Single Shot" "0c0a608f95317d10" 6 
 [OPTIONS_AZ1G202G_Git Hash]
-"Single Shot" "08614ef5eed07d10" 0 
+"Single Shot" "0c0a608f95317d10" 0 
 [OPTIONS_AZ1G202G_LibGen]
-"Single Shot" "090233a835fc6d10" 9 
+"Single Shot" "0c0a608f95317d10" 9 
 [OPTIONS_AZ1G202G_Link]
-"Single Shot" "0e3443d895fc6d10" 9 
+"Single Shot" "0c0a608f95317d10" 9 
 [OPTIONS_AZ1G202G_TargetSelection]
 "Single Shot" "0de1faed18ec6d10" 1 
 [OPTIONS_AZ1G202G_UpdateTestRom]
-"Single Shot" "0de899a352fc6d10" 12 
+"Single Shot" "0c0a608f95317d10" 12 
 [OPTIONS_AZ1G202G]
 "" 0 
 "$(CONFIGNAME) $(BUILDCONFIG) $(MMVERSION)" 1 
@@ -853,7 +847,6 @@
 "C:\Dev\MerpMod\MerpMod\tables\MapSwitchTables.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
 "C:\Dev\MerpMod\MerpMod\tables\MiscInputTables.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
 "C:\Dev\MerpMod\MerpMod\tables\ProgModeTables.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
-"C:\Dev\MerpMod\MerpMod\tables\RamTuneTables.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
 "C:\Dev\MerpMod\MerpMod\tables\RevLimiterTables.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
 "C:\Dev\MerpMod\MerpMod\tables\SpeedDensityTables.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
 "C:\Dev\MerpMod\MerpMod\tables\TimingHackTables.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 

@@ -449,20 +449,6 @@ ThreeDTable PGWGTableValetMode __attribute__ ((section ("RomHole_SpeedDensityTab
 	.multiplier = 0.00390625f,//0x3B800000	
 	.offset = 0 };
 	
-///////////////
-//PGWG RAM LUT
-///////////////
-#if PGWG_RAMTUNING
-ThreeDTable PGWGRamTable __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = {
-	.columnCount = 6,
-	.rowCount = 16,
-	.columnHeaderArray = PGWGCols,
-	.rowHeaderArray = PGWGRows,
-	.tableCells = &(pRamVariables.PGWGRamData),
-	.tableType = UInt16Table3D,
-	.multiplier = 0.00390625f,//0x3B800000	
-	.offset = 0 };
-#endif
 
 ///////////////
 //PGTB TABLE 1i
@@ -698,20 +684,6 @@ ThreeDTable PGTBTableValetMode __attribute__ ((section ("RomHole_SpeedDensityTab
 	.multiplier = 1.0f,//0x3F800000	
 	.offset = 0 };
 	
-///////////////
-//PGTB RAM LUT
-///////////////
-#if PGWG_RAMTUNING
-ThreeDTable PGTBRamTable __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = {
-	.columnCount = 6,
-	.rowCount = 16,
-	.columnHeaderArray = PGTBCols,
-	.rowHeaderArray = PGTBRows,
-	.tableCells = &(pRamVariables.PGTBRamData),
-	.tableType = UInt16Table3D,
-	.multiplier = 1.0,//0x3B800000
-	.offset = 0 };	
-#endif
 
 ///////////////////
 //WGDC Initial Table 1i LUT
@@ -821,21 +793,6 @@ ThreeDTable WGDCInitialTable2ss __attribute__ ((section ("RomHole_SpeedDensityTa
 	.multiplier = 0.000061037f,	
 	.offset = 0 };				//! /32767  (0-? range, 16bit precision)
 #endif
-	
-///////////////
-//WGDC Initial RAM LUT
-///////////////
-#if WGDC_RAMTUNING
-ThreeDTable WGDCInitialRamTable __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = {
-	.columnCount = 16,
-	.rowCount = 16,
-	.columnHeaderArray = WGDCInitialCols,
-	.rowHeaderArray = WGDCInitialRows,
-	.tableCells = &(pRamVariables.WGDCInitialRamData),
-	.tableType = UInt16Table3D,
-	.multiplier = 0.000061037f,
-	.offset = 0 };				//! /32767  (0- range, 16bit precision)
-#endif
 
 ///////////////////
 //WGDC Max Table 1i LUT
@@ -944,21 +901,6 @@ ThreeDTable WGDCMaxTable2ss __attribute__ ((section ("RomHole_SpeedDensityTables
 	.tableType = UInt16Table3D,
 	.multiplier = 0.000061037f,
 	.offset = 0 };				//! /32767  (0-? range, 16bit precision)
-#endif
-
-///////////////
-//WGDC Max RAM LUT
-///////////////
-#if WGDC_RAMTUNING
-ThreeDTable WGDCMaxRamTable __attribute__ ((section ("RomHole_SpeedDensityTables"),aligned(4))) = {
-	.columnCount = 16,
-	.rowCount = 16,
-	.columnHeaderArray = WGDCMaxCols,
-	.rowHeaderArray = WGDCMaxRows,
-	.tableCells = &(pRamVariables.WGDCMaxRamData),
-	.tableType = UInt16Table3D,
-	.multiplier = 0.000061037f,
-	.offset = 0 };				//! /32767  (0- range, 16bit precision)
 #endif
 
 ///////////////////
