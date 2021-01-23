@@ -386,7 +386,7 @@ DEFINERAMVAR("Merpmod Fuel Pressure",FuelPressure,"float","E");
 DEFINERAMVAR("Merpmod Rear O2 Voltage",RearO2Volts,"float","E");
 DEFINERAMVAR("Merpmod Wideband",WideBandLambda,"float","E");
 DEFINERAMVAR("Merpmod Lean Boost Counter",LeanBoostCounter,"uint16","E");
-DEFINERAMVAR("Merpmod Fuel Pressure Delta",FuelPressureDelta,"float","E");
+DEFINERAMVAR("Merpmod Fuel Pressure Delta",FuelPressureDifferential,"float","E");
 DEFINERAMVAR("Merpmod Injector Duty Cycle",InjectorDutyCycle,"float","E");
 
 #if INJECTOR_HACKS
