@@ -325,6 +325,7 @@
 "C:\Dev\MerpMod\MerpMod\ecuhacks\BlendAndSwitch.c" "User" "C source file|ecuhacks" 2 
 "C:\Dev\MerpMod\MerpMod\ecuhacks\BoostHacks.c" "User" "C source file|ecuhacks" 2 
 "C:\Dev\MerpMod\MerpMod\ecuhacks\CelFlash.c" "User" "C source file|ecuhacks" 2 
+"C:\Dev\MerpMod\MerpMod\ecuhacks\CustomCan.c" "User" "C source file|ecuhacks" 2 
 "C:\Dev\MerpMod\MerpMod\ecuhacks\Definition.c" "User" "C source file|ecuhacks" 2 
 "C:\Dev\MerpMod\MerpMod\ecuhacks\DynamicRamtune.c" "User" "C source file|ecuhacks" 2 
 "C:\Dev\MerpMod\MerpMod\ecuhacks\DynamicRamtune.flags" "User" "Special Flags" 2 
@@ -361,6 +362,7 @@
 "C:\Dev\MerpMod\MerpMod\include\enums.h" "User" "C header file|include" 2 
 "C:\Dev\MerpMod\MerpMod\tables\BoostHackTables.c" "User" "C source file|tables" 2 
 "C:\Dev\MerpMod\MerpMod\tables\CelFlashTables.c" "User" "C source file|tables" 2 
+"C:\Dev\MerpMod\MerpMod\tables\CustomCanTables.c" "User" "C source file|tables" 2 
 "C:\Dev\MerpMod\MerpMod\tables\FuelHackTables.c" "User" "C source file|tables" 2 
 "C:\Dev\MerpMod\MerpMod\tables\MapSwitchTables.c" "User" "C source file|tables" 2 
 "C:\Dev\MerpMod\MerpMod\tables\MiscInputTables.c" "User" "C source file|tables" 2 
@@ -369,6 +371,7 @@
 "C:\Dev\MerpMod\MerpMod\tables\SpeedDensityTables.c" "User" "C source file|tables" 2 
 "C:\Dev\MerpMod\MerpMod\tables\TimingHackTables.c" "User" "C source file|tables" 2 
 "C:\Dev\MerpMod\MerpMod\tests\CelFlashTests.c" "User" "C source file|tests" 2 
+"C:\Dev\MerpMod\MerpMod\tests\CustomCanTests.c" "User" "C source file|tests" 2 
 "C:\Dev\MerpMod\MerpMod\tests\DynamicRamtuneTests.c" "User" "C source file|tests" 2 
 "C:\Dev\MerpMod\MerpMod\tests\GenericTests.c" "User" "C source file|tests" 2 
 "C:\Dev\MerpMod\MerpMod\tests\ProgModeTests.c" "User" "C source file|tests" 2 
@@ -467,6 +470,7 @@
 "C:\Dev\MerpMod\MerpMod\ecuhacks\BlendAndSwitch.c" "0e3443d895fc6d10" 10 
 "C:\Dev\MerpMod\MerpMod\ecuhacks\BoostHacks.c" "0e3443d895fc6d10" 10 
 "C:\Dev\MerpMod\MerpMod\ecuhacks\CelFlash.c" "0e3443d895fc6d10" 10 
+"C:\Dev\MerpMod\MerpMod\ecuhacks\CustomCan.c" "001c90eea5317d10" 10 
 "C:\Dev\MerpMod\MerpMod\ecuhacks\Definition.c" "0e3443d895fc6d10" 10 
 "C:\Dev\MerpMod\MerpMod\ecuhacks\DynamicRamtune.c" "0e3443d895fc6d10" 10 
 "C:\Dev\MerpMod\MerpMod\ecuhacks\EcuHacks.c" "0e3443d895fc6d10" 10 
@@ -490,6 +494,7 @@
 "C:\Dev\MerpMod\MerpMod\ecuhacks\WideBand.c" "0e3443d895fc6d10" 10 
 "C:\Dev\MerpMod\MerpMod\tables\BoostHackTables.c" "0e3443d895fc6d10" 10 
 "C:\Dev\MerpMod\MerpMod\tables\CelFlashTables.c" "0e3443d895fc6d10" 10 
+"C:\Dev\MerpMod\MerpMod\tables\CustomCanTables.c" "096d223fa5317d10" 10 
 "C:\Dev\MerpMod\MerpMod\tables\FuelHackTables.c" "0e3443d895fc6d10" 10 
 "C:\Dev\MerpMod\MerpMod\tables\MapSwitchTables.c" "0e3443d895fc6d10" 10 
 "C:\Dev\MerpMod\MerpMod\tables\MiscInputTables.c" "0e3443d895fc6d10" 10 
@@ -498,6 +503,7 @@
 "C:\Dev\MerpMod\MerpMod\tables\SpeedDensityTables.c" "0e3443d895fc6d10" 10 
 "C:\Dev\MerpMod\MerpMod\tables\TimingHackTables.c" "0e3443d895fc6d10" 10 
 "C:\Dev\MerpMod\MerpMod\tests\CelFlashTests.c" "0e3443d895fc6d10" 10 
+"C:\Dev\MerpMod\MerpMod\tests\CustomCanTests.c" "09bf9e7fa5317d10" 10 
 "C:\Dev\MerpMod\MerpMod\tests\DynamicRamtuneTests.c" "0e3443d895fc6d10" 10 
 "C:\Dev\MerpMod\MerpMod\tests\GenericTests.c" "0e3443d895fc6d10" 10 
 "C:\Dev\MerpMod\MerpMod\tests\ProgModeTests.c" "0e3443d895fc6d10" 10 
@@ -507,7 +513,7 @@
 "C:\Dev\MerpMod\MerpMod\tests\TableHackTests.c" "0e3443d895fc6d10" 10 
 "C:\Dev\MerpMod\MerpMod\tests\TestUtilities.c" "0e3443d895fc6d10" 10 
 [OPTIONS_A2UI001L_CreateEnv]
-"Single Shot" "0c0a608f95317d10" 8 
+"Single Shot" "09bf9e7fa5317d10" 8 
 [OPTIONS_A2UI001L_GNU Assembler]
 "Assembly source file" "00d2355d11fc6d10" 5 
 "C:\Dev\MerpMod\MerpMod\asm\DynamicRamtunePatch.s" "0ef927b8b1fc6d10" 5 
@@ -518,6 +524,7 @@
 "C:\Dev\MerpMod\MerpMod\ecuhacks\BlendAndSwitch.c" "0c261254f1fc6d10" 2 
 "C:\Dev\MerpMod\MerpMod\ecuhacks\BoostHacks.c" "0c261254f1fc6d10" 2 
 "C:\Dev\MerpMod\MerpMod\ecuhacks\CelFlash.c" "0c261254f1fc6d10" 2 
+"C:\Dev\MerpMod\MerpMod\ecuhacks\CustomCan.c" "001c90eea5317d10" 2 
 "C:\Dev\MerpMod\MerpMod\ecuhacks\Definition.c" "0c261254f1fc6d10" 2 
 "C:\Dev\MerpMod\MerpMod\ecuhacks\DynamicRamtune.c" "0de899a352fc6d10" 2 
 "C:\Dev\MerpMod\MerpMod\ecuhacks\EcuHacks.c" "0c261254f1fc6d10" 2 
@@ -541,6 +548,7 @@
 "C:\Dev\MerpMod\MerpMod\ecuhacks\WideBand.c" "0c261254f1fc6d10" 2 
 "C:\Dev\MerpMod\MerpMod\tables\BoostHackTables.c" "0c261254f1fc6d10" 2 
 "C:\Dev\MerpMod\MerpMod\tables\CelFlashTables.c" "0c261254f1fc6d10" 2 
+"C:\Dev\MerpMod\MerpMod\tables\CustomCanTables.c" "096d223fa5317d10" 2 
 "C:\Dev\MerpMod\MerpMod\tables\FuelHackTables.c" "0c261254f1fc6d10" 2 
 "C:\Dev\MerpMod\MerpMod\tables\MapSwitchTables.c" "0c261254f1fc6d10" 2 
 "C:\Dev\MerpMod\MerpMod\tables\MiscInputTables.c" "0c261254f1fc6d10" 2 
@@ -549,6 +557,7 @@
 "C:\Dev\MerpMod\MerpMod\tables\SpeedDensityTables.c" "0c261254f1fc6d10" 2 
 "C:\Dev\MerpMod\MerpMod\tables\TimingHackTables.c" "0c261254f1fc6d10" 2 
 "C:\Dev\MerpMod\MerpMod\tests\CelFlashTests.c" "0c261254f1fc6d10" 2 
+"C:\Dev\MerpMod\MerpMod\tests\CustomCanTests.c" "09bf9e7fa5317d10" 2 
 "C:\Dev\MerpMod\MerpMod\tests\DynamicRamtuneTests.c" "0c261254f1fc6d10" 2 
 "C:\Dev\MerpMod\MerpMod\tests\GenericTests.c" "0c261254f1fc6d10" 2 
 "C:\Dev\MerpMod\MerpMod\tests\ProgModeTests.c" "0c261254f1fc6d10" 2 
@@ -559,19 +568,19 @@
 "C:\Dev\MerpMod\MerpMod\tests\TestUtilities.c" "0c261254f1fc6d10" 2 
 "Preprocess Assembly file" "0c261254f1fc6d10" 3 
 [OPTIONS_A2UI001L_GNU Library Generator]
-"Single Shot" "0c0a608f95317d10" 7 
+"Single Shot" "09bf9e7fa5317d10" 7 
 [OPTIONS_A2UI001L_GNU Linker]
-"Single Shot" "0c0a608f95317d10" 6 
+"Single Shot" "09bf9e7fa5317d10" 6 
 [OPTIONS_A2UI001L_Git Hash]
-"Single Shot" "0c0a608f95317d10" 0 
+"Single Shot" "09bf9e7fa5317d10" 0 
 [OPTIONS_A2UI001L_LibGen]
-"Single Shot" "0c0a608f95317d10" 9 
+"Single Shot" "09bf9e7fa5317d10" 9 
 [OPTIONS_A2UI001L_Link]
-"Single Shot" "0c0a608f95317d10" 9 
+"Single Shot" "09bf9e7fa5317d10" 9 
 [OPTIONS_A2UI001L_TargetSelection]
 "Single Shot" "0de1faed18ec6d10" 1 
 [OPTIONS_A2UI001L_UpdateTestRom]
-"Single Shot" "0c0a608f95317d10" 12 
+"Single Shot" "09bf9e7fa5317d10" 12 
 [OPTIONS_A2UI001L]
 "" 0 
 "$(CONFIGNAME) $(BUILDCONFIG) $(MMVERSION)" 1 
@@ -613,6 +622,7 @@
 "C:\Dev\MerpMod\MerpMod\ecuhacks\BlendAndSwitch.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
 "C:\Dev\MerpMod\MerpMod\ecuhacks\BoostHacks.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
 "C:\Dev\MerpMod\MerpMod\ecuhacks\CelFlash.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
+"C:\Dev\MerpMod\MerpMod\ecuhacks\CustomCan.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
 "C:\Dev\MerpMod\MerpMod\ecuhacks\Definition.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
 "C:\Dev\MerpMod\MerpMod\ecuhacks\DynamicRamtune.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).s" "UnknownCustom" 0 
 "C:\Dev\MerpMod\MerpMod\ecuhacks\EcuHacks.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
@@ -636,6 +646,7 @@
 "C:\Dev\MerpMod\MerpMod\ecuhacks\WideBand.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
 "C:\Dev\MerpMod\MerpMod\tables\BoostHackTables.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
 "C:\Dev\MerpMod\MerpMod\tables\CelFlashTables.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
+"C:\Dev\MerpMod\MerpMod\tables\CustomCanTables.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
 "C:\Dev\MerpMod\MerpMod\tables\FuelHackTables.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
 "C:\Dev\MerpMod\MerpMod\tables\MapSwitchTables.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
 "C:\Dev\MerpMod\MerpMod\tables\MiscInputTables.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
@@ -644,6 +655,7 @@
 "C:\Dev\MerpMod\MerpMod\tables\SpeedDensityTables.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
 "C:\Dev\MerpMod\MerpMod\tables\TimingHackTables.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
 "C:\Dev\MerpMod\MerpMod\tests\CelFlashTests.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
+"C:\Dev\MerpMod\MerpMod\tests\CustomCanTests.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
 "C:\Dev\MerpMod\MerpMod\tests\DynamicRamtuneTests.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
 "C:\Dev\MerpMod\MerpMod\tests\GenericTests.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
 "C:\Dev\MerpMod\MerpMod\tests\ProgModeTests.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
@@ -674,6 +686,7 @@
 "C:\Dev\MerpMod\MerpMod\ecuhacks\BlendAndSwitch.c" "0e3443d895fc6d10" 10 
 "C:\Dev\MerpMod\MerpMod\ecuhacks\BoostHacks.c" "0e3443d895fc6d10" 10 
 "C:\Dev\MerpMod\MerpMod\ecuhacks\CelFlash.c" "0e3443d895fc6d10" 10 
+"C:\Dev\MerpMod\MerpMod\ecuhacks\CustomCan.c" "001c90eea5317d10" 10 
 "C:\Dev\MerpMod\MerpMod\ecuhacks\Definition.c" "0e3443d895fc6d10" 10 
 "C:\Dev\MerpMod\MerpMod\ecuhacks\DynamicRamtune.c" "0e3443d895fc6d10" 10 
 "C:\Dev\MerpMod\MerpMod\ecuhacks\EcuHacks.c" "0e3443d895fc6d10" 10 
@@ -697,6 +710,7 @@
 "C:\Dev\MerpMod\MerpMod\ecuhacks\WideBand.c" "0e3443d895fc6d10" 10 
 "C:\Dev\MerpMod\MerpMod\tables\BoostHackTables.c" "0e3443d895fc6d10" 10 
 "C:\Dev\MerpMod\MerpMod\tables\CelFlashTables.c" "0e3443d895fc6d10" 10 
+"C:\Dev\MerpMod\MerpMod\tables\CustomCanTables.c" "096d223fa5317d10" 10 
 "C:\Dev\MerpMod\MerpMod\tables\FuelHackTables.c" "0e3443d895fc6d10" 10 
 "C:\Dev\MerpMod\MerpMod\tables\MapSwitchTables.c" "0e3443d895fc6d10" 10 
 "C:\Dev\MerpMod\MerpMod\tables\MiscInputTables.c" "0e3443d895fc6d10" 10 
@@ -705,6 +719,7 @@
 "C:\Dev\MerpMod\MerpMod\tables\SpeedDensityTables.c" "0e3443d895fc6d10" 10 
 "C:\Dev\MerpMod\MerpMod\tables\TimingHackTables.c" "0e3443d895fc6d10" 10 
 "C:\Dev\MerpMod\MerpMod\tests\CelFlashTests.c" "0e3443d895fc6d10" 10 
+"C:\Dev\MerpMod\MerpMod\tests\CustomCanTests.c" "09bf9e7fa5317d10" 10 
 "C:\Dev\MerpMod\MerpMod\tests\DynamicRamtuneTests.c" "0e3443d895fc6d10" 10 
 "C:\Dev\MerpMod\MerpMod\tests\GenericTests.c" "0e3443d895fc6d10" 10 
 "C:\Dev\MerpMod\MerpMod\tests\ProgModeTests.c" "0e3443d895fc6d10" 10 
@@ -714,7 +729,7 @@
 "C:\Dev\MerpMod\MerpMod\tests\TableHackTests.c" "0e3443d895fc6d10" 10 
 "C:\Dev\MerpMod\MerpMod\tests\TestUtilities.c" "0e3443d895fc6d10" 10 
 [OPTIONS_AZ1G202G_CreateEnv]
-"Single Shot" "0c0a608f95317d10" 8 
+"Single Shot" "09bf9e7fa5317d10" 8 
 [OPTIONS_AZ1G202G_GNU Assembler]
 "Assembly source file" "00d2355d11fc6d10" 5 
 "C:\Dev\MerpMod\MerpMod\asm\DynamicRamtunePatch.s" "0ef927b8b1fc6d10" 5 
@@ -725,6 +740,7 @@
 "C:\Dev\MerpMod\MerpMod\ecuhacks\BlendAndSwitch.c" "0c261254f1fc6d10" 2 
 "C:\Dev\MerpMod\MerpMod\ecuhacks\BoostHacks.c" "0c261254f1fc6d10" 2 
 "C:\Dev\MerpMod\MerpMod\ecuhacks\CelFlash.c" "0c261254f1fc6d10" 2 
+"C:\Dev\MerpMod\MerpMod\ecuhacks\CustomCan.c" "001c90eea5317d10" 2 
 "C:\Dev\MerpMod\MerpMod\ecuhacks\Definition.c" "0c261254f1fc6d10" 2 
 "C:\Dev\MerpMod\MerpMod\ecuhacks\DynamicRamtune.c" "0de899a352fc6d10" 2 
 "C:\Dev\MerpMod\MerpMod\ecuhacks\EcuHacks.c" "0c261254f1fc6d10" 2 
@@ -748,6 +764,7 @@
 "C:\Dev\MerpMod\MerpMod\ecuhacks\WideBand.c" "0c261254f1fc6d10" 2 
 "C:\Dev\MerpMod\MerpMod\tables\BoostHackTables.c" "0c261254f1fc6d10" 2 
 "C:\Dev\MerpMod\MerpMod\tables\CelFlashTables.c" "0c261254f1fc6d10" 2 
+"C:\Dev\MerpMod\MerpMod\tables\CustomCanTables.c" "096d223fa5317d10" 2 
 "C:\Dev\MerpMod\MerpMod\tables\FuelHackTables.c" "0c261254f1fc6d10" 2 
 "C:\Dev\MerpMod\MerpMod\tables\MapSwitchTables.c" "0c261254f1fc6d10" 2 
 "C:\Dev\MerpMod\MerpMod\tables\MiscInputTables.c" "0c261254f1fc6d10" 2 
@@ -756,6 +773,7 @@
 "C:\Dev\MerpMod\MerpMod\tables\SpeedDensityTables.c" "0c261254f1fc6d10" 2 
 "C:\Dev\MerpMod\MerpMod\tables\TimingHackTables.c" "0c261254f1fc6d10" 2 
 "C:\Dev\MerpMod\MerpMod\tests\CelFlashTests.c" "0c261254f1fc6d10" 2 
+"C:\Dev\MerpMod\MerpMod\tests\CustomCanTests.c" "09bf9e7fa5317d10" 2 
 "C:\Dev\MerpMod\MerpMod\tests\DynamicRamtuneTests.c" "0c261254f1fc6d10" 2 
 "C:\Dev\MerpMod\MerpMod\tests\GenericTests.c" "0c261254f1fc6d10" 2 
 "C:\Dev\MerpMod\MerpMod\tests\ProgModeTests.c" "0c261254f1fc6d10" 2 
@@ -766,19 +784,19 @@
 "C:\Dev\MerpMod\MerpMod\tests\TestUtilities.c" "0c261254f1fc6d10" 2 
 "Preprocess Assembly file" "0c261254f1fc6d10" 3 
 [OPTIONS_AZ1G202G_GNU Library Generator]
-"Single Shot" "0c0a608f95317d10" 7 
+"Single Shot" "09bf9e7fa5317d10" 7 
 [OPTIONS_AZ1G202G_GNU Linker]
-"Single Shot" "0c0a608f95317d10" 6 
+"Single Shot" "09bf9e7fa5317d10" 6 
 [OPTIONS_AZ1G202G_Git Hash]
-"Single Shot" "0c0a608f95317d10" 0 
+"Single Shot" "09bf9e7fa5317d10" 0 
 [OPTIONS_AZ1G202G_LibGen]
-"Single Shot" "0c0a608f95317d10" 9 
+"Single Shot" "09bf9e7fa5317d10" 9 
 [OPTIONS_AZ1G202G_Link]
-"Single Shot" "0c0a608f95317d10" 9 
+"Single Shot" "09bf9e7fa5317d10" 9 
 [OPTIONS_AZ1G202G_TargetSelection]
 "Single Shot" "0de1faed18ec6d10" 1 
 [OPTIONS_AZ1G202G_UpdateTestRom]
-"Single Shot" "0c0a608f95317d10" 12 
+"Single Shot" "09bf9e7fa5317d10" 12 
 [OPTIONS_AZ1G202G]
 "" 0 
 "$(CONFIGNAME) $(BUILDCONFIG) $(MMVERSION)" 1 
@@ -820,6 +838,7 @@
 "C:\Dev\MerpMod\MerpMod\ecuhacks\BlendAndSwitch.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
 "C:\Dev\MerpMod\MerpMod\ecuhacks\BoostHacks.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
 "C:\Dev\MerpMod\MerpMod\ecuhacks\CelFlash.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
+"C:\Dev\MerpMod\MerpMod\ecuhacks\CustomCan.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
 "C:\Dev\MerpMod\MerpMod\ecuhacks\Definition.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
 "C:\Dev\MerpMod\MerpMod\ecuhacks\DynamicRamtune.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).s" "UnknownCustom" 0 
 "C:\Dev\MerpMod\MerpMod\ecuhacks\EcuHacks.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
@@ -843,6 +862,7 @@
 "C:\Dev\MerpMod\MerpMod\ecuhacks\WideBand.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
 "C:\Dev\MerpMod\MerpMod\tables\BoostHackTables.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
 "C:\Dev\MerpMod\MerpMod\tables\CelFlashTables.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
+"C:\Dev\MerpMod\MerpMod\tables\CustomCanTables.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
 "C:\Dev\MerpMod\MerpMod\tables\FuelHackTables.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
 "C:\Dev\MerpMod\MerpMod\tables\MapSwitchTables.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
 "C:\Dev\MerpMod\MerpMod\tables\MiscInputTables.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
@@ -851,6 +871,7 @@
 "C:\Dev\MerpMod\MerpMod\tables\SpeedDensityTables.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
 "C:\Dev\MerpMod\MerpMod\tables\TimingHackTables.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
 "C:\Dev\MerpMod\MerpMod\tests\CelFlashTests.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
+"C:\Dev\MerpMod\MerpMod\tests\CustomCanTests.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
 "C:\Dev\MerpMod\MerpMod\tests\DynamicRamtuneTests.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
 "C:\Dev\MerpMod\MerpMod\tests\GenericTests.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
 "C:\Dev\MerpMod\MerpMod\tests\ProgModeTests.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 

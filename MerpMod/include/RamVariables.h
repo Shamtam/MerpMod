@@ -39,6 +39,34 @@ typedef struct
 	float InjectorScalingMultiplier;
 #endif
 
+#if CAN_HACKS	
+	float ethanolContentCAN;
+	unsigned short ethanolContentShortCAN;
+	unsigned short ccmSendTimers[ccmCount];
+	unsigned short sdTimer;
+	
+	unsigned short initFunctionRun;
+	unsigned char randomTimer;
+	unsigned char rgBackLight;
+	unsigned char ecuHacksMainCtr;
+	
+	
+		float rEthanolCAN;
+		float tFuelCAN;		
+		float pFuelCan;	
+		float pFuelCanRel;
+		float aemLambda;
+		float aemOxygen;
+		float vFuelPressureRel;
+		unsigned char aemDataValid;
+		unsigned char aemSensorFault;
+		unsigned char aemn1;
+		unsigned char aemn2;
+		
+#endif
+
+
+
 #if SPARK_CUT
 	unsigned char SparkEventsX;
 	unsigned char se;
@@ -162,7 +190,7 @@ typedef struct
 	unsigned char 	TimingHackInitFlag;		//97
 	unsigned char 	LCTimingMode;
 	unsigned char	TimingHackEnabled;
-	unsigned char	Tempty1;	
+	unsigned char	Tempty1;
 	float	BaseTiming;
 	float 	FinalTiming;	//97
 	float	TimingOutput;
