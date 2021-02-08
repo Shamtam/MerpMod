@@ -132,7 +132,7 @@ ThreeDTable VolumetricEfficiencyTable2  SPEEDDENSITYDATA = {
 //! 1.5/32767  (0-2.00 range, 16bit precision)
 
 
-
+#if DUALMAF_HACKS
 //***************************************
 // MAF Scaling Blending
 //***************************************
@@ -184,7 +184,7 @@ TwoDTable MafScalingTable2 SPEEDDENSITYDATA = {
 	.tableCells = MAF_SENSOR_SCALING_2_DATA,
 	.multiplier = 1,
 	.offset = 0.0f};
-
+#endif
 #endif
 
 #if SD_DMAP

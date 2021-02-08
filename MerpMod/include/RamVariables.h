@@ -52,6 +52,9 @@ typedef struct
 
 	unsigned char rEthanolCAN;
 	unsigned char ethanolSensorFault;
+	
+	unsigned short CANBusECAUpdateCounter;
+	unsigned char FailSafeCANBusECAUpdateSwitch;
 /*	
 	float aemLambda;
 	float aemOxygen;
@@ -121,8 +124,10 @@ typedef struct
 	float DeltaMapCompensation;
 	float SDMafBlendRatio;
 	float SDMafFromBlend;
-	float MafFromDualSensorScaling;
 
+#if DUALMAF_HACKS
+	float MafFromDualSensorScaling;
+#endif
 #endif
 
 #if REVLIM_HACKS
