@@ -1,6 +1,6 @@
 /*
 	Copyright (C) 2012-2013 Merrill A. Myers III merrillamyersiii@gmail.com
-
+	
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
@@ -32,7 +32,7 @@ else
 	void (*PolfHooked)() __attribute__ ((section ("RomHole_Functions"))) = (void(*)()) sPolf;
 
 void POLFHack()
-{
+{		
 
 #if POLF_MAIN_HOOK
 EcuHacksMain();
@@ -50,23 +50,11 @@ EcuHacksMain();
 		{
 			fuelingLookup = (*pManifoldAbsolutePressure - 760)*.01933677;	
 		}
-
-	#if POLF_RAM_TUNING
+		
 
 	
-		if(pRamVariables.POLFRamFlag = 0x01)
-		{
-			OutputValue = Pull3DHooked(&FuelRamTable, fuelingLookup, *pEngineSpeed);
-		}
-		else
-		{
-	#endif
-
-		OutputValue	= BlendAndSwitchCurve(FuelTableGroup, fuelingLookup, *pEngineSpeed, OpenLoopFuelingBlendCurveSwitch);
-
-	#if POLF_RAM_TUNING
-		}
-	#endif
+		OutputValue	= BlendAndSwitchCurve(FuelTableGroup, fuelingLookup, *pEngineSpeed, OpenLoopFuelingBlendCurveSwitch);	
+		
 		pRamVariables.LCFuelEnrich = Pull3DHooked(&LCFuelEnrichTable, *pVehicleSpeed, *pEngineSpeed) * pRamVariables.LCFuelEnrichMultiplier;
 
 		if(pRamVariables.LCFuelMode == LCFuelModeCompensated)
@@ -81,13 +69,13 @@ EcuHacksMain();
 		}
 	
 		pRamVariables.PolfTarget = OutputValue;
-
+		
 		if(pRamVariables.PolfHackEnabled == HackEnabled)
 			pRamVariables.PolfOutput = OutputValue;
 		else
-			pRamVariables.PolfOutput = Pull3DHooked((void*)PrimaryOEMPolfTable, *pEngineLoad, *pEngineSpeed);
+			pRamVariables.PolfOutput = Pull3DHooked((void*)PrimaryOEMPolfTable, *pEngineLoad, *pEngineSpeed);	
 #endif
-
+		
 	PolfHooked();
 }
 #endif

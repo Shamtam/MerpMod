@@ -45,21 +45,10 @@ float TimingHack()
 	
 	pRamVariables.SubtractiveKCA = subIam *  pRamVariables.MaxSubtractiveKCA;
 	
-#if TIMING_RAM_TUNING
-	if(pRamVariables.WGDCMaxRamFlag = 0x01)
-	{
-		OutputValue = Pull3DHooked(&TimingRamTable, timingLookup, *pEngineSpeed);
-	}
-	else
-	{
-#endif
 
 	OutputValue = BlendAndSwitchCurve(TimingTableGroup, timingLookup, *pEngineSpeed, TimingBlendCurveSwitch);
 	pRamVariables.BaseTiming = OutputValue;
 		
-#if TIMING_RAM_TUNING
-	}
-#endif
 
 	if(pRamVariables.LCTimingMode == LCTimingModeLocked && pRamVariables.LCEngaged == 1)
 	{
