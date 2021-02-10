@@ -111,6 +111,7 @@ float Pull2DRamHookStartupEnrich3(TwoDTable *table, float xLookup)
     return Pull2DHooked(table, xLookup);
 }
 
+#if DUAL_FRONTO2_HACKS
 float Pull2DRamHookFrontO2Scaling(TwoDTable *table, float xLookup)
 {
     if((table == (TwoDTable*) tFrontO2Scaling) &&
@@ -122,6 +123,7 @@ float Pull2DRamHookFrontO2Scaling(TwoDTable *table, float xLookup)
         );
     return Pull2DHooked(table, xLookup);
 }
+#endif
 
 float Pull3DRamHookStartupEnrich1(ThreeDTable *table, float xLookup, float yLookup)
 {

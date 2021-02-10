@@ -717,6 +717,7 @@ const MetaReplace POLFHook METADATA =
 		name: STRI(Startup Enrich 1 Pull3D Hook)
 	};
 
+#if DUAL_FRONTO2_HACKS
 
 	const MetaReplace FrontO2ScalingHookPull METADATA =
 	{
@@ -727,6 +728,7 @@ const MetaReplace POLFHook METADATA =
 		name: STRI(Front O2 Scaling Pull2D Hook)
 	};
 
+#endif
 
 	const MetaReplace IntakeTempCompensationHookPull METADATA =
 	{
