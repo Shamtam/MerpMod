@@ -120,8 +120,13 @@ EcuHacksMain();
 	else
 	{
 		//TODO: Might need to use conditionals here! Do some roms use Requested Torque lookups??
+		#if TARGETBOOST_THROTTLEPLATE
 		pRamVariables.WGDCInitialOutput = Pull3DHooked((void*)OEMWGDCInitialTable, *pThrottlePlate, *pEngineSpeed);
 		pRamVariables.WGDCMaxOutput = Pull3DHooked((void*)OEMWGDCMaxTable, *pThrottlePlate, *pEngineSpeed);	
+		#else
+		pRamVariables.WGDCInitialOutput = Pull3DHooked((void*)OEMWGDCInitialTable, *pReqTorque, *pEngineSpeed);
+		pRamVariables.WGDCMaxOutput = Pull3DHooked((void*)OEMWGDCMaxTable, *pReqTorque, *pEngineSpeed);
+		#endif	
 	}
 		
 #endif
@@ -201,7 +206,11 @@ void TargetBoostHack()
 	else
 	{		
 		//TODO: Need to use conditionals here! Some roms use Requested Torque lookups!
+		#if TARGETBOOST_THROTTLEPLATE
 		pRamVariables.TargetBoostOutput = Pull3DHooked((void*)OEMTargetBoostTable, *pThrottlePlate, *pEngineSpeed);			
+		#else
+		pRamVariables.TargetBoostOutput = Pull3DHooked((void*)OEMTargetBoostTable, *pReqTorque, *pEngineSpeed);			
+		#endif
 	}
 }
 #endif
