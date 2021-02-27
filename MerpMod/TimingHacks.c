@@ -30,8 +30,8 @@ float TimingHack()
 	float iam;
 
 	subIam = HighPass(1 - IAM, 0.0f);
-	
-	pRamVariables.MaxSubtractiveKCA = HighPass(BlendAndSwitch(KnockCorrectionRetardTableGroup, *pEngineLoad, *pEngineSpeed),0.0f);
+
+	pRamVariables.MaxSubtractiveKCA = HighPass(BlendAndSwitchCurve(KnockCorrectionRetardTableGroup, *pEngineLoad, *pEngineSpeed, KnockControlBlendCurveSwitch),0.0f);
 	
 	pRamVariables.SubtractiveKCA = subIam *  pRamVariables.MaxSubtractiveKCA;
 	
@@ -44,7 +44,7 @@ float TimingHack()
 	{
 #endif
 
-	OutputValue = BlendAndSwitch(TimingTableGroup, *pEngineLoad, *pEngineSpeed);
+	OutputValue = BlendAndSwitchCurve(TimingTableGroup, *pEngineLoad, *pEngineSpeed, TimingBlendCurveSwitch);
 	pRamVariables.BaseTiming = OutputValue;
 		
 #if TIMING_RAM_TUNING
@@ -69,9 +69,19 @@ float TimingHack()
 	pRamVariables.FinalTiming = OutputValue;
 	
 	if(pRamVariables.TimingHackEnabled == HackEnabled)
+	{
 		pRamVariables.TimingOutput = OutputValue;
+		pRamVariables.FBKCRetardValue = BlendCurve(FBKCRetardValue1,FBKCRetardValue2,KnockControlBlendCurveSwitch);
+		pRamVariables.FBKCRetardValueAlternate = BlendCurve(FBKCRetardValueAlternate1,FBKCRetardValueAlternate2,KnockControlBlendCurveSwitch);
+	}
 	else
+	   {
 		pRamVariables.TimingOutput = Pull3DHooked((void*)PrimaryOEMTimingTable, *pEngineLoad, *pEngineSpeed);	
+		pRamVariables.FBKCRetardValue = *dFBKCRetardValue;
+		pRamVariables.FBKCRetardValueAlternate = *dFBKCRetardValueAlternate;
+	}
+
+	
 		
 	//Call existing!
 	BaseTimingHooked();

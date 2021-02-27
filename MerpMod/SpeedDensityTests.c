@@ -84,17 +84,17 @@ void SpeedDensityUnitTests()
 #endif
 
 	//Test MAF Blending
-	pRamVariables.MafMode = MafModeBlending;
+	pRamVariables.MafMode = MafModeSDBlending;
 	result = CallSpeedDensityHook();
 	Assert(AreCloseEnough(result, expectedMafFromSensor), "Checking blend mode code, cell should be zero and return maf sensor value.");
-	Assert(pRamVariables.MafMode == MafModeBlending, "MafMode should remain set.");
+	Assert(pRamVariables.MafMode == MafModeSDBlending, "MafMode should remain set.");
 	//add another test at mixed load cell (50% blend)
 	*pManifoldAbsolutePressure = 700.0f; // Corresponds to -9.5psiG, which is normal for idle.
 	result = CallSpeedDensityHook();
 	Assert(AreCloseEnough(pRamVariables.SDMafBlendRatio, 0.5555555f),"Checking Blend ratio");
 	Assert(AreCloseEnough(pRamVariables.MafFromSpeedDensity, 11.52687f),"Checking SD value"); 
 	Assert(AreCloseEnough(result, (expectedMafFromSensor*(1-0.5555555f)+(11.52687f*0.5555555f))), "Checking blend mode code, cell should be zero and return maf sensor value.");
-	Assert(pRamVariables.MafMode == MafModeBlending, "MafMode should remain set.");
+	Assert(pRamVariables.MafMode == MafModeSDBlending, "MafMode should remain set.");
 	//Clear manifold pressure
 	*pManifoldAbsolutePressure = 268.917649;;
 

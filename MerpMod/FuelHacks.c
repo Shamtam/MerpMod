@@ -1,6 +1,6 @@
 /*
 	Copyright (C) 2012-2013 Merrill A. Myers III merrillamyersiii@gmail.com
-	
+
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
@@ -30,7 +30,7 @@ pRamVariables.InjectorScaling = pRamVariables.InjectorScalingMultiplier * (*dInj
 	void (*PolfHooked)() __attribute__ ((section ("RomHole_Functions"))) = (void(*)()) sPolf;
 
 void POLFHack()
-{		
+{
 
 #if POLF_MAIN_HOOK
 EcuHacksMain();
@@ -47,9 +47,9 @@ EcuHacksMain();
 		else
 		{
 	#endif
-	
-		OutputValue	= BlendAndSwitch(FuelTableGroup, *pEngineLoad, *pEngineSpeed);
-		
+
+		OutputValue	= BlendAndSwitchCurve(FuelTableGroup, *pEngineLoad, *pEngineSpeed, OpenLoopFuelingBlendCurveSwitch);
+
 	#if POLF_RAM_TUNING
 		}
 	#endif
@@ -60,15 +60,15 @@ EcuHacksMain();
 			OutputValue += pRamVariables.LCFuelEnrich;
 		}
 		//Now run existing code!
-	
+
 		pRamVariables.PolfTarget = OutputValue;
-	
+
 		if(pRamVariables.PolfHackEnabled == HackEnabled)
 			pRamVariables.PolfOutput = OutputValue;
 		else
-			pRamVariables.PolfOutput = Pull3DHooked((void*)PrimaryOEMPolfTable, *pEngineLoad, *pEngineSpeed);	
+			pRamVariables.PolfOutput = Pull3DHooked((void*)PrimaryOEMPolfTable, *pEngineLoad, *pEngineSpeed);
 #endif
-		
+
 	PolfHooked();
 }
 #endif

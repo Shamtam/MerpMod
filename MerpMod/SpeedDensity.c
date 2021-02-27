@@ -20,6 +20,9 @@ float ComputeMassAirFlow(TwoDTable* MafScalingTable, float MafVoltage)
 {	
 	pRamVariables.MafFromSensor = Pull2DHooked(MafScalingTable,MafVoltage);	
 
+	pRamVariables.MafFromDualSensorScaling = BlendCurve(Pull2DHooked(&MafScalingTable1,MafVoltage),Pull2DHooked(&MafScalingTable2,MafVoltage),MassAirFlowScalingBlendCurveSwitch);
+ 
+
 #if VE_RAMTUNING
 	if(pRamVariables.VERamFlag == 0x01)
 	{
@@ -30,7 +33,7 @@ float ComputeMassAirFlow(TwoDTable* MafScalingTable, float MafVoltage)
 #endif
 
 #if SWITCH_HACKS
-	pRamVariables.VolumetricEfficiency = BlendAndSwitch(VETableGroup, *pManifoldAbsolutePressure, *pEngineSpeed);
+	pRamVariables.VolumetricEfficiency = BlendAndSwitchCurve(VETableGroup, *pManifoldAbsolutePressure, *pEngineSpeed, SpeedDensityBlendCurveSwitch);
 #else
 	pRamVariables.VolumetricEfficiency = Pull3DHooked(&VolumetricEfficiencyTable1, *pManifoldAbsolutePressure, *pEngineSpeed);
 #endif
@@ -65,7 +68,7 @@ float ComputeMassAirFlow(TwoDTable* MafScalingTable, float MafVoltage)
 	{
 		return pRamVariables.MafFromSpeedDensity;
 	}
-	else if (pRamVariables.MafMode == MafModeBlending)
+	else if (pRamVariables.MafMode == MafModeSDBlending)
 	{
 		pRamVariables.SDMafBlendRatio = Pull3DHooked(&SDBlendingTable, *pManifoldAbsolutePressure, *pEngineSpeed);
 		
@@ -75,6 +78,21 @@ float ComputeMassAirFlow(TwoDTable* MafScalingTable, float MafVoltage)
 		(1 - pRamVariables.SDMafBlendRatio)));
 		
 		return pRamVariables.SDMafFromBlend;
+	}
+	else if (pRamVariables.MafMode == MafModeDualSDBlending)
+	{
+		pRamVariables.SDMafBlendRatio = Pull3DHooked(&SDBlendingTable, *pManifoldAbsolutePressure, *pEngineSpeed);
+		
+		pRamVariables.SDMafFromBlend = 
+		((pRamVariables.MafFromSpeedDensity * pRamVariables.SDMafBlendRatio) +
+		(pRamVariables.MafFromDualSensorScaling * 
+		(1 - pRamVariables.SDMafBlendRatio)));
+		
+		return pRamVariables.SDMafFromBlend;		
+	}
+	else if (pRamVariables.MafMode == MafModeSensorDualScaling)
+	{
+		return pRamVariables.MafFromDualSensorScaling;	
 	}
 	else
 	{

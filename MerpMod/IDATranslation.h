@@ -54,6 +54,14 @@
 #define InjectorScalingOem ((float*)dInjectorScaling)
 #endif
 
+#ifdef dFBKCRetardValue
+#define FBKCRetardValueOem ((float*)dFBKCRetardValue)
+#endif
+
+#ifdef dFBKCRetardValueAlternate
+#define FBKCRetardValueAlternateOem ((float*)dFBKCRetardValueAlternate)
+#endif
+
 #ifdef tPolf
 #define PrimaryOEMPolfTable tPolf
 #elif defined(tPolfKcaAlt) //TODO FIX THIS FOR NEWER CARS!!!!!

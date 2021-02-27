@@ -149,7 +149,7 @@ pad4:   OpDelim,
 
 //Mod Information
 modauthorop :  OpModAuthor,
-authname :  "Merp",
+authname :  "Adrian Pistritto",
 modbuildop : OpModBuild,
 modbuild :  STR(MOD_BUILD),
 pad5	:	OpDelim,
@@ -505,7 +505,7 @@ const MetaReplace POLFHook METADATA =
 		op: OpReplace4Bytes,
 		address: hTableBaseTimingPNonCruise,
 		oldval: tBaseTimingPNonCruise,
-		newval: (int)&(pRamVariables.BaseTimingOutput),
+		newval: (int)&(pRamVariables.TimingOutput),
 		name: STR(Base Timing Primary Non Cruise Table Hook)
 	};
 	const MetaReplace BaseTimingRCruiseAvcsTablePatch METADATA =
@@ -513,7 +513,7 @@ const MetaReplace POLFHook METADATA =
 		op: OpReplace4Bytes,
 		address:hTableBaseTimingRCruiseAvcs,
 		oldval: tBaseTimingRCruiseAvcs,
-		newval: (int)&(pRamVariables.BaseTimingOutput),
+		newval: (int)&(pRamVariables.TimingOutput),
 		name: STR(Base Timing Reference Cruise AVCS Table Hook)
 	};
 	const MetaReplace BaseTimingRNonCruiseAvcsTablePatch METADATA =
@@ -521,7 +521,7 @@ const MetaReplace POLFHook METADATA =
 		op: OpReplace4Bytes,
 		address:hTableBaseTimingRNonCruiseAvcs,
 		oldval: tBaseTimingRNonCruiseAvcs,
-		newval: (int)&(pRamVariables.BaseTimingOutput),
+		newval: (int)&(pRamVariables.TimingOutput),
 		name: STR(Base Timing Reference Non Cruise AVCS Table Hook)
 	};
 #endif
@@ -534,6 +534,28 @@ const MetaReplace POLFHook METADATA =
 		newval: (int)Pull3DRamHook,
 		name: STR(Timing Pull3D Hook)
 	};
+	
+
+	const MetaReplace FBKCRetardValuePatch METADATA =
+	{
+		op: OpReplace4Bytes,
+		address: hFBKCRetardValue,
+		oldval: dFBKCRetardValue,
+		newval: (int)&(pRamVariables.FBKCRetardValue),
+		name: STR(Timing FBKC Retard Hook)
+	};
+	
+	const MetaReplace FBKCRetardValueAlternatePatch METADATA =
+	{
+		op: OpReplace4Bytes,
+		address: hFBKCRetardValueAlternate,
+		oldval: dFBKCRetardValueAlternate,
+		newval: (int)&(pRamVariables.FBKCRetardValueAlternate),
+		name: STR(Timing FBKC Retard Alternate Hook)
+	};	
+
+	
+	
 #endif
 
 #if POLF_HACKS 

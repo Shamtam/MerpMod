@@ -31,6 +31,9 @@ void TimingHackUnitTests()
 	*pEngineLoad = 1.0;
 	*pVehicleSpeed = 1.0;
 	
+	pRamVariables.MapSwitchingInputMode = MapSwitchingInputModeSiDrive;
+	pRamVariables.TGVLeftVolts = 1;
+	InputUpdate();
 	pRamVariables.TimingHackInitFlag = 0x00;
 	pRamVariables.MapBlendRatio = 0.5;				//default is 0
 	pRamVariables.LCTimingLock = 10;		//default is 20

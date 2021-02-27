@@ -29,6 +29,7 @@ void ADCLogger() ROMCODE;
 void RamHoleScanner() ROMCODE;
 #endif
 
+void MapSwitchSiDriveCheck() ROMCODE;
 unsigned char TestTestModeSwitch() ROMCODE;
 unsigned char TestDefogSwitch() ROMCODE;
 unsigned char TestBrakeSwitch()	ROMCODE;
@@ -87,9 +88,14 @@ float Smooth(float smoothingFactor, float input, float previous) ROMCODE;
 void RevLimCode() ROMCODE;
 void RevLimReset() ROMCODE;
 
+float GetBlendCurveRatio(unsigned char curve) ROMCODE;
 float BlendAndSwitch(TableGroup tg, float xLookup, float yLookup) ROMCODE;
+float BlendCurve(float xLookup, float yLookup,unsigned char curve) ROMCODE;
+float BlendAndSwitchCurve(TableGroup tg, float xLookup, float yLookup, unsigned char curve) ROMCODE;
 float SwitchSelect(TableSubSet tss, float xLookup, float yLookup) ROMCODE;
 void InputUpdate() ROMCODE;
+void MapBlendFailSafeCount() ROMCODE;
+void UpdateMapBlendRatio(float inputVoltage) ROMCODE;
 void MapSwitchThresholdCheck(float input) ROMCODE;
 
 //////////////////////////
@@ -119,6 +125,9 @@ extern ThreeDTable VolumetricEfficiencyRamTable;
 extern ThreeDTable TemperatureCompensationTable;
 extern ThreeDTable AtmosphericCompensationTable;
 extern ThreeDTable SDBlendingTable;
+
+extern TwoDTable MafScalingTable1;
+extern TwoDTable MafScalingTable2;
 
 extern TwoDTable InjectorScalingMultiplierTable;
 
@@ -202,6 +211,11 @@ extern ThreeDTable KnockCorrectionRetardTable2ss;
 
 extern ThreeDTable LCTimingRetardTable;
 
+extern float FBKCRetardValue1;
+extern float FBKCRetardValue2;
+
+extern float FBKCRetardValueAlternate1;
+extern float FBKCRetardValueAlternate2;
 
 extern float RPMLockWGDC;
 extern float ThrottleLockWGDC;
@@ -288,18 +302,35 @@ extern unsigned char Licensee[];
 #if SWITCH_HACKS
 extern unsigned char DefaultMapSwitch;
 extern float DefaultMapBlendRatio;
-extern float LeftTGVInputSmoothingFactor;
-extern float RightTGVInputSmoothingFactor;
-extern float LeftTGVInputMultiplier;
-extern float RightTGVInputMultiplier;
-extern float LeftTGVInputOffset;
-extern float RightTGVInputOffset;
-extern TwoDTable TGVLeftScaling;
-extern TwoDTable TGVRightScaling;
+
+extern float BlendInputMinimumVolts;
+extern float BlendInputMaximumVolts;
+extern unsigned char MapBlendFailSafe;
+extern unsigned short MapBlendCount;
+extern float MapBlendSmoothingFactor;
+extern float MapSwitchSmoothingFactor;
+extern float MapBlendBoostContentLock;
+
+unsigned char OpenLoopFuelingBlendCurveSwitch;
+unsigned char ClosedLoopFuelingBlendCurveSwitch;
+unsigned char TimingBlendCurveSwitch;
+unsigned char KnockControlBlendCurveSwitch;
+unsigned char WastegateDutyBlendCurveSwitch;
+unsigned char BoostBlendCurveSwitch;
+unsigned char MassAirFlowScalingBlendCurveSwitch;
+unsigned char SpeedDensityBlendCurveSwitch;
+
+extern TwoDTable MapBlendScaling;
 extern float MapSwitchThresholdLo;
 extern float MapSwitchThresholdHi;
+
 extern unsigned char DefaultMapBlendingInputMode;
 extern unsigned char DefaultMapSwitchingInputMode;
+
+extern TwoDTable MapBlendCurve1;
+extern TwoDTable MapBlendCurve2;
+extern TwoDTable MapBlendCurve3;
+extern TwoDTable MapBlendCurve4;
 
 extern TwoDTable TipInEnrichMultiplier;
 extern TwoDTable CrankingFuelMultiplier;

@@ -20,6 +20,11 @@ unsigned char DefaultLCTimingMode TIMINGDATA = LCTimingModeDisabled;
 unsigned char DefaultTimingHackEnabled TIMINGDATA = HackDisabled;
 float DefaultLCTimingLock TIMINGDATA = 20.0f;
 float DefaultLCTimingRetardMultiplier TIMINGDATA = 1.0f;
+float FBKCRetardValue1 TIMINGDATA = 1.4;
+float FBKCRetardValue2 TIMINGDATA = 0;
+float FBKCRetardValueAlternate1 TIMINGDATA = 1.4;
+float FBKCRetardValueAlternate2 TIMINGDATA = 0;
+
 
 //TODO IS THIS NECESSARY?
 ThreeDTable TimingTable1i  TIMINGDATA;

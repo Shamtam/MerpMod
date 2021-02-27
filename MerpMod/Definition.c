@@ -257,6 +257,9 @@ DEFNEW3D("Volumetric Efficiency Table 1",VolumetricEfficiencyTable1);
 
 #if SWITCH_HACKS
 DEFNEW3D("Volumetric Efficiency Table 2",VolumetricEfficiencyTable2);
+DEFNEW2D("Mass Airflow Sensor Scaling Table 1",MafScalingTable1);
+DEFNEW2D("Mass Airflow Sensor Scaling Table 2",MafScalingTable2);
+DEFINERAMVAR("MerpMod SD Airflow Maf Sensor Dual Scaled",MafFromDualSensorScaling,"float","E");
 #endif
 
 #if SD_DMAP
@@ -326,17 +329,21 @@ DEFINERAMVAR("MerpMod ECU Identifier",ECUIdentifier,"uint32","E1602");
 DEFINERAMVAR("MerpMod TGV Volts Left",TGVLeftVolts,"float","E1511");
 DEFINERAMVAR("MerpMod TGV Volts Right",TGVRightVolts,"float","E1512");
 
-DEFNEW2D("TGV Left Input Scaling",TGVLeftScaling);
-DEFNEW2D("TGV Right Input Scaling",TGVRightScaling);
+DEFNEW2D("Map Blend Input Scaling",MapBlendScaling);
 
-DEFNEW1D("TGV Left Input Smoothing Factor",LeftTGVInputSmoothingFactor);
-DEFNEW1D("TGV Right Input Smoothing Factor",RightTGVInputSmoothingFactor);
+DEFNEW2D("Map Blend Curve 1",MapBlendCurve1);
+DEFNEW2D("Map Blend Curve 2",MapBlendCurve2);
+DEFNEW2D("Map Blend Curve 3",MapBlendCurve3);
+DEFNEW2D("Map Blend Curve 4",MapBlendCurve4);
 
-DEFNEW1D("TGV Left Input Multiplier",LeftTGVInputMultiplier);
-DEFNEW1D("TGV Right Input Multiplier",RightTGVInputMultiplier);
-
-DEFNEW1D("TGV Left Input Offset",LeftTGVInputOffset);
-DEFNEW1D("TGV Right Input Offset",RightTGVInputOffset);
+DEFNEW1D("Open Loop Fueling Blend Curve",OpenLoopFuelingBlendCurveSwitch);
+DEFNEW1D("Closed Loop Fueling Blend Curve",ClosedLoopFuelingBlendCurveSwitch);
+DEFNEW1D("Base Timing Blend Curve",TimingBlendCurveSwitch);
+DEFNEW1D("Knock Control Blend Curve",KnockControlBlendCurveSwitch);
+DEFNEW1D("Wastegate Duty Blend Curve",WastegateDutyBlendCurveSwitch);
+DEFNEW1D("Boost Blend Curve",BoostBlendCurveSwitch);
+DEFNEW1D("Mass Airflow Blend Curve",MassAirFlowScalingBlendCurveSwitch);
+DEFNEW1D("Speed Density Blend Curve",SpeedDensityBlendCurveSwitch);
 
 DEFNEW1D("Map Switch Input Threshold Low",MapSwitchThresholdLo);
 DEFNEW1D("Map Switch Input Threshold High",MapSwitchThresholdHi);
@@ -346,11 +353,22 @@ DEFINERAMVAR("MerpMod Map Switching Input Mode",MapSwitchingInputMode,"uint8","E
 DEFINERAMVAR("MerpMod Map Blending Input Mode",MapBlendingInputMode,"uint8","E1524");
 DEFINERAMVAR("MerpMod Map Switch",MapSwitch,"uint8","E1525");
 DEFINERAMVAR("MerpMod Map Blending Ratio",MapBlendRatio,"float","E1526");
-DEFINERAMVAR("MerpMod TGV Left Scaled",TGVLeftScaled,"float","E1506");	
-DEFINERAMVAR("MerpMod TGV Right Scaled",TGVRightScaled,"float","E1507");
 
+DEFINERAMVAR("Merpmod Blended FBKC Retard Value",FBKCRetardValue,"float","E");
+DEFINERAMVAR("Merpmod Blended FBKC Retard Value Alternate",FBKCRetardValueAlternate,"float","E");
+
+DEFINERAMVAR("Merpmod SI Drive",SIDriveMode,"uint8","E");
+DEFINERAMVAR("Merpmod Map Blend Out Of Range Counter",MapBlendOutOfRangeCounter,"uint16","E");
+
+DEFNEW1D("Map Blend Ratio Smoothing Factor",MapBlendSmoothingFactor);
+DEFNEW1D("Map Blend Ratio Boost Content Lock",MapBlendBoostContentLock);
 DEFNEW1D("Default Map Blending Ratio",DefaultMapBlendRatio);
 DEFNEW1D("Default Map Switch",DefaultMapSwitch);
+DEFNEW1D("Map Switch Smoothing Factor",MapSwitchSmoothingFactor);
+DEFNEW1D("Map Blend Failsafe Low Threshold Voltage",BlendInputMinimumVolts);
+DEFNEW1D("Map Blend Failsafe High Threshold Voltage",BlendInputMaximumVolts);
+DEFNEW1D("Map Blend Failsafe Delay",MapBlendCount);
+DEFNEW1D("Map Blend Failsafe Action",MapBlendFailSafe);
 
 #if INJECTOR_HACKS
 DEFNEW2D("Map Blending Injector Scaling Multiplier",InjectorScalingMultiplierTable);
@@ -529,6 +547,11 @@ DEFNEW1D("Launch Control Timing Lock",DefaultLCTimingLock);
 DEFNEW1D("Default Launch Control Timing Retard Multiplier",DefaultLCTimingRetardMultiplier);
 DEFNEW3D("Launch Control Timing Retard Table",LCTimingRetardTable);
 	
+DEFNEW1D("Feedback Knock Correction Blended Retard Value 1",FBKCRetardValue1);
+DEFNEW1D("Feedback Knock Correction Blended Retard Value 2",FBKCRetardValue2);
+DEFNEW1D("Feedback Knock Correction Blended Retard Value Alternate 1",FBKCRetardValueAlternate1);
+DEFNEW1D("Feedback Knock Correction Blended Retard Value Alternate 2",FBKCRetardValueAlternate2);
+
 #if SWITCH_HACKS
 DEFNEW1D("Timing Hack Enable",DefaultTimingHackEnabled);
 DEFNEW3D("Base Timing Table 1 Intelligent",TimingTable1i);

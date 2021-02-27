@@ -165,6 +165,7 @@
 "C:\Dev\MerpMod\MerpMod\IDATranslation.h" "User" "C header file" 2 
 "C:\Dev\MerpMod\MerpMod\Identifier.c" "User" "C source file" 2 
 "C:\Dev\MerpMod\MerpMod\Initializer.c" "User" "C source file" 2 
+"C:\Dev\MerpMod\MerpMod\InputHandler.c" "User" "C source file" 2 
 "C:\Dev\MerpMod\MerpMod\LinkerScript.txt" "User" "C header file" 2 
 "C:\Dev\MerpMod\MerpMod\MapSwitchTables.c" "User" "C source file|Data & Tables" 2 
 "C:\Dev\MerpMod\MerpMod\Metadata.c" "User" "C source file" 2 
@@ -482,6 +483,7 @@
 "C:\Dev\MerpMod\MerpMod\GenericTests.c" "0c9afd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\Identifier.c" "0c9afd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\Initializer.c" "0c9afd23307eec10" 2 
+"C:\Dev\MerpMod\MerpMod\InputHandler.c" "0ed3396bb1d07d10" 2 
 "C:\Dev\MerpMod\MerpMod\MapSwitchTables.c" "0c9afd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\Metadata.c" "0c9afd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\PortLogger.c" "05766bd742b5fc10" 2 
@@ -555,6 +557,7 @@
 "C:\Dev\MerpMod\MerpMod\GenericTests.c" "0e51bd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\Identifier.c" "0e51bd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\Initializer.c" "0e51bd23307eec10" 2 
+"C:\Dev\MerpMod\MerpMod\InputHandler.c" "0ed3396bb1d07d10" 2 
 "C:\Dev\MerpMod\MerpMod\MapSwitchTables.c" "0e51bd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\Metadata.c" "0e51bd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\PortLogger.c" "05766bd742b5fc10" 2 
@@ -627,6 +630,7 @@
 "C:\Dev\MerpMod\MerpMod\GenericTests.c" "04f89d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\Identifier.c" "04f89d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\Initializer.c" "04f89d23307eec10" 2 
+"C:\Dev\MerpMod\MerpMod\InputHandler.c" "0ed3396bb1d07d10" 2 
 "C:\Dev\MerpMod\MerpMod\MapSwitchTables.c" "04f89d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\Metadata.c" "04f89d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\ProgMode.c" "04f89d23307eec10" 2 
@@ -698,6 +702,7 @@
 "C:\Dev\MerpMod\MerpMod\GenericTests.c" "08c9cd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\Identifier.c" "08c9cd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\Initializer.c" "08c9cd23307eec10" 2 
+"C:\Dev\MerpMod\MerpMod\InputHandler.c" "0ed3396bb1d07d10" 2 
 "C:\Dev\MerpMod\MerpMod\MapSwitchTables.c" "08c9cd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\Metadata.c" "08c9cd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\PortLogger.c" "05766bd742b5fc10" 2 
@@ -770,6 +775,7 @@
 "C:\Dev\MerpMod\MerpMod\GenericTests.c" "06031e23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\Identifier.c" "06031e23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\Initializer.c" "06031e23307eec10" 2 
+"C:\Dev\MerpMod\MerpMod\InputHandler.c" "0ed3396bb1d07d10" 2 
 "C:\Dev\MerpMod\MerpMod\MapSwitchTables.c" "06031e23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\Metadata.c" "06031e23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\PortLogger.c" "05766bd742b5fc10" 2 
@@ -842,6 +848,7 @@
 "C:\Dev\MerpMod\MerpMod\GenericTests.c" "06bf4d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\Identifier.c" "06bf4d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\Initializer.c" "06bf4d23307eec10" 2 
+"C:\Dev\MerpMod\MerpMod\InputHandler.c" "0ed3396bb1d07d10" 2 
 "C:\Dev\MerpMod\MerpMod\MapSwitchTables.c" "06bf4d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\Metadata.c" "06bf4d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\PortLogger.c" "05766bd742b5fc10" 2 
@@ -914,6 +921,7 @@
 "C:\Dev\MerpMod\MerpMod\GenericTests.c" "00286d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\Identifier.c" "00286d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\Initializer.c" "00286d23307eec10" 2 
+"C:\Dev\MerpMod\MerpMod\InputHandler.c" "0ed3396bb1d07d10" 2 
 "C:\Dev\MerpMod\MerpMod\MapSwitchTables.c" "00286d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\Metadata.c" "00286d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\PortLogger.c" "05766bd742b5fc10" 2 

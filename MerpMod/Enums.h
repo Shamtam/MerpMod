@@ -47,8 +47,10 @@ enum MafModeValues
 {
 	MafModeUndefined = (unsigned char)0x00,
 	MafModeSensor = (unsigned char)0x01,
-	MafModeSpeedDensity = (unsigned char)0x02,
-	MafModeBlending = (unsigned char)0x03,
+	MafModeSensorDualScaling = (unsigned char)0x02,
+	MafModeSpeedDensity = (unsigned char)0x03,
+	MafModeSDBlending = (unsigned char)0x04,
+	MafModeDualSDBlending = (unsigned char)0x05
 };
 enum RevLimModeValues
 {
@@ -81,14 +83,18 @@ enum MapBlendModeValues
 {
 	MapBlendingInputModeUndefined = (unsigned char)0x00,
 	MapBlendingInputModeTGVLeft = (unsigned char)0x01,
-	MapBlendingInputModeTGVRight = (unsigned char)0x02
+	MapBlendingInputModeTGVRight = (unsigned char)0x02,
+	MapBlendingInputModeRearO2 = (unsigned char)0x03,
+	MapBlendingInputModeMAF = (unsigned char)0x04,
 };
 enum MapSwitchModeValues
 {
 	MapSwitchingInputModeUndefined = (unsigned char)0x00,
 	MapSwitchingInputModeTGVLeft = (unsigned char)0x01,
 	MapSwitchingInputModeTGVRight = (unsigned char)0x02,
-	MapSwitchingInputModeSiDrive = (unsigned char)0x03
+	MapSwitchingInputModeSiDrive = (unsigned char)0x03,
+	MapSwitchingInputModeRearO2 = (unsigned char) 0x04,
+	MapSwitchingInputModeMAF = (unsigned char)0x05,	
 };
 enum HardResetFlagValues
 {
@@ -123,6 +129,22 @@ enum ProgModeStatusValues
 	ProgModeAdjustValue = (unsigned char)0x03,
 };
 
+
+enum BlendCurveSwitch
+{
+	MasterBlendCurve = (unsigned char)0x00,
+	BlendCurve1 = (unsigned char)0x01,
+	BlendCurve2 = (unsigned char)0x02,
+	BlendCurve3 = (unsigned char)0x03,
+	BlendCurve4 = (unsigned char)0x04,
+};
+
+enum BlendFailSafe
+{
+	FailToLastBlendRatio = (unsigned char)0x00,
+	FailToDefaultBlendRatio = (unsigned char)0x01,	
+};
+
 //////////////////////////////
 //Type Definitions for Tables
 //////////////////////////////
@@ -143,7 +165,7 @@ typedef struct
 	short columnCount;
 	short tableType;
 	float* columnHeaderArray;
-	short* tableCells;
+	void* tableCells;
 	float multiplier;
 	float offset;
 } TwoDTable;

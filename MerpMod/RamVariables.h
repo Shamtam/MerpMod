@@ -55,8 +55,12 @@ typedef struct
 	float MapBlendRatio;
 	float TGVLeftVolts;
 	float TGVRightVolts;
-	float TGVLeftScaled;
-	float TGVRightScaled;
+	float RearO2Volts;
+	float MAFSensorVolts;
+	float MapSwitchInputVoltage;
+	unsigned short MapBlendOutOfRangeCounter;
+	unsigned char FailSafeMapBlendSwitch;
+	unsigned char SIDriveMode;
 #endif
 
 #if SD_HACKS
@@ -72,6 +76,7 @@ typedef struct
 	float DeltaMapCompensation;	
 	float SDMafBlendRatio;
 	float SDMafFromBlend;
+	float MafFromDualSensorScaling;
 
 #endif
 	
@@ -117,8 +122,6 @@ typedef struct
 	unsigned char CelFlashDelay;
 	unsigned char celunused;
 	
-	//unsigned char CruiseSpeedCounter;			
-	//unsigned char CruiseFlashCounter;
 
 #endif
 
@@ -146,6 +149,8 @@ typedef struct
 	float	LCTimingRetardMultiplier;
 	float	SubtractiveKCA;
 	float	MaxSubtractiveKCA;
+	float	FBKCRetardValue;
+	float	FBKCRetardValueAlternate;
 #endif
 
 #if POLF_HACKS
