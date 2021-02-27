@@ -51,10 +51,14 @@ typedef struct
 	unsigned char MapSwitch;
 	unsigned char MapBlendingInputMode;
 	unsigned char MapSwitchingInputMode;
+	unsigned char WideBandLambdaInputMode;
+	unsigned char FuelPressureInputMode;
 	unsigned char swblank;
 	float MapBlendRatio;
 	float TGVLeftVolts;
 	float TGVRightVolts;
+	float WideBandLambda;
+	float FuelPressure;
 	float RearO2Volts;
 	float MAFSensorVolts;
 	float MapSwitchInputVoltage;

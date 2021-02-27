@@ -92,6 +92,60 @@ void InputUpdate()//TODO: put on SD branch
 		pRamVariables.MapSwitch = DefaultMapSwitch;
 		break;
 	}
+	
+///******************
+/// Wideband Input
+///******************
+
+	switch(pRamVariables.WideBandLambdaInputMode)
+	{
+		case WideBandLambdaInputModeUndefined:
+		break;
+		case WideBandLambdaInputModeTGVLeft:
+			UpdateWideBandLambdaInput(pRamVariables.TGVLeftVolts);
+		break;
+		case WideBandLambdaInputModeTGVRight:
+			UpdateWideBandLambdaInput(pRamVariables.TGVRightVolts);
+		break;
+		case WideBandLambdaInputModeRearO2:
+			UpdateWideBandLambdaInput(pRamVariables.RearO2Volts);
+		break;
+		
+		case WideBandLambdaInputModeMAF:
+			UpdateWideBandLambdaInput(pRamVariables.MAFSensorVolts);
+		break;
+		
+		default:
+		break;
+	}
+
+
+///*********************
+/// Fuel Pressure Input
+///*********************
+
+	switch(pRamVariables.FuelPressureInputMode)
+	{
+		case FuelPressureInputModeUndefined:
+		break;
+		case FuelPressureInputModeTGVLeft:
+			UpdateFuelPressureInput(pRamVariables.TGVLeftVolts);
+		break;
+		case FuelPressureInputModeTGVRight:
+			UpdateFuelPressureInput(pRamVariables.TGVRightVolts);
+		break;
+		case FuelPressureInputModeRearO2:
+			UpdateFuelPressureInput(pRamVariables.RearO2Volts);
+		break;
+		
+		case FuelPressureInputModeMAF:
+			UpdateFuelPressureInput(pRamVariables.MAFSensorVolts);
+		break;
+		
+		default:
+		break;
+	}
+
 
 }
 

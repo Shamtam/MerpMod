@@ -370,6 +370,16 @@ DEFNEW1D("Map Blend Failsafe High Threshold Voltage",BlendInputMaximumVolts);
 DEFNEW1D("Map Blend Failsafe Delay",MapBlendCount);
 DEFNEW1D("Map Blend Failsafe Action",MapBlendFailSafe);
 
+DEFNEW2D("Wideband Sensor Scaling",WideBandScaling);
+DEFNEW1D("Wideband Sensor Smoothing Factor",WidebandSensorSmoothingFactor);
+DEFNEW2D("Fuel Pressure Sensor Scaling",FuelPressureScaling);
+DEFNEW1D("Fuel Pressure Sensor Smoothing Factor",FuelPressureSensorSmoothingFactor);
+DEFNEW1D("Wideband Sensor Input Mode",WideBandLambdaInputMode);
+DEFNEW1D("Fuel Pressure Sensor Input Mode",FuelPressureInputMode);
+
+DEFINERAMVAR("Merpmod Fuel Pressure",FuelPressure,"float","E");
+DEFINERAMVAR("Merpmod Rear O2 Voltage",RearO2Volts,"float","E");
+DEFINERAMVAR("Merpmod Wideband",WideBandLambda,"float","E");
 #if INJECTOR_HACKS
 DEFNEW2D("Map Blending Injector Scaling Multiplier",InjectorScalingMultiplierTable);
 DEFINERAMVAR("MerpMod Injector Scaling",InjectorScaling,"float","E1527");

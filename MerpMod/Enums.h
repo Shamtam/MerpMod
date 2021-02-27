@@ -101,6 +101,22 @@ enum MapSwitchModeValues
 	MapSwitchingInputModeRearO2 = (unsigned char) 0x04,
 	MapSwitchingInputModeMAF = (unsigned char)0x05,	
 };
+enum WidebandLambdaModeValues
+{
+	WideBandLambdaInputModeUndefined = (unsigned char)0x00,
+	WideBandLambdaInputModeTGVLeft = (unsigned char)0x01,
+	WideBandLambdaInputModeTGVRight = (unsigned char)0x02,
+	WideBandLambdaInputModeRearO2 = (unsigned char) 0x03,
+	WideBandLambdaInputModeMAF = (unsigned char)0x04,
+};
+enum FuelPressureModeValues
+{
+	FuelPressureInputModeUndefined = (unsigned char)0x00,
+	FuelPressureInputModeTGVLeft = (unsigned char)0x01,
+	FuelPressureInputModeTGVRight = (unsigned char)0x02,
+	FuelPressureInputModeRearO2 = (unsigned char) 0x03,
+	FuelPressureInputModeMAF = (unsigned char)0x04,
+};
 enum HardResetFlagValues
 {
 	HardResetFlagDisabled = (unsigned char)0x00,

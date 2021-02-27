@@ -97,6 +97,8 @@ void InputUpdate() ROMCODE;
 void MapBlendFailSafeCount() ROMCODE;
 void UpdateMapBlendRatio(float inputVoltage) ROMCODE;
 void MapSwitchThresholdCheck(float input) ROMCODE;
+void UpdateFuelPressureInput(float InputVoltage) ROMCODE;
+void UpdateWideBandLambdaInput(float InputVoltage) ROMCODE;
 
 //////////////////////////
 //Extern Function Pointers
@@ -337,6 +339,12 @@ extern TwoDTable MapBlendCurve4;
 extern TwoDTable TipInEnrichMultiplier;
 extern TwoDTable CrankingFuelMultiplier;
 extern TwoDTable StartupEnrichMultiplier;
+extern unsigned char WideBandLambdaInputMode;
+extern unsigned char FuelPressureInputMode;
+extern float WidebandSensorSmoothingFactor;
+extern float FuelPressureSensorSmoothingFactor;
+extern TwoDTable WideBandScaling;
+extern TwoDTable FuelPressureScaling;
 #endif
 
 extern long RomHoleEndMarker;

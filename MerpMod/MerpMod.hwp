@@ -158,6 +158,7 @@
 "C:\Dev\MerpMod\MerpMod\Flash.h" "User" "C header file|Build Configurations" 2 
 "C:\Dev\MerpMod\MerpMod\FuelHackTables.c" "User" "C source file|Data & Tables" 2 
 "C:\Dev\MerpMod\MerpMod\FuelHacks.c" "User" "C source file" 2 
+"C:\Dev\MerpMod\MerpMod\FuelPressure.c" "User" "C source file" 2 
 "C:\Dev\MerpMod\MerpMod\Functions.c" "User" "C source file" 2 
 "C:\Dev\MerpMod\MerpMod\GenericTests.c" "User" "C source file|Tests" 2 
 "C:\Dev\MerpMod\MerpMod\GitVersion.h" "User" "C header file" 2 
@@ -169,6 +170,7 @@
 "C:\Dev\MerpMod\MerpMod\LinkerScript.txt" "User" "C header file" 2 
 "C:\Dev\MerpMod\MerpMod\MapSwitchTables.c" "User" "C source file|Data & Tables" 2 
 "C:\Dev\MerpMod\MerpMod\Metadata.c" "User" "C source file" 2 
+"C:\Dev\MerpMod\MerpMod\MiscInputTables.c" "User" "C source file" 2 
 "C:\Dev\MerpMod\MerpMod\PortLogger.c" "User" "C source file" 2 
 "C:\Dev\MerpMod\MerpMod\ProgMode.c" "User" "C source file" 2 
 "C:\Dev\MerpMod\MerpMod\ProgModeTables.c" "User" "C source file|Data & Tables" 2 
@@ -341,6 +343,7 @@
 "C:\Dev\MerpMod\MerpMod\TestUtilities.c" "User" "C source file|Tests" 2 
 "C:\Dev\MerpMod\MerpMod\TimingHackTables.c" "User" "C source file|Data & Tables" 2 
 "C:\Dev\MerpMod\MerpMod\TimingHacks.c" "User" "C source file" 2 
+"C:\Dev\MerpMod\MerpMod\WideBand.c" "User" "C source file" 2 
 "C:\Dev\MerpMod\MerpMod\compiledate.h" "User" "C header file" 2 
 [FOLDER]
 "Assembly source file" "Assembly source file" 
@@ -479,6 +482,7 @@
 "C:\Dev\MerpMod\MerpMod\EcuHacks.c" "0c9afd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\FuelHackTables.c" "0c9afd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\FuelHacks.c" "0c9afd23307eec10" 2 
+"C:\Dev\MerpMod\MerpMod\FuelPressure.c" "085fbcc053d07d10" 2 
 "C:\Dev\MerpMod\MerpMod\Functions.c" "0c9afd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\GenericTests.c" "0c9afd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\Identifier.c" "0c9afd23307eec10" 2 
@@ -486,6 +490,7 @@
 "C:\Dev\MerpMod\MerpMod\InputHandler.c" "0ed3396bb1d07d10" 2 
 "C:\Dev\MerpMod\MerpMod\MapSwitchTables.c" "0c9afd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\Metadata.c" "0c9afd23307eec10" 2 
+"C:\Dev\MerpMod\MerpMod\MiscInputTables.c" "085fbcc053d07d10" 2 
 "C:\Dev\MerpMod\MerpMod\PortLogger.c" "05766bd742b5fc10" 2 
 "C:\Dev\MerpMod\MerpMod\ProgMode.c" "0c9afd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\ProgModeTables.c" "0c9afd23307eec10" 2 
@@ -504,6 +509,7 @@
 "C:\Dev\MerpMod\MerpMod\TestUtilities.c" "0c9afd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\TimingHackTables.c" "0c9afd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\TimingHacks.c" "0c9afd23307eec10" 2 
+"C:\Dev\MerpMod\MerpMod\WideBand.c" "085fbcc053d07d10" 2 
 "Preprocess Assembly file" "0c9afd23307eec10" 2 
 [OPTIONS_Flash_Debug_GNU Library Generator]
 "Single Shot" "0c9afd23307eec10" 1 
@@ -553,6 +559,7 @@
 "C:\Dev\MerpMod\MerpMod\EcuHacks.c" "0e51bd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\FuelHackTables.c" "0e51bd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\FuelHacks.c" "0e51bd23307eec10" 2 
+"C:\Dev\MerpMod\MerpMod\FuelPressure.c" "085fbcc053d07d10" 2 
 "C:\Dev\MerpMod\MerpMod\Functions.c" "0e51bd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\GenericTests.c" "0e51bd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\Identifier.c" "0e51bd23307eec10" 2 
@@ -560,6 +567,7 @@
 "C:\Dev\MerpMod\MerpMod\InputHandler.c" "0ed3396bb1d07d10" 2 
 "C:\Dev\MerpMod\MerpMod\MapSwitchTables.c" "0e51bd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\Metadata.c" "0e51bd23307eec10" 2 
+"C:\Dev\MerpMod\MerpMod\MiscInputTables.c" "085fbcc053d07d10" 2 
 "C:\Dev\MerpMod\MerpMod\PortLogger.c" "05766bd742b5fc10" 2 
 "C:\Dev\MerpMod\MerpMod\ProgMode.c" "0e51bd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\ProgModeTables.c" "0e51bd23307eec10" 2 
@@ -577,6 +585,7 @@
 "C:\Dev\MerpMod\MerpMod\TestUtilities.c" "0e51bd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\TimingHackTables.c" "0e51bd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\TimingHacks.c" "0e51bd23307eec10" 2 
+"C:\Dev\MerpMod\MerpMod\WideBand.c" "085fbcc053d07d10" 2 
 "Preprocess Assembly file" "0e51bd23307eec10" 2 
 [OPTIONS_Flash_Testing_GNU Library Generator]
 "Single Shot" "0e51bd23307eec10" 1 
@@ -626,6 +635,7 @@
 "C:\Dev\MerpMod\MerpMod\EcuHacks.c" "04f89d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\FuelHackTables.c" "04f89d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\FuelHacks.c" "04f89d23307eec10" 2 
+"C:\Dev\MerpMod\MerpMod\FuelPressure.c" "085fbcc053d07d10" 2 
 "C:\Dev\MerpMod\MerpMod\Functions.c" "04f89d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\GenericTests.c" "04f89d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\Identifier.c" "04f89d23307eec10" 2 
@@ -633,6 +643,7 @@
 "C:\Dev\MerpMod\MerpMod\InputHandler.c" "0ed3396bb1d07d10" 2 
 "C:\Dev\MerpMod\MerpMod\MapSwitchTables.c" "04f89d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\Metadata.c" "04f89d23307eec10" 2 
+"C:\Dev\MerpMod\MerpMod\MiscInputTables.c" "085fbcc053d07d10" 2 
 "C:\Dev\MerpMod\MerpMod\ProgMode.c" "04f89d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\ProgModeTables.c" "04f89d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\ProgModeTests.c" "04f89d23307eec10" 2 
@@ -649,6 +660,7 @@
 "C:\Dev\MerpMod\MerpMod\TestUtilities.c" "04f89d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\TimingHackTables.c" "04f89d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\TimingHacks.c" "04f89d23307eec10" 2 
+"C:\Dev\MerpMod\MerpMod\WideBand.c" "085fbcc053d07d10" 2 
 "Preprocess Assembly file" "04f89d23307eec10" 2 
 [OPTIONS_Gratis_Debug_GNU Library Generator]
 "Single Shot" "04f89d23307eec10" 1 
@@ -698,6 +710,7 @@
 "C:\Dev\MerpMod\MerpMod\EcuHacks.c" "08c9cd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\FuelHackTables.c" "08c9cd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\FuelHacks.c" "08c9cd23307eec10" 2 
+"C:\Dev\MerpMod\MerpMod\FuelPressure.c" "085fbcc053d07d10" 2 
 "C:\Dev\MerpMod\MerpMod\Functions.c" "08c9cd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\GenericTests.c" "08c9cd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\Identifier.c" "08c9cd23307eec10" 2 
@@ -705,6 +718,7 @@
 "C:\Dev\MerpMod\MerpMod\InputHandler.c" "0ed3396bb1d07d10" 2 
 "C:\Dev\MerpMod\MerpMod\MapSwitchTables.c" "08c9cd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\Metadata.c" "08c9cd23307eec10" 2 
+"C:\Dev\MerpMod\MerpMod\MiscInputTables.c" "085fbcc053d07d10" 2 
 "C:\Dev\MerpMod\MerpMod\PortLogger.c" "05766bd742b5fc10" 2 
 "C:\Dev\MerpMod\MerpMod\ProgMode.c" "08c9cd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\ProgModeTables.c" "08c9cd23307eec10" 2 
@@ -722,6 +736,7 @@
 "C:\Dev\MerpMod\MerpMod\TestUtilities.c" "08c9cd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\TimingHackTables.c" "08c9cd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\TimingHacks.c" "08c9cd23307eec10" 2 
+"C:\Dev\MerpMod\MerpMod\WideBand.c" "085fbcc053d07d10" 2 
 "Preprocess Assembly file" "08c9cd23307eec10" 2 
 [OPTIONS_Gratis_Release_GNU Library Generator]
 "Single Shot" "08c9cd23307eec10" 1 
@@ -771,6 +786,7 @@
 "C:\Dev\MerpMod\MerpMod\EcuHacks.c" "06031e23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\FuelHackTables.c" "06031e23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\FuelHacks.c" "06031e23307eec10" 2 
+"C:\Dev\MerpMod\MerpMod\FuelPressure.c" "085fbcc053d07d10" 2 
 "C:\Dev\MerpMod\MerpMod\Functions.c" "06031e23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\GenericTests.c" "06031e23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\Identifier.c" "06031e23307eec10" 2 
@@ -778,6 +794,7 @@
 "C:\Dev\MerpMod\MerpMod\InputHandler.c" "0ed3396bb1d07d10" 2 
 "C:\Dev\MerpMod\MerpMod\MapSwitchTables.c" "06031e23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\Metadata.c" "06031e23307eec10" 2 
+"C:\Dev\MerpMod\MerpMod\MiscInputTables.c" "085fbcc053d07d10" 2 
 "C:\Dev\MerpMod\MerpMod\PortLogger.c" "05766bd742b5fc10" 2 
 "C:\Dev\MerpMod\MerpMod\ProgMode.c" "06031e23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\ProgModeTables.c" "06031e23307eec10" 2 
@@ -795,6 +812,7 @@
 "C:\Dev\MerpMod\MerpMod\TestUtilities.c" "06031e23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\TimingHackTables.c" "06031e23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\TimingHacks.c" "06031e23307eec10" 2 
+"C:\Dev\MerpMod\MerpMod\WideBand.c" "085fbcc053d07d10" 2 
 "Preprocess Assembly file" "06031e23307eec10" 2 
 [OPTIONS_Gratis_Testing_GNU Library Generator]
 "Single Shot" "06031e23307eec10" 1 
@@ -844,6 +862,7 @@
 "C:\Dev\MerpMod\MerpMod\EcuHacks.c" "06bf4d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\FuelHackTables.c" "06bf4d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\FuelHacks.c" "06bf4d23307eec10" 2 
+"C:\Dev\MerpMod\MerpMod\FuelPressure.c" "085fbcc053d07d10" 2 
 "C:\Dev\MerpMod\MerpMod\Functions.c" "06bf4d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\GenericTests.c" "06bf4d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\Identifier.c" "06bf4d23307eec10" 2 
@@ -851,6 +870,7 @@
 "C:\Dev\MerpMod\MerpMod\InputHandler.c" "0ed3396bb1d07d10" 2 
 "C:\Dev\MerpMod\MerpMod\MapSwitchTables.c" "06bf4d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\Metadata.c" "06bf4d23307eec10" 2 
+"C:\Dev\MerpMod\MerpMod\MiscInputTables.c" "085fbcc053d07d10" 2 
 "C:\Dev\MerpMod\MerpMod\PortLogger.c" "05766bd742b5fc10" 2 
 "C:\Dev\MerpMod\MerpMod\ProgMode.c" "06bf4d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\ProgModeTables.c" "06bf4d23307eec10" 2 
@@ -868,6 +888,7 @@
 "C:\Dev\MerpMod\MerpMod\TestUtilities.c" "06bf4d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\TimingHackTables.c" "06bf4d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\TimingHacks.c" "06bf4d23307eec10" 2 
+"C:\Dev\MerpMod\MerpMod\WideBand.c" "085fbcc053d07d10" 2 
 "Preprocess Assembly file" "06bf4d23307eec10" 2 
 [OPTIONS_Switch_Debug_GNU Library Generator]
 "Single Shot" "06bf4d23307eec10" 1 
@@ -917,6 +938,7 @@
 "C:\Dev\MerpMod\MerpMod\EcuHacks.c" "00286d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\FuelHackTables.c" "00286d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\FuelHacks.c" "00286d23307eec10" 2 
+"C:\Dev\MerpMod\MerpMod\FuelPressure.c" "085fbcc053d07d10" 2 
 "C:\Dev\MerpMod\MerpMod\Functions.c" "00286d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\GenericTests.c" "00286d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\Identifier.c" "00286d23307eec10" 2 
@@ -924,6 +946,7 @@
 "C:\Dev\MerpMod\MerpMod\InputHandler.c" "0ed3396bb1d07d10" 2 
 "C:\Dev\MerpMod\MerpMod\MapSwitchTables.c" "00286d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\Metadata.c" "00286d23307eec10" 2 
+"C:\Dev\MerpMod\MerpMod\MiscInputTables.c" "085fbcc053d07d10" 2 
 "C:\Dev\MerpMod\MerpMod\PortLogger.c" "05766bd742b5fc10" 2 
 "C:\Dev\MerpMod\MerpMod\ProgMode.c" "00286d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\ProgModeTables.c" "00286d23307eec10" 2 
@@ -941,6 +964,7 @@
 "C:\Dev\MerpMod\MerpMod\TestUtilities.c" "00286d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\TimingHackTables.c" "00286d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\TimingHacks.c" "00286d23307eec10" 2 
+"C:\Dev\MerpMod\MerpMod\WideBand.c" "085fbcc053d07d10" 2 
 "Preprocess Assembly file" "00286d23307eec10" 2 
 [OPTIONS_Switch_Testing_GNU Library Generator]
 "Single Shot" "00286d23307eec10" 1 
