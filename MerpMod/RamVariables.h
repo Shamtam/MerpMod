@@ -61,6 +61,8 @@ typedef struct
 	unsigned short MapBlendOutOfRangeCounter;
 	unsigned char FailSafeMapBlendSwitch;
 	unsigned char SIDriveMode;
+	unsigned char FuelingLookupMAPLoad;
+	unsigned char TimingLookupMAPLoad;
 #endif
 
 #if SD_HACKS

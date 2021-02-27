@@ -38,17 +38,29 @@ EcuHacksMain();
 
 #if POLF_HACKS
 	float OutputValue;
+	float fuelingLookup;
+
+		if(pRamVariables.FuelingLookupMAPLoad==LoadLookup)	
+		{
+			fuelingLookup = *pEngineLoad;
+		}
+		else
+		{
+			fuelingLookup = (*pManifoldAbsolutePressure - 760)*.01933677;	
+		}
 
 	#if POLF_RAM_TUNING
+
+	
 		if(pRamVariables.POLFRamFlag = 0x01)
 		{
-			OutputValue = Pull3DHooked(&FuelRamTable, *pEngineLoad, *pEngineSpeed);
+			OutputValue = Pull3DHooked(&FuelRamTable, fuelingLookup, *pEngineSpeed);
 		}
 		else
 		{
 	#endif
 
-		OutputValue	= BlendAndSwitchCurve(FuelTableGroup, *pEngineLoad, *pEngineSpeed, OpenLoopFuelingBlendCurveSwitch);
+		OutputValue	= BlendAndSwitchCurve(FuelTableGroup, fuelingLookup, *pEngineSpeed, OpenLoopFuelingBlendCurveSwitch);
 
 	#if POLF_RAM_TUNING
 		}

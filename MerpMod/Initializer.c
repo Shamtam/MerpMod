@@ -132,6 +132,7 @@ pRamVariables.CruiseCoastLast = TestCruiseCoastSwitch();
 	}
 	pRamVariables.LCFuelLock = DefaultLCFuelLock;
 	pRamVariables.LCFuelEnrichMultiplier = DefaultLCFuelEnrichMultiplier;
+	pRamVariables.FuelingLookupMAPLoad = DefaultFuelingLookupMAPLoad;
 #endif
 
 #if TIMING_HACKS
@@ -143,6 +144,7 @@ pRamVariables.CruiseCoastLast = TestCruiseCoastSwitch();
 	}
 	pRamVariables.LCTimingLock = DefaultLCTimingLock;
 	pRamVariables.LCTimingRetardMultiplier = DefaultLCTimingRetardMultiplier;
+	pRamVariables.TimingLookupMAPLoad = DefaultTimingLookupMAPLoad;
 #endif
 
 #if BOOST_HACKS

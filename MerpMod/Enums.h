@@ -52,6 +52,11 @@ enum MafModeValues
 	MafModeSDBlending = (unsigned char)0x04,
 	MafModeDualSDBlending = (unsigned char)0x05
 };
+enum MAPLoadLookupValues
+{
+	LoadLookup = (unsigned char)0x00,
+	MAPLookup = (unsigned char)0x01	
+};
 enum RevLimModeValues
 {
 	RevLimModeUndefined = (unsigned char)0x00,

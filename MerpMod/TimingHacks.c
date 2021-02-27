@@ -28,23 +28,33 @@ float TimingHack()
 	
 	float subIam;
 	float iam;
+	float timingLookup;
 
 	subIam = HighPass(1 - IAM, 0.0f);
 
-	pRamVariables.MaxSubtractiveKCA = HighPass(BlendAndSwitchCurve(KnockCorrectionRetardTableGroup, *pEngineLoad, *pEngineSpeed, KnockControlBlendCurveSwitch),0.0f);
+	if(pRamVariables.TimingLookupMAPLoad==LoadLookup)	
+	{
+		timingLookup = *pEngineLoad;
+	}
+	else
+	{
+		timingLookup = (*pManifoldAbsolutePressure - 760)*.01933677;
+	}
+
+	pRamVariables.MaxSubtractiveKCA = HighPass(BlendAndSwitchCurve(KnockCorrectionRetardTableGroup, timingLookup, *pEngineSpeed, KnockControlBlendCurveSwitch),0.0f);
 	
 	pRamVariables.SubtractiveKCA = subIam *  pRamVariables.MaxSubtractiveKCA;
 	
 #if TIMING_RAM_TUNING
 	if(pRamVariables.WGDCMaxRamFlag = 0x01)
 	{
-		OutputValue = Pull3DHooked(&TimingRamTable, *pEngineLoad, *pEngineSpeed);
+		OutputValue = Pull3DHooked(&TimingRamTable, timingLookup, *pEngineSpeed);
 	}
 	else
 	{
 #endif
 
-	OutputValue = BlendAndSwitchCurve(TimingTableGroup, *pEngineLoad, *pEngineSpeed, TimingBlendCurveSwitch);
+	OutputValue = BlendAndSwitchCurve(TimingTableGroup, timingLookup, *pEngineSpeed, TimingBlendCurveSwitch);
 	pRamVariables.BaseTiming = OutputValue;
 		
 #if TIMING_RAM_TUNING

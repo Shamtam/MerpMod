@@ -18,6 +18,8 @@
 
 unsigned char DefaultLCTimingMode TIMINGDATA = LCTimingModeDisabled;
 unsigned char DefaultTimingHackEnabled TIMINGDATA = HackDisabled;
+unsigned char DefaultTimingLookupMAPLoad TIMINGDATA = LoadLookup;
+
 float DefaultLCTimingLock TIMINGDATA = 20.0f;
 float DefaultLCTimingRetardMultiplier TIMINGDATA = 1.0f;
 float FBKCRetardValue1 TIMINGDATA = 1.4;

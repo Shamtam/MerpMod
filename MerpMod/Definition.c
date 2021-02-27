@@ -391,6 +391,7 @@ DEFINERAMVAR("MerpMod Primary Open Loop Fueling Output",PolfOutput,"float","E152
 	
 #if SWITCH_HACKS
 DEFNEW1D("Primary Open Loop Fuel Hack Enable",DefaultPolfHackEnabled);
+DEFNEW1D("Fueling Lookup Load/MAP",DefaultFuelingLookupMAPLoad);
 DEFNEW3D("Primary Open Loop Fueling Table 1 Intelligent",FuelTable1i);
 DEFNEW3D("Primary Open Loop Fueling Table 2 Intelligent",FuelTable2i);
 DEFNEW3D("Primary Open Loop Fueling Table 1 Sport",FuelTable1s);
@@ -542,6 +543,7 @@ DEFINERAMVAR("MerpMod Base Timing",BaseTiming,"float","E1515");
 DEFINERAMVAR("MerpMod Final Timing",FinalTiming,"float","E1516");
 DEFINERAMVAR("MerpMod Timing Output",TimingOutput,"float","E1517");
 	
+DEFNEW1D("Timing Lookup Load/MAP",DefaultTimingLookupMAPLoad);
 DEFNEW1D("Launch Control Timing Mode",DefaultLCTimingMode);
 DEFNEW1D("Launch Control Timing Lock",DefaultLCTimingLock);	
 DEFNEW1D("Default Launch Control Timing Retard Multiplier",DefaultLCTimingRetardMultiplier);

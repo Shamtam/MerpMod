@@ -234,6 +234,8 @@ extern float Displacement;
 extern float SpeedDensityConstant;
 extern unsigned char DefaultMafMode;
 
+extern unsigned char DefaultTimingLookupMAPLoad;
+extern unsigned char DefaultFuelingLookupMAPLoad;
 extern unsigned char DefaultLCTimingMode;
 extern float DefaultLCTimingLock;
 extern float DefaultLCTimingRetardMultiplier;
