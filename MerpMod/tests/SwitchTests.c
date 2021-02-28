@@ -12,25 +12,16 @@
     GNU General Public License for more details.
 */
 
+//Tests for Switch code
+
 #include "EcuHacks.h"
 
-#if DEBUG
-
-#define PAPR (0xFFFFF780)
-#define PBPR (0xFFFFF780)
-#define PCDR (0xFFFFF73E)
-#define PDPR (0xFFFFF780)
-#define PEDR (0xFFFFF754)
-#define PFDR (0xFFFFF74E)
-#define PGDR (0xFFFFF764)
-#define PHDR (0xFFFFF72C)
-#define PJPR (0xFFFFF780)
-#define PKDR (0xFFFFF778)
-#define PLPR (0xFFFFF780)
-
-void PortScan()
+void SwitchUnitTests() __attribute__ ((section ("Misc")));
+void SwitchUnitTests()
 {
+	PopulateRamVariables();
 
-}
 
-#endif
+
+}	
+	

@@ -12,6 +12,9 @@
     GNU General Public License for more details.
 */
 
+#ifndef __EXTERNS__
+#define __EXTERNS__
+
 #include "enums.h"
 
 //////////////////////////
@@ -467,3 +470,5 @@ extern TwoDTable FuelPressureScaling;
 
 extern long RomHoleEndMarker;
 extern unsigned char ModIdentifier[];
+
+#endif
