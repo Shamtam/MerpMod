@@ -224,6 +224,13 @@ DEFINERAMBIT("MerpMod Clutch Switch",pClutchFlags, ClutchBitMask,"E");
 DEFINERAMBIT("MerpMod Brake Switch",pBrakeFlags, BrakeBitMask,"E");
 #endif
 
+#ifdef pDefogFlags
+DEFINERAMBIT("MerpMod Defog Switch",pDefogFlags, DefogBitMask,"E");
+#endif
+#ifdef pTestModeFlags
+DEFINERAMBIT("MerpMod TestMode Switch",pTestModeFlags, TestModeBitMask,"E");
+#endif
+
 #ifdef pResumeFlags
 	DEFINERAMBIT("MerpMod Cruise Resume Switch",pResumeFlags, ResumeBitMask,"E");
 #endif
