@@ -144,3 +144,43 @@ float Pull2DRamHookIntakeTempCompensation(float* table, float xLookup)
 
 
 #endif
+
+#if AVCS_HACKS
+float Pull3DRamHookAVCSLookup(float* table, float xLookup, float yLookup)
+{
+
+#if AVCS_RAMTUNING
+	if (table == tIntakeAVCSNonCruise &&
+		pRamVariables.AVCSRamFlag == 0x01)
+		{
+			if(pRamVariables.AVCSLookupMAPLoad == LoadLookup)
+			{
+				return Pull3DHooked(&AVCSRamTable, xLookup, yLookup);
+			}
+			else
+			{
+				return Pull3DHooked(&AVCSRamTable, ((*pManifoldAbsolutePressure - 760)*.01933677), yLookup);
+			}
+		}
+	else if((table == tIntakeAVCSCruise ||
+			table == tIntakeAVCSNonCruise ||
+			table == tExhaustAVCSCruise ||
+			table == tExhaustAVCSNonCruise) &&
+			(pRamVariables.AVCSLookupMAPLoad != LoadLookup))
+				return Pull3DHooked((ThreeDTable*)table, ((*pManifoldAbsolutePressure - 760)*.01933677), yLookup); 	
+	else 
+		return Pull3DHooked((ThreeDTable*)table, xLookup, yLookup);	
+
+#else
+	if((table == tIntakeAVCSCruise ||
+	table == tIntakeAVCSNonCruise ||
+	table == tExhaustAVCSCruise ||
+	table == tExhaustAVCSNonCruise) &&
+	(pRamVariables.AVCSLookupMAPLoad != LoadLookup))
+		return Pull3DHooked((ThreeDTable*)table, ((*pManifoldAbsolutePressure - 760)*.01933677), yLookup); 	
+	return Pull3DHooked((ThreeDTable*)table, xLookup, yLookup);	
+#endif	
+// To-do, create OEMRamTuneTables.c, create AVCS Ramtune table, 
+	
+}
+#endif

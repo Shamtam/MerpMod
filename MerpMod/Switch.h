@@ -34,6 +34,8 @@
 #define PGWG_HACKS 1		//
 #define INJECTOR_HACKS 1	//
 #define REQTORQUE_HACKS 1	//
+#define E85_HACKS 1			//
+#define AVCS_HACKS 1		//
 							//
 //////////////////////////////
 							
@@ -47,5 +49,6 @@
 #define TIMING_RAMTUNING 0	//
 #define PGWG_RAMTUNING 0	//
 #define WGDC_RAMTUNING 0	//
+#define AVCS_RAMTUNING 1	//
 							//
 //////////////////////////////	

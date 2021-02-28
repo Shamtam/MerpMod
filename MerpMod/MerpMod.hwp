@@ -178,6 +178,7 @@
 "C:\Dev\MerpMod\MerpMod\ProgModeTests.c" "User" "C source file|Tests" 2 
 "C:\Dev\MerpMod\MerpMod\PullRamHooks.c" "User" "C source file" 2 
 "C:\Dev\MerpMod\MerpMod\RamHoleScanner.c" "User" "C source file" 2 
+"C:\Dev\MerpMod\MerpMod\RamTuneTables.c" "User" "C source file" 2 
 "C:\Dev\MerpMod\MerpMod\RamVariables.h" "User" "C header file" 2 
 "C:\Dev\MerpMod\MerpMod\ResetHandler.s" "User" "Assembly source file" 2 
 "C:\Dev\MerpMod\MerpMod\RevLimiter.c" "User" "C source file" 2 
@@ -499,6 +500,7 @@
 "C:\Dev\MerpMod\MerpMod\ProgModeTests.c" "0c9afd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\PullRamHooks.c" "0c9afd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\RamHoleScanner.c" "040c15e93266fc10" 2 
+"C:\Dev\MerpMod\MerpMod\RamTuneTables.c" "0f46fa8da5d07d10" 2 
 "C:\Dev\MerpMod\MerpMod\RevLimiter.c" "0c9afd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\RevLimiterTables.c" "0c9afd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\RevLimiterTests.c" "0c9afd23307eec10" 2 
@@ -576,6 +578,7 @@
 "C:\Dev\MerpMod\MerpMod\ProgModeTables.c" "0e51bd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\ProgModeTests.c" "0e51bd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\PullRamHooks.c" "0e51bd23307eec10" 2 
+"C:\Dev\MerpMod\MerpMod\RamTuneTables.c" "0f46fa8da5d07d10" 2 
 "C:\Dev\MerpMod\MerpMod\RevLimiter.c" "0e51bd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\RevLimiterTables.c" "0e51bd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\RevLimiterTests.c" "0e51bd23307eec10" 2 
@@ -652,6 +655,7 @@
 "C:\Dev\MerpMod\MerpMod\ProgModeTables.c" "04f89d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\ProgModeTests.c" "04f89d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\PullRamHooks.c" "04f89d23307eec10" 2 
+"C:\Dev\MerpMod\MerpMod\RamTuneTables.c" "0f46fa8da5d07d10" 2 
 "C:\Dev\MerpMod\MerpMod\RevLimiter.c" "04f89d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\RevLimiterTables.c" "04f89d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\RevLimiterTests.c" "04f89d23307eec10" 2 
@@ -729,6 +733,7 @@
 "C:\Dev\MerpMod\MerpMod\ProgModeTables.c" "08c9cd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\ProgModeTests.c" "08c9cd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\PullRamHooks.c" "08c9cd23307eec10" 2 
+"C:\Dev\MerpMod\MerpMod\RamTuneTables.c" "0f46fa8da5d07d10" 2 
 "C:\Dev\MerpMod\MerpMod\RevLimiter.c" "08c9cd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\RevLimiterTables.c" "08c9cd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\RevLimiterTests.c" "08c9cd23307eec10" 2 
@@ -806,6 +811,7 @@
 "C:\Dev\MerpMod\MerpMod\ProgModeTables.c" "06031e23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\ProgModeTests.c" "06031e23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\PullRamHooks.c" "06031e23307eec10" 2 
+"C:\Dev\MerpMod\MerpMod\RamTuneTables.c" "0f46fa8da5d07d10" 2 
 "C:\Dev\MerpMod\MerpMod\RevLimiter.c" "06031e23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\RevLimiterTables.c" "06031e23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\RevLimiterTests.c" "06031e23307eec10" 2 
@@ -883,6 +889,7 @@
 "C:\Dev\MerpMod\MerpMod\ProgModeTables.c" "06bf4d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\ProgModeTests.c" "06bf4d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\PullRamHooks.c" "06bf4d23307eec10" 2 
+"C:\Dev\MerpMod\MerpMod\RamTuneTables.c" "0f46fa8da5d07d10" 2 
 "C:\Dev\MerpMod\MerpMod\RevLimiter.c" "06bf4d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\RevLimiterTables.c" "06bf4d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\RevLimiterTests.c" "06bf4d23307eec10" 2 
@@ -960,6 +967,7 @@
 "C:\Dev\MerpMod\MerpMod\ProgModeTables.c" "00286d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\ProgModeTests.c" "00286d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\PullRamHooks.c" "00286d23307eec10" 2 
+"C:\Dev\MerpMod\MerpMod\RamTuneTables.c" "0f46fa8da5d07d10" 2 
 "C:\Dev\MerpMod\MerpMod\RevLimiter.c" "00286d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\RevLimiterTables.c" "00286d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\RevLimiterTests.c" "00286d23307eec10" 2 

@@ -152,6 +152,20 @@
 #define hPull3DReqTorque (0x00016E28)
 
 /////////////////////
+// AVCS Hacks
+/////////////////////
+
+#define tIntakeAVCSCruise (0x0008B0F8)
+#define tIntakeAVCSNonCruise (0x0008B114)
+#define tExhaustAVCSCruise (0x0008B1BC)
+#define tExhaustAVCSNonCruise (0x0008B1D8)
+#define hPull3DIntakeAVCS (0x00057BE8)
+#define hPull3DExhaustAVCS (0x00059534)
+#define tIntakeAVCSNonCruiseCols (0x000D66B0)
+#define tIntakeAVCSNonCruiseRows (0x000D66FC)
+#define tIntakeAVCSNonCruiseData (0x000D6744)
+
+/////////////////////
 // Spark Cut
 /////////////////////
 

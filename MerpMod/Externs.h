@@ -68,6 +68,7 @@ float Pull3DRamHook(float* table, float xLookup, float yLookup) ROMCODE;
 float Pull3DRamHookStartupEnrich1(float* table, float xLookup, float yLookup) ROMCODE;
 float Pull2DRamHookIntakeTempCompensation(float* table, float xLookup) ROMCODE;
 float Pull3DHookReqTorque(ThreeDTable* table, float xLookup, float yLookup) ROMCODE;
+float Pull3DRamHookAVCSLookup(float* table, float xLookup, float yLookup) ROMCODE;
 void VinCheck() ROMCODE;
 
 void ProgModeListener()  ROMCODE;
@@ -243,6 +244,7 @@ extern ThreeDTable PGTBRamTable;
 extern ThreeDTable WGDCInitialRamTable;
 extern ThreeDTable WGDCMaxRamTable;
 
+extern ThreeDTable AVCSRamTable;
 
 extern unsigned char DefaultTimingHackEnabled;
 
@@ -314,6 +316,7 @@ extern unsigned char DefaultMafMode;
 
 extern unsigned char DefaultTimingLookupMAPLoad;
 extern unsigned char DefaultFuelingLookupMAPLoad;
+extern unsigned char DefaultAVCSLookupMAPLoad;
 extern unsigned char DefaultLCTimingMode;
 extern float DefaultLCTimingLock;
 extern float DefaultLCTimingRetardMultiplier;
@@ -383,6 +386,10 @@ extern float LCAdjustStep;
 extern float ValetModeRevLim;
 extern float ValetModeReqTorqueLimit;
 #endif
+
+extern unsigned char DefaultRamTuneTableBlend;
+extern unsigned char DefaultRamTuneTableSwitch;
+extern ThreeDTable AVCSRamTable;
 
 #if VIN_HACKS
 extern const VinBlockStruct VinBlock;

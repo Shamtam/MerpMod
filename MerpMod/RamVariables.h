@@ -75,6 +75,7 @@ typedef struct
 	unsigned char FailSafeInjectorDutyCycleSwitch;
 	unsigned char FuelingLookupMAPLoad;
 	unsigned char TimingLookupMAPLoad;
+	unsigned char AVCSLookupMAPLoad;
 #endif
 
 #if SD_HACKS
@@ -240,6 +241,11 @@ typedef struct
 	short WGDCInitialRamData[256];
 	unsigned char WGDCMaxRamFlag;
 	short WGDCMaxRamData[256];
+#endif
+
+#if AVCS_RAMTUNING
+	unsigned char AVCSRamFlag;
+	short AVCSRamData[342];
 #endif
 
 #if PORT_LOGGER

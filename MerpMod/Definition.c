@@ -455,6 +455,10 @@ DEFNEW1D("Requested Torque Limit (Valet Mode)",ValetModeReqTorqueLimit);
 #if SPARK_HACKS
 #endif
 
+#if AVCS_HACKS
+DEFNEW1D("AVCS Lookup Load/MAP",DefaultAVCSLookupMAPLoad);	
+#endif
+
 #if CEL_HACKS
 DEFNEW1D("FBKC Threshold",FBKCLoThreshold);	
 DEFNEW1D("FBKC Flash Speed",FBKCLoFlashSpeed);	

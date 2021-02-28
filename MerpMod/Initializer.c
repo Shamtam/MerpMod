@@ -163,6 +163,9 @@ pRamVariables.CruiseCoastLast = TestCruiseCoastSwitch();
 	pRamVariables.MafMode = DefaultMafMode;
 #endif
 
+#if AVCS_HACKS
+	pRamVariables.AVCSLookupMAPLoad = DefaultAVCSLookupMAPLoad;
+#endif
 pRamVariables.ECUIdentifier = *(long*)dEcuId;
 pRamVariables.HardResetFlag = HardResetFlagDisabled;
 

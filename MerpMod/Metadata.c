@@ -714,6 +714,32 @@ const MetaReplace POLFHook METADATA =
 		newval: (int)Pull2DRamHookIntakeTempCompensation,
 		name: STR(Intake Temp Timing Compensation A Hook)
 	};
+
+
+
+	
+#endif
+
+#if AVCS_HACKS
+
+	const MetaReplace IntakeAVCSHookPull METADATA = 
+	{
+		op: OpReplace4Bytes,
+		address: hPull3DIntakeAVCS,
+		oldval: sPull3DFloat,
+		newval: (int)Pull3DRamHookAVCSLookup,
+		name: STR(Intake AVCS Pull3D Hook)
+	};
+	
+	const MetaReplace ExhaustAVCSHookPull METADATA = 
+	{
+		op: OpReplace4Bytes,
+		address: hPull3DExhaustAVCS,
+		oldval: sPull3DFloat,
+		newval: (int)Pull3DRamHookAVCSLookup,
+		name: STR(Exhaust AVCS Pull3D Hook)
+	};
+
 #endif
 
 //////////////////////
