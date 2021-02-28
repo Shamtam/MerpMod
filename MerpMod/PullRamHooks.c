@@ -64,52 +64,83 @@ float Pull2DRamHook(float* table, float xLookup)
 }
 
 #if SWITCH_HACKS
-float Pull2DRamHookTipIn(float* table, float xLookup)
+
+float Pull2DRamHookTipInEnrich(float* table, float xLookup)
 {
-	if(table == tTipInEnrich)//This hook is used by other tables!!
+	// Change this to return tipinenrichlookup * injectorscalar multiplier, if switch is on 
+	// maybe move to fueling hacks?
+
+	if((table == tTipInEnrich
+		|| table == tTipInEnrich2)  && (pRamVariables.PolfHackEnabled == HackEnabled))//This hook is used by other tables!!
 		return Pull2DHooked((TwoDTable*)table, xLookup) 
-		* Pull2DHooked((TwoDTable*)&TipInEnrichMultiplier, xLookup)
-		* pRamVariables.InjectorScalingMultiplier;		
+		* Pull3DHooked((ThreeDTable*)&TipInEnrichMultiplier, pRamVariables.MapBlendRatio, xLookup);
 	return Pull2DHooked((TwoDTable*)table, xLookup);
 }
 
 float Pull2DRamHookCrankingFuel(float* table, float xLookup)
 {
-	if(table == tCrankingFuelA ||
+	if((table == tCrankingFuelA ||
 	table == tCrankingFuelB ||
 	table == tCrankingFuelC ||
 	table == tCrankingFuelD ||
 	table == tCrankingFuelE ||
-	table == tCrankingFuelF)//This hook is used by other tables!!
+	table == tCrankingFuelF) && (pRamVariables.PolfHackEnabled == HackEnabled))//This hook is used by other tables!!
 		return Pull2DHooked((TwoDTable*)table, xLookup) 
-		* Pull2DHooked((TwoDTable*)&CrankingFuelMultiplier, xLookup)
-		* pRamVariables.InjectorScalingMultiplier;
+		* Pull3DHooked((ThreeDTable*)&CrankingFuelMultiplier, pRamVariables.MapBlendRatio, xLookup);
 	return Pull2DHooked((TwoDTable*)table, xLookup);
+
 }
 
 float Pull2DRamHookStartupEnrich2(float* table, float xLookup)
 {
-	if(table == tStartupEnrich2_1A ||
+	if((table == tStartupEnrich2_1A ||
 	table == tStartupEnrich2_1B ||
 	table == tStartupEnrich2_2A ||
-	table == tStartupEnrich2_2B)//This hook is used by other tables!!
-		return Pull2DHooked((TwoDTable*)table, xLookup) * Pull2DHooked((TwoDTable*)&StartupEnrichMultiplier, xLookup);
+	table == tStartupEnrich2_2B) && (pRamVariables.PolfHackEnabled == HackEnabled))//This hook is used by other tables!!
+		return Pull2DHooked((TwoDTable*)table, xLookup)
+		* Pull3DHooked((ThreeDTable*)&StartupEnrichMultiplier, pRamVariables.MapBlendRatio, xLookup);
 	return Pull2DHooked((TwoDTable*)table, xLookup);
+
 }
 
 float Pull2DRamHookStartupEnrich3(float* table, float xLookup)
 {
-	if(table == tStartupEnrich3_1A ||
+	if((table == tStartupEnrich3_1A ||
 	table == tStartupEnrich3_1B ||
 	table == tStartupEnrich3_2A ||
-	table == tStartupEnrich3_2B)//This hook is used by other tables!!
-		return Pull2DHooked((TwoDTable*)table, xLookup) * Pull2DHooked((TwoDTable*)&StartupEnrichMultiplier, xLookup);
+	table == tStartupEnrich3_2B) && (pRamVariables.PolfHackEnabled == HackEnabled))//This hook is used by other tables!!
+		return Pull2DHooked((TwoDTable*)table, xLookup) 
+		* Pull3DHooked((ThreeDTable*)&StartupEnrichMultiplier,pRamVariables.MapBlendRatio, xLookup);
+	return Pull2DHooked((TwoDTable*)table, xLookup);
+}
+
 float Pull2DRamHookFrontO2Scaling(float* table, float xLookup)
 {
 	if((table == tFrontO2Scaling) && (pRamVariables.PolfHackEnabled == HackEnabled))//This hook is used by other tables!!
 		return BlendCurve(Pull2DHooked(&FrontOxygenSensorScaling1,xLookup),Pull2DHooked(&FrontOxygenSensorScaling2,xLookup),ClosedLoopFuelingBlendCurveSwitch);
 	return Pull2DHooked((TwoDTable*)table, xLookup);
 }
+
+float Pull3DRamHookStartupEnrich1(float* table, float xLookup, float yLookup)
+{
+	if((table == tStartupEnrich1Cruise ||
+	table == tStartupEnrich1NonCruise)
+	&& (pRamVariables.PolfHackEnabled == HackEnabled))//This hook is used by other tables!!
+		return Pull3DHooked((ThreeDTable*)table, xLookup, yLookup) 
+		* Pull3DHooked((ThreeDTable*)&StartupEnrichMultiplier, pRamVariables.MapBlendRatio, xLookup);
+	return Pull3DHooked((ThreeDTable*)table, xLookup, yLookup);	
+}
+
+
+
+float Pull2DRamHookIntakeTempCompensation(float* table, float xLookup)
+{
+	if((table == tIntakeTempCompensation) && (pRamVariables.TimingHackEnabled == HackEnabled))//This hook is used by other tables!!
+		return BlendCurve(Pull2DHooked(&IntakeTempCompensationTable1,xLookup),Pull2DHooked(&IntakeTempCompensationTable2,xLookup),TimingBlendCurveSwitch);
 	return Pull2DHooked((TwoDTable*)table, xLookup);
 }
+//To do - define tIntakeTempCompensation, and create the two tables
+
+
+
 #endif

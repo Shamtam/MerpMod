@@ -59,11 +59,14 @@ void InjectorHack() ROMCODE;
 void POLFHack()  ROMCODE;
 float TimingHack()  ROMCODE;
 float Pull2DRamHook(float* table, float xLookup) ROMCODE;
-float Pull2DRamHookTipIn(float* table, float xLookup) ROMCODE;
+float Pull2DRamHookTipInEnrich(float* table, float xLookup) ROMCODE;
 float Pull2DRamHookCrankingFuel(float* table, float xLookup) ROMCODE;
 float Pull2DRamHookStartupEnrich2(float* table, float xLookup) ROMCODE;
 float Pull2DRamHookStartupEnrich3(float* table, float xLookup) ROMCODE;
+float Pull2DRamHookFrontO2Scaling(float* table, float xLookup) ROMCODE;
 float Pull3DRamHook(float* table, float xLookup, float yLookup) ROMCODE;
+float Pull3DRamHookStartupEnrich1(float* table, float xLookup, float yLookup) ROMCODE;
+float Pull2DRamHookIntakeTempCompensation(float* table, float xLookup) ROMCODE;
 float Pull3DHookReqTorque(ThreeDTable* table, float xLookup, float yLookup) ROMCODE;
 void VinCheck() ROMCODE;
 
@@ -131,6 +134,9 @@ extern ThreeDTable TemperatureCompensationTable;
 extern ThreeDTable AtmosphericCompensationTable;
 extern ThreeDTable SDBlendingTable;
 
+extern short VE_DATA1[];
+extern short VE_DATA2[];
+
 extern TwoDTable MafScalingTable1;
 extern TwoDTable MafScalingTable2;
 
@@ -145,6 +151,14 @@ extern ThreeDTable FuelTable2s;
 extern ThreeDTable FuelTable1ss;
 extern ThreeDTable FuelTable2ss;
 extern ThreeDTable LCFuelEnrichTable;
+
+extern unsigned char F1SS_DATA[];
+extern unsigned char F1S_DATA[];
+extern unsigned char F1I_DATA[];
+extern unsigned char F2SS_DATA[];
+extern unsigned char F2S_DATA[];
+extern unsigned char F2I_DATA[];
+
 extern unsigned char DefaultLCFuelMode;
 extern float DefaultLCFuelLock;
 extern float DefaultLCFuelEnrichMultiplier;
@@ -161,6 +175,21 @@ extern ThreeDTable PGTBTable2s;
 extern ThreeDTable PGWGTable1ss;
 extern ThreeDTable PGWGTable2ss;
 extern ThreeDTable PGWGTableValetMode;
+
+extern short PGWGData1ss[];
+extern short PGWGData1s[];
+extern short PGWGData1i[];
+extern short PGWGData2ss[];
+extern short PGWGData2s[];
+extern short PGWGData2i[];
+
+extern short PGTBData1ss[];
+extern short PGTBData1s[];
+extern short PGTBData1i[];
+extern short PGTBData2ss[];
+extern short PGTBData2s[];
+extern short PGTBData2i[];
+
 
 extern TableGroup PGTBTableGroup;
 extern ThreeDTable PGTBTable1i;
@@ -187,6 +216,13 @@ extern ThreeDTable WGDCInitialTable2s;
 extern ThreeDTable WGDCInitialTable1ss;
 extern ThreeDTable WGDCInitialTable2ss;
 
+extern short WGDCInitialData1ss[];
+extern short WGDCInitialData1s[];
+extern short WGDCInitialData1i[];
+extern short WGDCInitialData2ss[];
+extern short WGDCInitialData2s[];
+extern short WGDCInitialData2i[];
+
 extern TableGroup WGDCMaxTableGroup;
 extern ThreeDTable WGDCMaxTable1i;
 extern ThreeDTable WGDCMaxTable2i;
@@ -195,12 +231,23 @@ extern ThreeDTable WGDCMaxTable2s;
 extern ThreeDTable WGDCMaxTable1ss;
 extern ThreeDTable WGDCMaxTable2ss;
 
+extern short WGDCMaxData1ss[];
+extern short WGDCMaxData1s[];
+extern short WGDCMaxData1i[];
+extern short WGDCMaxData2ss[];
+extern short WGDCMaxData2s[];
+extern short WGDCMaxData2i[];
+
 extern ThreeDTable PGWGRamTable;
+extern ThreeDTable PGTBRamTable;
 extern ThreeDTable WGDCInitialRamTable;
 extern ThreeDTable WGDCMaxRamTable;
 
 
 extern unsigned char DefaultTimingHackEnabled;
+
+extern TwoDTable IntakeTempCompensationTable1;
+extern TwoDTable IntakeTempCompensationTable2;
 extern TableGroup TimingTableGroup;
 extern ThreeDTable TimingTable1i;
 extern ThreeDTable TimingTable2i;
@@ -208,6 +255,13 @@ extern ThreeDTable TimingTable1s;
 extern ThreeDTable TimingTable2s;
 extern ThreeDTable TimingTable1ss;
 extern ThreeDTable TimingTable2ss;
+
+extern unsigned char T1ss_DATA[];
+extern unsigned char T1s_DATA[];
+extern unsigned char T1i_DATA[];
+extern unsigned char T2ss_DATA[];
+extern unsigned char T2s_DATA[];
+extern unsigned char T2i_DATA[];
 
 extern TableGroup KnockCorrectionRetardTableGroup;
 extern ThreeDTable KnockCorrectionRetardTable1i;
@@ -369,9 +423,10 @@ extern TwoDTable MapBlendCurve2;
 extern TwoDTable MapBlendCurve3;
 extern TwoDTable MapBlendCurve4;
 
-extern TwoDTable TipInEnrichMultiplier;
-extern TwoDTable CrankingFuelMultiplier;
-extern TwoDTable StartupEnrichMultiplier;
+extern ThreeDTable TipInEnrichMultiplier;
+extern ThreeDTable CrankingFuelMultiplier;
+extern ThreeDTable StartupEnrichMultiplier;
+
 extern unsigned char WideBandLambdaInputMode;
 extern unsigned char FuelPressureInputMode;
 extern float WidebandSensorSmoothingFactor;

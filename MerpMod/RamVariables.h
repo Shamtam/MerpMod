@@ -103,7 +103,6 @@ typedef struct
 	unsigned char	FFSEngaged;
 	unsigned char	ClutchSwitchLast;
 	unsigned char FFSGear;
-	char	eleemee2;
 	float 	RevLimCut;	//96
 	float 	RevLimResume;
   	float  	RedLineCut;
@@ -211,72 +210,36 @@ typedef struct
 #if VE_RAMTUNING
 //VE RAMTUNING
 	unsigned char VERamFlag;
-	unsigned char emptypaafr;
-	unsigned char emptypdfr1;
-	unsigned char emptyprdafd2;
-	float VERamCols[24];
-	float VERamRows[24];
 	short VERamData[576];
 #endif
 
 #if TIMING_RAMTUNING
 //VE RAMTUNING
 	unsigned char TimingRamFlag;
-	unsigned char emptypadr;
-	unsigned char emptyprdadf1;
-	unsigned char emptypfadfr2;
-	float TimingRamCols[20];
-	float TimingRamRows[20];
-	unsigned char TimingRamData[400];
+	unsigned char TimingRamData[576];
 #endif
 
 #if POLF_RAMTUNING
 //VE RAMTUNING
 	unsigned char POLFRamFlag;
-	unsigned char emptypr;
-	unsigned char emptypr1;
-	unsigned char emptypr2;
-	float POLFRamCols[20];
-	float POLFRamRows[20];
-	unsigned char POLFRamData[400];
-	unsigned char LCFuelEnrichRamFlag;
-	unsigned char emptylcfe;
-	unsigned char emptylcfe1;
-	unsigned char emptylcfe2;
-	float LCFuelEnrichCols[20];
-	float LCFuelEnrichRows[20];
-	unsigned char LCFFuelEnrichData[400];
+	unsigned char POLFRamData[576];
 #endif
 
 	
 #if PGWG_RAMTUNING
 	//PGWG RAMTUNING
 	unsigned char PGWGRamFlag;
-	unsigned char emptypadfdr;
-	unsigned char emptyprada1;
-	unsigned char emptypddfrfaf2;
-	float PGWGRamCols[6];
-	float PGWGRamRows[10];
-	short PGWGRamData[60];
+	short PGWGRamData[96];
+	short PGTBRamData[96];
 #endif
 
 	
 #if WGDC_RAMTUNING
 	//WGDC RAMTUNIN
 	unsigned char WGDCInitialRamFlag;
-	unsigned char emptywi1;
-	unsigned char emptywi2;
-	unsigned char emptywi3;
-	float WGDCInitialRamCols[6];
-	float WGDCInitialRamRows[10];
-	short WGDCInitialRamData[60];
+	short WGDCInitialRamData[256];
 	unsigned char WGDCMaxRamFlag;
-	unsigned char emptywm1;
-	unsigned char emptywm2;
-	unsigned char emptywm3;
-	float WGDCMaxRamCols[6];
-	float WGDCMaxRamRows[10];
-	short WGDCMaxRamData[60];
+	short WGDCMaxRamData[256];
 #endif
 
 #if PORT_LOGGER

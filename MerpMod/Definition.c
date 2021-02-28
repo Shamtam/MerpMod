@@ -390,9 +390,9 @@ DEFNEW2D("Map Blending Injector Scaling Multiplier",InjectorScalingMultiplierTab
 DEFINERAMVAR("MerpMod Injector Scaling",InjectorScaling,"float","E1527");
 #endif
 
-DEFNEW2D("Map Blending Throttle Tip-In Enrichment Multiplier",TipInEnrichMultiplier);
-DEFNEW2D("Map Blending Cranking Fuel Multiplier",CrankingFuelMultiplier);
-DEFNEW2D("Map Blending Startup Enrichment Multiplier",StartupEnrichMultiplier);
+DEFNEW3D("Map Blending Throttle Tip-In Enrichment Multiplier",TipInEnrichMultiplier);
+DEFNEW3D("Map Blending Cranking Fuel Multiplier",CrankingFuelMultiplier);
+DEFNEW3D("Map Blending Startup Enrichment Multiplier",StartupEnrichMultiplier);
 
 #endif
 
@@ -615,6 +615,8 @@ DEFNEW1D("Feedback Knock Correction Blended Retard Value Alternate 2",FBKCRetard
 
 #if SWITCH_HACKS
 DEFNEW1D("Timing Hack Enable",DefaultTimingHackEnabled);
+DEFNEW2D("Timing Compensation A (IAT) Table 1", IntakeTempCompensationTable1);
+DEFNEW2D("Timing Compensation A (IAT) Table 2", IntakeTempCompensationTable2);
 DEFNEW3D("Base Timing Table 1 Intelligent",TimingTable1i);
 DEFNEW3D("Base Timing Table 2 Intelligent",TimingTable2i);
 DEFNEW3D("Base Timing Table 1 Sport",TimingTable1s);

@@ -597,7 +597,7 @@ const MetaReplace POLFHook METADATA =
 		address: hTablePolfKcaAlt,
 		oldval: tPolfKcaAlt,
 		newval: (int)&(pRamVariables.PolfOutput),
-		name: STR(POLF Table Hook)
+		name: STR(POLF Table Hook KcaAlt)
 	};
 #endif
 #ifdef hTablePolfKcaBLo
@@ -607,7 +607,7 @@ const MetaReplace POLFHook METADATA =
 		address: hTablePolfKcaBLo,
 		oldval: tPolfKcaBLo,
 		newval: (int)&(pRamVariables.PolfOutput),
-		name: STR(POLF Table Hook)
+		name: STR(POLF Table Hook KcaBLo)
 	};
 #endif
 #ifdef hTablePolfKcaBHi
@@ -617,7 +617,7 @@ const MetaReplace POLFHook METADATA =
 		address: hTablePolfKcaBHi,
 		oldval: tPolfKcaBHi,
 		newval: (int)&(pRamVariables.PolfOutput),
-		name: STR(POLF Table Hook)
+		name: STR(POLF Table Hook KcaBHi)
 	};
 #endif
 
@@ -686,6 +686,16 @@ const MetaReplace POLFHook METADATA =
 		name: STR(Startup Enrich 3 Pull2D Hook)
 	};
 
+	const MetaReplace StartupEnrich1HookPull METADATA = 
+	{
+		op: OpReplace4Bytes,
+		address: hPull3DStartupEnrich1,
+		oldval: sPull3DFloat,
+		newval: (int)Pull3DRamHookStartupEnrich1,
+		name: STR(Startup Enrich 1 Pull3D Hook)
+	};
+
+
 	const MetaReplace FrontO2ScalingHookPull METADATA = 
 	{
 		op: OpReplace4Bytes,
@@ -695,6 +705,15 @@ const MetaReplace POLFHook METADATA =
 		name: STR(Front O2 Scaling Pull2D Hook)
 	};
 	
+
+	const MetaReplace IntakeTempCompensationHookPull METADATA = 
+	{
+		op: OpReplace4Bytes,
+		address: hPull2DIntakeTempCompensation,
+		oldval: sPull2DFloat,
+		newval: (int)Pull2DRamHookIntakeTempCompensation,
+		name: STR(Intake Temp Timing Compensation A Hook)
+	};
 #endif
 
 //////////////////////

@@ -108,23 +108,11 @@ void SpeedDensityUnitTests()
 	result = CallSpeedDensityHook();
 	Assert(AreCloseEnough(result, 0), "Checking blend mode code, cell should be zero and return maf sensor value.");
 	//populate table
-	extern float VE_COLS1[];
-	extern float VE_ROWS1[];
+	extern float VE_COLS[];
+	extern float VE_ROWS[];
 	extern short VE_DATA1[];
 	
 	int i;
-	float* fpoint = pRamVariables.VERamCols;
-	for (i=0; i < 24; i++)
-	{
-	*fpoint = VE_COLS1[i];
-	fpoint += 0x1;
-	}
-	fpoint = pRamVariables.VERamRows;
-	for (i=0; i < 24; i++)
-	{
-	*fpoint = VE_ROWS1[i];
-	fpoint += 0x1;
-	}
 	short* spoint = pRamVariables.VERamData;
 	for (i=0; i < 576; i++)
 	{

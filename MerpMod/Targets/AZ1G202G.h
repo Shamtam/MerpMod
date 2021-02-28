@@ -29,6 +29,7 @@
 #define sShortToFloat (0x000BE56C)
 #define hPull2DTipInEnrich (0x33FC0)
 #define tTipInEnrich (0x88D24)
+#define tTipInEnrich2 (0x88D38)
 #define hPull2DCrankingFuel (0x2A98C)
 #define tCrankingFuelA (0x000882D4)
 #define tCrankingFuelB (0x000882E8)
@@ -36,6 +37,9 @@
 #define tCrankingFuelD (0x00088310)
 #define tCrankingFuelE (0x00088324)
 #define tCrankingFuelF (0x00088338)
+#define hPull3DStartupEnrich1 (0x2B804)
+#define tStartupEnrich1Cruise (0x88FB4)
+#define tStartupEnrich1NonCruise (0x88F98)
 #define hPull2DStartupEnrich2 (0x2B694)
 #define tStartupEnrich2_1A (0x883A8)
 #define tStartupEnrich2_1B (0x883E4)
@@ -48,6 +52,8 @@
 #define tStartupEnrich3_2B (0x88388)
 #define hPull2DFrontO2Scaling (0x4FF64)
 #define tFrontO2Scaling (0x8AB70)
+#define tIntakeTempCompensation (0x89564)
+#define hPull2DIntakeTempCompensation (0x38F4C)
 
 /////////////////////
 // Rev Limit Hack
