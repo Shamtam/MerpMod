@@ -1,8 +1,9 @@
-#define MOD_ECUID 12C06909E1
-#define MOD_DATE 14.10.17.18.59
-#include "Flash.h"
-#define MOD_CONFIG Flash
-#define MOD_BUILD Debug
+#define MOD_IDENTIFIER STRI(A8DH200Z.MeRpMoD.Switch.Testing.v01.40.d17.1.20.2243)
+#define MOD_ECUID 9859014023
+#define MOD_DATE 17.1.20.2243
+#include "Switch.h"
+#define MOD_CONFIG Switch
+#define MOD_BUILD Testing
 #define MOD_RELEASE 0
 #define ECU_CALIBRATION_ID A8DH200Z
 #define ECU_IDENTIFIER 4342594006
@@ -21,21 +22,35 @@
 // Switch Hacks
 /////////////////////
 
-#define tTipInEnrich (0x0007B948)
-#define tCrankingFuelA (0x0007B4EC)
-#define tCrankingFuelB (0x0007B500)
-#define tCrankingFuelC (0x0007B514)
-#define tCrankingFuelD (0x0007B528)
-#define tCrankingFuelE (0x0007B53C)
-#define tCrankingFuelF (0x0007B550)
-#define tStartupEnrich2_1A (0x0007B5B4)
-#define tStartupEnrich2_1B (0x0007B5DC)
-#define tStartupEnrich2_2A (0x0007B5C8)
-#define tStartupEnrich2_2B (0x0007B5F0)
-#define tStartupEnrich3_1A (0x0007B564)
-#define tStartupEnrich3_1B (0x0007B578)
-#define tStartupEnrich3_2A (0x0007B58C)
-#define tStartupEnrich3_2B (0x0007B5A0)
+#define pTGVLeftVoltage ((unsigned short*)0xFFFF5C0A)
+#define pTGVRightVoltage ((unsigned short*)0xFFFF5C0C)
+#define pRearO2Voltage ((float*)0xFFFF5CBC)
+#define sShortToFloat (0x2554)
+#define hPull2DTipInEnrich (0x2BDBC)
+#define tTipInEnrich (0x7B948)
+#define tTipInEnrich2 (0x7B948)
+#define hPull2DCrankingFuel (0x241BC)
+#define tCrankingFuelA (0x7B4EC)
+#define tCrankingFuelB (0x7B500)
+#define tCrankingFuelC (0x7B514)
+#define tCrankingFuelD (0x7B528)
+#define tCrankingFuelE (0x7B53C)
+#define tCrankingFuelF (0x7B550)
+#define hPull3DStartupEnrich1 (0x24D34)
+#define tStartupEnrich1Cruise (0x7BBAC)
+#define tStartupEnrich1NonCruise (0x7BB90)
+#define hPull2DStartupEnrich2 (0x24C08)
+#define tStartupEnrich2_1A (0x7B5B4)
+#define tStartupEnrich2_1B (0x7B5DC)
+#define tStartupEnrich2_2A (0x7B5C8)
+#define tStartupEnrich2_2B (0x7B5F0)
+#define hPull2DStartupEnrich3 (0x24A2C)
+#define tStartupEnrich3_1A (0x7B564)
+#define tStartupEnrich3_1B (0x7B578)
+#define tStartupEnrich3_2A (0x7B58C)
+#define tStartupEnrich3_2B (0x7B5A0)
+#define hPull2DFrontO2Scaling (0xBDB8)
+#define tFrontO2Scaling (0x7CD58)
 
 /////////////////////
 // Rev Limit Hack
@@ -59,6 +74,7 @@
 /////////////////////
 
 #define dInjectorScaling ((float*)0x000C5EBC)
+#define hInjectorScaling (0x24808)
 
 /////////////////////
 // Cel Hacks
@@ -72,32 +88,48 @@
 // Boost Hacks
 /////////////////////
 
+#define hPullTargetBoost (0x16E38)
+#define hTableTargetBoost (0x16E4C)
 #define tTargetBoost (0x0007A768)
 
 /////////////////////
 // WGDC Hacks
 /////////////////////
 
-#define hWgdc (0x000141E0)
-#define sWgdc (0x00016948)
-#define tWgdcInitial (0x0007A6C0)
-#define tWgdcMax (0x0007A6F8)
+#define hPullWgdc (0x17260)
+#define hWgdc (0x141E0)
+#define sWgdc (0x16948)
+#define hTableWgdcInitial (0x17268)
+#define tWgdcInitial (0x7A6C0)
+#define hTableWgdcMax (0x172A4)
+#define tWgdcMax (0x7A6F8)
 
 /////////////////////
 // Primary Open Loop Fueling Hacks
 /////////////////////
 
 #define pPolf4Byte (0xFFFF6E74)
-#define tPolf (0x0007BC00)
+#define hPull3DPolf (0x29740)
+#define tPolf (0x7BC00)
+#define hPolf (0x145C8)
+#define sPolf (0x2950C)
 #define pPolfEnrich (0xFFFF6E74)
 
 /////////////////////
 // Timing Hacks
 /////////////////////
 
-#define tBaseTiming (0x0007C3B0)
+#define hBaseTiming (0x14684)
+#define hTableBaseTiming (0x2FF80)
+#define tBaseTiming (0x7C3B0)
 #define pBaseTiming (0xFFFF71A0)
+#define sBaseTiming (0x2FE12)
+#define hPull3DTiming (0x2FF7C)
 #define pKcaIam (0xFFFF7320)
+#define hFBKCRetardValue (0x32448)
+#define dFBKCRetardValue ((float*)0xC927C)
+#define hFBKCRetardValueAlternate (0x32428)
+#define dFBKCRetardValueAlternate ((float*)0xC9280)
 
 /////////////////////
 // Spark Cut
@@ -124,6 +156,9 @@
 #define pCoolantTemp ((float*)0xFFFF5CAC)
 #define pAtmoPress ((float*)0xFFFF5CD4)
 #define pManifoldAbsolutePressure ((float*)0xFFFF6464)
+#define pManifoldRelativePressure ((float*)0xFFFF6468)
+#define pInjectorPulseWidth ((float*)0xFFFF7064)
+#define pInjectorLatency ((float*)0xFFFF7078)
 #define pIntakeAirTemp ((float*)0xFFFF5C9C)
 #define pMassAirFlow ((float*)0xFFFF5CD0)
 #define pMafSensorVoltage ((short*)0xFFFF5BFE)

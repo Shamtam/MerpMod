@@ -3,7 +3,7 @@
 //		OPTIONS
 //////////////////////////////
 
-#define AUTO_TRANS 1
+#define AUTO_TRANS 0
 #define SD_DMAP		0
 					
 #define ECU_IDENTIFIER_CHARS (10)

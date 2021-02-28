@@ -1,9 +1,5 @@
 SECTIONS
 {
-	REVLIM_START 0x000321F4 : AT (0x000321F4)
-	{
-		*(RevLimit)
-	}
 	ROMHOLE_START 0x000E2000 : AT (0x000E2000)
 	{
 		*(RomHole_Identifier)
@@ -15,8 +11,6 @@ SECTIONS
 		*(RomHole_BoostHackTables)
 		*(RomHole_TimingHackTables)
 		*(RomHole_MapSwitchTables)
-		*(RomHole_ProgModeTables)
-		*(RomHole_PortLoggerTables)
 		*(RomHole_Vin)
 		*(RomHole_Code)
 		*(RomHole_Functions)

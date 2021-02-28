@@ -27,7 +27,7 @@
     </category>
 
     <category name="Switch Hacks">
-        <define name="pSiDrive">
+        <define name="pSiDrive" type="unsigned char*">
             <ida name="pSiDriveMode"/>
         </define>
         <define name="pTGVLeftVoltage" type="unsigned short*">
@@ -36,6 +36,11 @@
         <define name="pTGVRightVoltage" type="unsigned short*">
             <ida name="E_SSM_Tumble_Valve_Pos_R"/>
         </define>
+		
+	    <define name="pRearO2Voltage" type="float*">
+            <ida name="E_Rear_O2_Voltage"/>
+        </define>
+		
         <define name="sShortToFloat">
             <ida name="SBR_SHORT_TO_FLOAT"/>
         </define>
@@ -46,7 +51,10 @@
         <define name="tTipInEnrich">
             <ida name="Table_Throttle_Tipin_Enrichment" />
         </define>
-		
+		<define name="tTipInEnrich2">
+            <ida name="Table_Throttle_Tipin_Enrichment2" />
+        </define>
+			
 		<define name="hPull2DCrankingFuel">
             <ida name="HOOKPULL_CRANKING_FUEL"/>
         </define>
@@ -68,7 +76,15 @@
 		<define name="tCrankingFuelF">
             <ida name="Table_Cranking_Fuel_Injector_Pulse_Width_F_ECT" />
         </define>
-		
+		<define name="hPull3DStartupEnrich1">
+            <ida name="HOOKPULL_STARTUP_ENRICH_1" />
+        </define>
+		<define name="tStartupEnrich1Cruise">
+            <ida name="Table_Min_Primary_Base_Enrich_Cruise" />
+        </define>
+		<define name="tStartupEnrich1NonCruise">
+            <ida name="Table_Min_Primary_Base_Enrich_NonCruise" />
+        </define>
 		<define name="hPull2DStartupEnrich2">
             <ida name="HOOKPULL_STARTUP_ENRICH_2"/>
         </define>
@@ -100,6 +116,25 @@
 		<define name="tStartupEnrich3_2B">
             <ida name="Table_Min_Primary_Base_Enrich_3_Initial_Start_2B" />
         </define>
+		
+		<define name="hPull2DFrontO2Scaling">
+            <ida name="HOOKPULL_FRONTO2SCALING"/>
+        </define>		
+		
+		<define name="tFrontO2Scaling">
+            <ida name="Table_Front_Oxygen_Sensor_Scaling" />
+        </define>
+
+			<define name="tIntakeTempCompensation">
+            <ida name="Table_Timing_Compensation_A_IAT" />
+        </define>
+		
+		<define name="hPull2DIntakeTempCompensation">
+            <ida name="HOOKPULL_INTAKETEMPCOMPENSATION"/>
+        </define>	
+		
+		
+		
 		
     </category>
 
@@ -369,13 +404,51 @@
         <define name="pKcaIam">
             <ida name="E_KNOCK_CORRECTION_ADVANCE_IAM_ONLYEXT_E40" />
         </define>
+        <define name="hFBKCRetardValue">
+            <ida name="HOOKTABLE_Feedback_Knock_Correction_Retard_Value" />
+        </define>
+		<define name="dFBKCRetardValue" type="float*">
+            <ida name="Feedback_Knock_Correction_Retard_Value" />
+        </define>
+        <define name="hFBKCRetardValueAlternate">
+            <ida name="HOOKTABLE_Feedback_Knock_Correction_Retard_Value_Alternate" />
+        </define>
+		<define name="dFBKCRetardValueAlternate" type="float*">
+            <ida name="Feedback_Knock_Correction_Retard_Value_Alternate" />
+        </define>		
+	
     </category>
 
-	<category name="Requested Torque Hacks">
-		<define name="hPull3DReqTorque">
-			<ida name="HOOKPULL_REQ_TORQUE" />
-		</define>
-	</category>
+	<category name="AVCS Hacks">
+        <define name="tIntakeAVCSCruise">
+            <ida name="INTAKE_AVCS_CRUISE" />
+        </define>
+        <define name="tIntakeAVCSNonCruise">
+            <ida name="INTAKE_AVCS_NON_CRUISE" />
+        </define>
+        <define name="tExhaustAVCSCruise">
+            <ida name="EXHAUST_AVCS_CRUISE" />
+        </define>
+        <define name="tExhaustAVCSNonCruise">
+            <ida name="EXHAUST_AVCS_NON_CRUISE" />
+        </define>
+        <define name="hPull3DIntakeAVCS">
+            <ida name="HOOKTABLE_IntakeAVCS" />
+        </define>
+        <define name="hPull3DExhaustAVCS">
+            <ida name="HOOKTABLE_Exhaust_AVCS" />
+        </define>		
+        <define name="tIntakeAVCSNonCruiseCols">
+            <ida name="INTAKE_AVCS_COLUMNS_NONCRUISE" />
+        </define>		
+		<define name="tIntakeAVCSNonCruiseRows">
+            <ida name="INTAKE_AVCS_ROWS_NONCRUISE" />
+        </define>			
+		<define name="tIntakeAVCSNonCruiseData">
+            <ida name="INTAKE_AVCS_DATA_NONCRUISE" />
+        </define>			
+
+    </category>
 	
     <category name="Spark Cut">
         <define name="sSparkCutOcrStart">
@@ -462,15 +535,22 @@
         </define>
         <define name="pCoolantTemp" type="float*">
             <ida name="E_COOLANT_TEMP" />
-			<ida name="E_COOLANT_TEMP_DIRECT" priority="2" />
         </define>
         <define name="pAtmoPress" type="float*">
             <ida name="E_ATMOSPHERIC_PRESSURE" />
         </define>
         <define name="pManifoldAbsolutePressure" type="float*">
-            <ida name="E_MANIFOLD_RELATIVE_SEA_LEVEL_PRESSURE_4BYTEEXT_E52" />
-            <ida name="E_BOOST_PRESSURE_ACTUAL" priority="2" />
+            <ida name="E_BOOST_PRESSURE_ACTUAL"  />
         </define>
+		<define name="pManifoldRelativePressure" type="float*">
+            <ida name="E_MANIFOLD_RELATIVE_SEA_LEVEL_PRESSURE_4BYTEEXT_E113" />
+        </define>
+		<define name="pInjectorPulseWidth" type="float*">
+            <ida name="E_FUEL_INJECTOR_1_PULSE_WIDTH_4BYTEEXT_E60" />
+        </define>
+		<define name="pInjectorLatency" type="float*">
+			<ida name="E_FUEL_INJECTOR_1_LATENCY_4BYTEEXT_E50" />	
+		</define>
         <define name="pIntakeAirTemp" type="float*">
             <ida name="E_IAT_DIRECT" />
         </define>

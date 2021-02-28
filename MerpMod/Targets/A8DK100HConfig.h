@@ -3,7 +3,7 @@
 //		OPTIONS
 //////////////////////////////
 
-#define AUTO_TRANS 1
+#define AUTO_TRANS 0
 #define SD_DMAP		0
 					
 #define ECU_IDENTIFIER_CHARS (10)
@@ -11,5 +11,5 @@
 #define MOD_CALIBRATION_ID	FFFFFFFF
 #define MOD_ECU_IDENTIFIER FFFFFFFFFF
 
-#define EXPECTED_MAF_SENSOR 3.69385f
+#define EXPECTED_MAF_SENSOR 3.301016f
 #define EXPECTED_MAF_SD 3.73053f

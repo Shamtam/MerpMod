@@ -1,8 +1,9 @@
-#define MOD_ECUID 05A90A8956
-#define MOD_DATE 27.06.18.20.39
+#define MOD_IDENTIFIER STRI(A8DH202X.MeRpMoD.Switch.Testing.v00.60.d14.12.9.2112)
+#define MOD_ECUID 5AED006023
+#define MOD_DATE 14.12.9.2112
 #include "Switch.h"
 #define MOD_CONFIG Switch
-#define MOD_BUILD Debug
+#define MOD_BUILD Testing
 #define MOD_RELEASE 0
 #define ECU_CALIBRATION_ID A8DH202X
 #define ECU_IDENTIFIER 4312584206
@@ -123,12 +124,6 @@
 #define hPull3DTiming (0x00037DDC)
 #define hSubKca (0x00037654)
 #define pKcaIam (0xFFFF7840)
-
-/////////////////////
-// Requested Torque Hacks
-/////////////////////
-
-#define hPull3DReqTorque (0x000BEA7C)
 
 /////////////////////
 // Spark Cut

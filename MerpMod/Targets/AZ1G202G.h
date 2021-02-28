@@ -1,8 +1,9 @@
-#define MOD_ECUID CD76E28458
-#define MOD_DATE 26.02.21.23.42
+#define MOD_IDENTIFIER STRI(AZ1G202G.MeRpMoD.Switch.Debug.v01.60.d19.7.14.1214)
+#define MOD_ECUID 9964016013
+#define MOD_DATE 19.7.14.1214
 #include "Switch.h"
 #define MOD_CONFIG Switch
-#define MOD_BUILD Testing
+#define MOD_BUILD Debug
 #define MOD_RELEASE 0
 #define ECU_CALIBRATION_ID AZ1G202G
 #define ECU_IDENTIFIER 5A42784207
@@ -22,7 +23,7 @@
 // Switch Hacks
 /////////////////////
 
-#define pSiDrive (0xFFFF611E)
+#define pSiDrive ((unsigned char*)0xFFFF611E)
 #define pTGVLeftVoltage ((unsigned short*)0xFFFF404A)
 #define pTGVRightVoltage ((unsigned short*)0xFFFF403E)
 #define pRearO2Voltage ((float*)0xFFFF43F8)
@@ -144,12 +145,6 @@
 #define dFBKCRetardValue ((float*)0xCE0E0)
 #define hFBKCRetardValueAlternate (0x3C900)
 #define dFBKCRetardValueAlternate ((float*)0xCE0F0)
-
-/////////////////////
-// Requested Torque Hacks
-/////////////////////
-
-#define hPull3DReqTorque (0x00016E28)
 
 /////////////////////
 // AVCS Hacks
