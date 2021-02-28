@@ -34,6 +34,7 @@ void TimingHackUnitTests()
 	pRamVariables.MapSwitchingInputMode = MapSwitchingInputModeSiDrive;
 	pRamVariables.TGVLeftVolts = 1;
 	InputUpdate();
+	pRamVariables.TimingHackEnabled = HackEnabled;
 	pRamVariables.TimingHackInitFlag = 0x00;
 	pRamVariables.MapBlendRatio = 0.5;				//default is 0
 	pRamVariables.LCTimingLock = 10;		//default is 20
@@ -46,7 +47,7 @@ void TimingHackUnitTests()
 	Assert(pRamVariables.LCTimingLock == DefaultLCTimingLock, "check timing lock default value");
 	Assert(pRamVariables.MapBlendRatio == DefaultBlend, "Check default blending value");
 	Assert(pRamVariables.TimingHackInitFlag == 0x01, "Check Timing init flag is set");
-	Assert(pRamVariables.TimingOutput == -12.96875, "check timing map 1 is used");
+	Assert(AreCloseEnough(pRamVariables.TimingOutput, -12.96875), "check timing map 1 is used");
 	
 	pRamVariables.MapBlendRatio = 1;
 	TimingHack();
@@ -75,6 +76,8 @@ void PolfHackUnitTests()
 	*pEngineSpeed = 3000;
 	*pEngineLoad = 1.0;
 	*pThrottlePlate = 0;
+
+	pRamVariables.PolfHackEnabled = HackEnabled;
 
 	POLFHack();
 	Assert(pRamVariables.MapBlendRatio == DefaultBlend, "Check for init Blend");
@@ -120,7 +123,9 @@ void PolfHackUnitTests()
 	
 	pRamVariables.LCFuelMode = LCFuelModeLocked; //Lock the fueling target
 	*pEngineSpeed  = (pRamVariables.LaunchControlCut - pRamVariables.LaunchControlHyst - 25);
+	#if !AUTO_TRANS
 	SetClutch(1);
+	#endif
 	*pVehicleSpeed = 0.0f;
 	*pThrottlePlate = LCMinimumThrottle + 1;
 	RevLimCode();	//init the rev limiter stuff
@@ -129,7 +134,9 @@ void PolfHackUnitTests()
 	Assert(AreCloseEnough(pRamVariables.PolfOutput, locked), "Check Locked Value");
 	
 	*pEngineSpeed = 7000;
+	#if !AUTO_TRANS
 	SetClutch(0);
+	#endif
 	RevLimCode();	
 	pRamVariables.LCFuelMode = LCFuelModeCompensated; //Set to compensation
 	pRamVariables.MapBlendRatio = 0;

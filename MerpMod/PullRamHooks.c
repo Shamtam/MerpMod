@@ -72,7 +72,7 @@ float Pull2DRamHookTipInEnrich(float* table, float xLookup)
 
 	if((table == tTipInEnrich
 		|| table == tTipInEnrich2)  && (pRamVariables.PolfHackEnabled == HackEnabled))//This hook is used by other tables!!
-		return Pull2DHooked((TwoDTable*)table, xLookup) 
+		return Pull2DHooked((TwoDTable*)table, xLookup)
 		* Pull3DHooked((ThreeDTable*)&TipInEnrichMultiplier, pRamVariables.MapBlendRatio, xLookup);
 	return Pull2DHooked((TwoDTable*)table, xLookup);
 }

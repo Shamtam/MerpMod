@@ -31,6 +31,8 @@ void LCAdjustCruiseToggled(unsigned char state)
 			pRamVariables.LaunchControlCut += LCAdjustStep;
 		else if (state == ToggleCoast && (pRamVariables.LaunchControlCut > 2000))
 			pRamVariables.LaunchControlCut -= LCAdjustStep;
+		pRamVariables.RevLimCut = pRamVariables.LaunchControlCut;
+		pRamVariables.RevLimResume = pRamVariables.LaunchControlCut - HighPass(pRamVariables.LaunchControlHyst,0.0f);	
 	}
 }
 #endif

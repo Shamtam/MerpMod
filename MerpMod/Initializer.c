@@ -117,7 +117,9 @@ pRamVariables.CruiseCoastLast = TestCruiseCoastSwitch();
 	pRamVariables.FlatFootShiftSpeedThreshold = DefaultFlatFootShiftSpeedThreshold;
 	pRamVariables.FlatFootShiftRpmThreshold = DefaultFlatFootShiftRpmThreshold;
 	pRamVariables.ClutchSwitchLast = *pClutchFlags & ClutchBitMask;
+#if !AUTO_TRANS
 	RevLimReset();
+#endif	
 #endif 
 
 #if VIN_HACKS

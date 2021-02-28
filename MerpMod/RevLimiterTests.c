@@ -80,7 +80,9 @@ void RevLimUnitTest(unsigned char flag, int brake, int clutch, float throttle, f
 	SetBrake(brake);
 #endif
 
+#if !AUTO_TRANS
 	SetClutch(clutch);
+#endif	
 	*pThrottlePlate = throttle;
 	*pEngineSpeed = rpm;
 	*pVehicleSpeed = mph;
@@ -213,9 +215,13 @@ void RevLimUnitTests()
 	*pThrottlePlate = 20;
 	*pVehicleSpeed = 50.0f;
 	*pEngineSpeed = pRamVariables.LaunchControlCut - 100;
+#if !AUTO_TRANS
 	SetClutch(0);
+#endif
 	RevLimCode(); //This sets the current gear
+#if !AUTO_TRANS	
 	SetClutch(1);
+#endif
 	RevLimCode();
 	//Should NOT cut due to throttle.
 	Assert(!GetFuelCutFlag() && !pRamVariables.LCEngaged, "Flat Foot Shifting: Resume fuel at FlatFootShiftResume - 1 RPM, moving, clutch pressed");
@@ -224,9 +230,11 @@ void RevLimUnitTests()
 	//Should engage FFS and cut
 	*pEngineSpeed = pRamVariables.FlatFootShiftRpmThreshold + 500;
 	*pThrottlePlate = FFSMinimumThrottle + 1;
+#if !AUTO_TRANS	
 	SetClutch(0);
 	RevLimCode(); //This sets the clutch depressed test
 	SetClutch(1);
+#endif	
 	RevLimCode(); //Sets FFSEngaged = 1 and sets the FFSRPM
 	Assert(pRamVariables.FFSEngaged == 1,"FFS Intermediate step");
 	RevLimCode(); //Sets FFSEngaged = 2
@@ -246,7 +254,9 @@ void RevLimUnitTests()
 	//Set throttle below  FFS threshold, should resume
 	*pThrottlePlate = FFSMinimumThrottle - 1;
 	*pVehicleSpeed = 19.0f;
+#if !AUTO_TRANS	
 	SetClutch(1);
+#endif	
 	RevLimCode();
 	RevLimCode();
 	Assert(!GetFuelCutFlag(), "Flat Foot Shifting: Resume fuel at FlatFootShiftResume - 1 RPM, moving, clutch pressed");
@@ -257,7 +267,9 @@ void RevLimUnitTests()
 	
 	*pEngineSpeed = 6000.0f;
 	*pVehicleSpeed = 0.0f;
+#if	!AUTO_TRANS
 	SetClutch(1);
+#endif	
 	#ifdef pBrakeFlags
 	SetBrake(0);
 	#endif
@@ -269,7 +281,9 @@ void RevLimUnitTests()
 	// Verify the other bits in the rev limiter flag are not modified.
 	*pEngineSpeed = 1000.0f;
 	*pVehicleSpeed = 0.0f;
+#if !AUTO_TRANS	
 	SetClutch(0);
+#endif	
 	*pFlagsRevLim = 0xFF;
 	RevLimCode();
 	flags = ~*pFlagsRevLim;
