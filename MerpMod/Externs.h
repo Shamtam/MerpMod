@@ -235,6 +235,9 @@ extern unsigned char FBKCHiFailSafeValetModeEnable;
 extern unsigned char LeanBoostFailSafeValetModeEnable;
 extern unsigned char FuelPressureDeltaFailSafeValetModeEnable;
 extern unsigned char InjectorDutyCycleFailSafeValetModeEnable;
+
+extern unsigned char UseInjectorLatency;
+
 extern float RPMLockWGDC;
 extern float ThrottleLockWGDC;
 

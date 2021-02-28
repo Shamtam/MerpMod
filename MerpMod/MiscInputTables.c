@@ -29,6 +29,8 @@ unsigned short FuelPressureDeltaDelay SWITCHDATA = 25;
 float FuelPressureDeltaThreshold SWITCHDATA = 700;
 float FuelPressureTriggerMinRPM SWITCHDATA = 3000.0f;
 
+unsigned char UseInjectorLatency SWITCHDATA = 0x01;
+
 float WIDEBAND_SCALING_ROWS[11] SWITCHDATA =
 {0,0.5,1,1.5,2,2.5,3,3.5,4,4.5,5};
 

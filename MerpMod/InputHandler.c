@@ -27,6 +27,9 @@ void InputUpdate()//TODO: put on SD branch
 	pRamVariables.RearO2Volts = *pRearO2Voltage;
 	pRamVariables.MAFSensorVolts = ShortToFloatHooked(*pMafSensorVoltage,grad1,offs);
 
+	//hopefully a more accurate injector duty cycle calculation that can be logged. 
+	pRamVariables.InjectorDutyCycle = (((*pInjectorPulseWidth + *pInjectorLatency * (UseInjectorLatency & 0x01))/1000) * *pEngineSpeed)/1200;
+
 ///***************
 /// MAP Blending
 ///***************

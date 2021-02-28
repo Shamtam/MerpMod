@@ -425,6 +425,7 @@ DEFNEW1D("Failsafe Valet Mode Trigger - Severe Knock",FBKCHiFailSafeValetModeEna
 DEFNEW1D("Failsafe Valet Mode Trigger - Lean Boost",LeanBoostFailSafeValetModeEnable);
 DEFNEW1D("Failsafe Valet Mode Trigger - Fuel Pressure Delta",FuelPressureDeltaFailSafeValetModeEnable); 
 DEFNEW1D("Failsafe Valet Mode Trigger - Injector Duty Cycle",InjectorDutyCycleFailSafeValetModeEnable);
+DEFNEW1D("Injector Pulse Width Calculation",UseInjectorLatency);
 #else
 DEFNEW3D("Primary Open Loop Fueling Table 1",FuelTable1i);	
 DEFNEW3D("Primary Open Loop Fueling Table 2",FuelTable2i);	

@@ -180,6 +180,8 @@
 #define pAtmoPress ((float*)0xFFFF6A70)
 #define pManifoldAbsolutePressure ((float*)0xFFFF63FC)
 #define pManifoldRelativePressure ((float*)0xFFFF6400)
+#define pInjectorPulseWidth ((float*)0xFFFF783C)
+#define pInjectorLatency ((float*)0xFFFF6F44)
 #define pIntakeAirTemp ((float*)0xFFFF4124)
 #define pMassAirFlow ((float*)0xFFFF40B4)
 #define pMafSensorVoltage ((short*)0xFFFF4046)
