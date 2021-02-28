@@ -112,15 +112,10 @@ void UpdateFailSafes() ROMCODE;
 //Dynamic RAM Tuning
 //////////////////////////
 #if DYN_RAMTUNING
-
-#define _MAX_RAM_TABLES_ 10 //arbitrary number for now...
-#define DefaultRAMTableRomAddr 0xFFFFFFFF
-#define DefaultRAMTableRamAddr 0x00000000
+extern void Pull3DFloatDynRamHook(ThreeDTable* table);
 extern void Pull2DFloatDynRamHook(TwoDTable* table);
-extern unsigned long RAMTableHeaders_ROMStart;
-extern unsigned long RAMTableHeaders_RAMStart;
-extern unsigned short MaxRAMTableHeaders;
-
+extern unsigned long *pMaxRAMTables;
+extern unsigned long **ppDynRAMTableHeaders;
 #endif
 
 //////////////////////////
@@ -134,8 +129,8 @@ extern void (*RevLimDeleteHooked) ();
 #define MafVoltageToInternalUnits 13107.20005368709
 
 // Test utility functions.
-void TestFailed(unsigned char *message) __attribute__ ((section ("Misc")));
-void Assert(int condition, unsigned char *message) __attribute__ ((section ("Misc")));
+void TestFailed(char *message) __attribute__ ((section ("Misc")));
+void Assert(int condition, char *message) __attribute__ ((section ("Misc")));
 int AreCloseEnough(float actual, float expected) __attribute__ ((section ("Misc")));
 
 

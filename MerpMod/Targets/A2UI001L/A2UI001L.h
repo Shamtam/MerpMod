@@ -1,11 +1,52 @@
-#define MOD_ECUID 1B25509333
-#define MOD_DATE 28.02.21.14.51
-#include "Switch.h"
-#define MOD_CONFIG Switch
+//stock ROM image info
+#define ECU_IDENTIFIER 4B12785207
+#define ECU_CALID_BASE A2UI
+#define ECU_CALID_REV 001L
+#define ECU_CALIBRATION_ID CONCAT(ECU_CALID_BASE, ECU_CALID_REV)
+#define ECU_IDENTIFIER_CHARS (10)
+#define ECU_CALIBRATION_CHARS (8)
+#define AUTO_TRANS 0
+#define SD_DMAP 0
+
+//mod info
 #define MOD_BUILD Debug
 #define MOD_RELEASE 0
-#define ECU_CALIBRATION_ID A2UI001L
-#define ECU_IDENTIFIER 4B12785207
+#define MOD_VERSION AM16
+
+#define MOD_YEAR 21
+#define MOD_MONTH 01
+#define MOD_DAY 31
+#define MOD_DATE CONCAT_THREE(MOD_YEAR, MOD_MONTH, MOD_DAY)
+#define MOD_CALIBRATION_ID CONCAT(ECU_CALID_BASE, MOD_VERSION)
+#define MOD_ALT_ID CONCAT_THREE(MOD_CALIBRATION_ID, MOD_BUILD, MOD_DATE)
+#define MOD_ALT_ID_CHARS (21)
+
+// HACK CONFIGURATION
+#define MEMORY_HACKS 1
+#define VIN_HACKS 0
+#define VIN_TEST_LOG 0
+#define SWITCH_HACKS 1
+#define SD_HACKS 1
+#define REVLIM_HACKS 1
+#define LC_ADJ_HACKS 1
+#define PROG_MODE 1
+#define SPARK_HACKS 0
+#define CEL_HACKS 1
+#define BOOST_HACKS 1
+#define TIMING_HACKS 1
+#define POLF_HACKS 1
+#define PGWG_HACKS 1
+#define INJECTOR_HACKS 1
+#define E85_HACKS 0
+#define AVCS_HACKS 0
+#define RAM_PERSIST 0
+#define DYN_RAMTUNING 1
+#define RAM_HOLE_SCANNER 0
+#define RAMTUNE_AUTOCOPY 0
+
+#define EXPECTED_MAF_SENSOR 3.388727f
+#define EXPECTED_MAF_SD 3.73053f
+
 /////////////////////
 // NonSpecific Rom Info and Routines
 /////////////////////
@@ -237,4 +278,5 @@
 
 #define hPull2DFloatRamInjectStart (0x000020B4)
 #define hPull2DFloatRamInjectEnd (0x000020DC)
-
+#define hPull3DFloatRamInjectStart (0x00002168)
+#define hPull3DFloatRamInjectEnd (0x0000218C)

@@ -89,7 +89,7 @@ unsigned char pad2[8];
 //MODID
 long modidop;
 long modidoffset;
-unsigned char modid[100];
+unsigned char modid[MOD_ALT_ID_CHARS];
 unsigned char padmod[8];
 //ECUID
 long ecuidop;
@@ -130,10 +130,10 @@ pad2:  OpDelim,
 //Alternate Identifier (in ROM HOLE, uniquely identifies this rom!)
 modidop:	OpModId,
 modidoffset: (int)&(ModIdentifier),
-modid:		MOD_IDENTIFIER,
+modid:		STRI(MOD_ALT_ID),
 padmod:		OpDelim,
 
-//ECU ID
+//ECU ID -- using original ECUID, this shouldn't be modified
 ecuidop:	OpECUID,
 ecuidoffset: dEcuId,
 ecuidbytes: ECU_IDENTIFIER_CHARS,
@@ -141,9 +141,9 @@ ecuid:		STRI(ECU_IDENTIFIER),
 pad3:   OpDelim,
 newecuidop:	OpNewECUID,
 #ifdef MOD_ECUID
-newecuid:	STRI(MOD_ECUID),
+newecuid:	STRI(ECU_IDENTIFIER),
 #else
-newecuid:	STRI(MOD_ECU_IDENTIFIER),
+newecuid:	STRI(ECU_IDENTIFIER),
 #endif
 pad4:   OpDelim,
 
@@ -189,7 +189,14 @@ modinfo	:	ModInfo OpDelim
 		op: OpPatch,
 		startaddress: hPull2DFloatRamInjectStart,
 		endaddress: hPull2DFloatRamInjectEnd - 1,
-		name: STRI(Pull2DFloat Dynamic Ramtuning)
+		name: STRI(Pull2DFloat Dynamic RAM Tuning - Pull2D)
+	};
+	const MetaPatch Pull3DFloatRamInjectStart METADATA =
+	{
+		op: OpPatch,
+		startaddress: hPull3DFloatRamInjectStart,
+		endaddress: hPull3DFloatRamInjectEnd + 3,
+		name: STRI(Pull3DFloat Dynamic RAM Tuning - Pull3D)
 	};
 #endif
 
@@ -773,5 +780,4 @@ const MetaPatch RomHoleCodePatch METADATA =
 };
 
 const long endoffile[2] METADATA = {0x00090009,0x00090009};
-
 

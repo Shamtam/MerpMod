@@ -14,14 +14,14 @@
 
 #include "EcuHacks.h"
 
-void TestFailed(unsigned char *message) __attribute__ ((section ("Misc")));
-void TestFailed(unsigned char *message)
+void TestFailed(char *message) __attribute__ ((section ("Misc")));
+void TestFailed(char *message)
 {
 	// This just provides a place to set a breakpoint.
 	asm("nop");
 }
 
-void Assert(int condition, unsigned char *message)
+void Assert(int condition, char *message)
 {
 
 	if (condition == 0)
@@ -50,18 +50,12 @@ void ClearRam()
 }
 // It's hard to express a floating point number with enough precision to use
 // the == operator.  Or impossible: http://en.wikipedia.org/wiki/Machine_epsilon
-// So we'll just test wither the actual an expected values are within +/- 0.001.
+// Should be sufficient to ensure difference of squares is less than some tolerance
+// this will also work for negative numbers
+// assumes any floats used anywhere in the ECU or the code are well within
+// the limits where their squares will not cause multiplication overflow
 int AreCloseEnough(float actual, float expected)
 {
-	if ((actual * 1.001) < expected) 
-	{
-		return 0;
-	}
-	
-	if ((actual * 0.999) > expected)
-	{
-		return 0;
-	}	
-	
-	return 1;
+    float difference = (actual*actual - expected*expected);
+    return difference < 1e-3; //tolerance
 }
