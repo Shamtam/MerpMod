@@ -155,6 +155,7 @@
 "C:\Dev\MerpMod\MerpMod\EcuHacks.h" "User" "C header file" 2 
 "C:\Dev\MerpMod\MerpMod\Enums.h" "User" "C header file" 2 
 "C:\Dev\MerpMod\MerpMod\Externs.h" "User" "C header file" 2 
+"C:\Dev\MerpMod\MerpMod\FailSafes.c" "User" "C source file" 2 
 "C:\Dev\MerpMod\MerpMod\Flash.h" "User" "C header file|Build Configurations" 2 
 "C:\Dev\MerpMod\MerpMod\FuelHackTables.c" "User" "C source file|Data & Tables" 2 
 "C:\Dev\MerpMod\MerpMod\FuelHacks.c" "User" "C source file" 2 
@@ -480,6 +481,7 @@
 "C:\Dev\MerpMod\MerpMod\Debug.c" "0c9afd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\Definition.c" "0c9afd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\EcuHacks.c" "0c9afd23307eec10" 2 
+"C:\Dev\MerpMod\MerpMod\FailSafes.c" "017c4bddc3d07d10" 2 
 "C:\Dev\MerpMod\MerpMod\FuelHackTables.c" "0c9afd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\FuelHacks.c" "0c9afd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\FuelPressure.c" "085fbcc053d07d10" 2 
@@ -557,6 +559,7 @@
 "C:\Dev\MerpMod\MerpMod\Debug.c" "0e51bd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\Definition.c" "0e51bd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\EcuHacks.c" "0e51bd23307eec10" 2 
+"C:\Dev\MerpMod\MerpMod\FailSafes.c" "017c4bddc3d07d10" 2 
 "C:\Dev\MerpMod\MerpMod\FuelHackTables.c" "0e51bd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\FuelHacks.c" "0e51bd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\FuelPressure.c" "085fbcc053d07d10" 2 
@@ -633,6 +636,7 @@
 "C:\Dev\MerpMod\MerpMod\Debug.c" "04f89d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\Definition.c" "04f89d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\EcuHacks.c" "04f89d23307eec10" 2 
+"C:\Dev\MerpMod\MerpMod\FailSafes.c" "017c4bddc3d07d10" 2 
 "C:\Dev\MerpMod\MerpMod\FuelHackTables.c" "04f89d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\FuelHacks.c" "04f89d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\FuelPressure.c" "085fbcc053d07d10" 2 
@@ -708,6 +712,7 @@
 "C:\Dev\MerpMod\MerpMod\Debug.c" "08c9cd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\Definition.c" "08c9cd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\EcuHacks.c" "08c9cd23307eec10" 2 
+"C:\Dev\MerpMod\MerpMod\FailSafes.c" "017c4bddc3d07d10" 2 
 "C:\Dev\MerpMod\MerpMod\FuelHackTables.c" "08c9cd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\FuelHacks.c" "08c9cd23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\FuelPressure.c" "085fbcc053d07d10" 2 
@@ -784,6 +789,7 @@
 "C:\Dev\MerpMod\MerpMod\Debug.c" "06031e23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\Definition.c" "06031e23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\EcuHacks.c" "06031e23307eec10" 2 
+"C:\Dev\MerpMod\MerpMod\FailSafes.c" "017c4bddc3d07d10" 2 
 "C:\Dev\MerpMod\MerpMod\FuelHackTables.c" "06031e23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\FuelHacks.c" "06031e23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\FuelPressure.c" "085fbcc053d07d10" 2 
@@ -860,6 +866,7 @@
 "C:\Dev\MerpMod\MerpMod\Debug.c" "06bf4d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\Definition.c" "06bf4d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\EcuHacks.c" "06bf4d23307eec10" 2 
+"C:\Dev\MerpMod\MerpMod\FailSafes.c" "017c4bddc3d07d10" 2 
 "C:\Dev\MerpMod\MerpMod\FuelHackTables.c" "06bf4d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\FuelHacks.c" "06bf4d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\FuelPressure.c" "085fbcc053d07d10" 2 
@@ -936,6 +943,7 @@
 "C:\Dev\MerpMod\MerpMod\Debug.c" "00286d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\Definition.c" "00286d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\EcuHacks.c" "00286d23307eec10" 2 
+"C:\Dev\MerpMod\MerpMod\FailSafes.c" "017c4bddc3d07d10" 2 
 "C:\Dev\MerpMod\MerpMod\FuelHackTables.c" "00286d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\FuelHacks.c" "00286d23307eec10" 2 
 "C:\Dev\MerpMod\MerpMod\FuelPressure.c" "085fbcc053d07d10" 2 

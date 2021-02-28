@@ -19,6 +19,21 @@
 void UpdateWideBandLambdaInput(float InputVoltage)
 {
 	pRamVariables.WideBandLambda = Smooth(WidebandSensorSmoothingFactor,Pull2DHooked(&WideBandScaling,InputVoltage),pRamVariables.WideBandLambda);
+	
+	if((pRamVariables.WideBandLambda > (LeanBoostAFRThreshold*14.7)) && (*pManifoldRelativePressure > LeanBoostMRPThreshold))
+	{
+		if(pRamVariables.LeanBoostCounter == 0) pRamVariables.FailSafeLeanBoostSwitch = 1;
+	}
+	else
+	{
+		pRamVariables.FailSafeLeanBoostSwitch = 0;
+		pRamVariables.LeanBoostCounter = LeanBoostDelay;
+	}
+}
+
+void LeanBoostCount()
+{
+	if(pRamVariables.LeanBoostCounter > 0) pRamVariables.LeanBoostCounter--;
 }
 
 #endif

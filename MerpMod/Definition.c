@@ -376,10 +376,15 @@ DEFNEW2D("Fuel Pressure Sensor Scaling",FuelPressureScaling);
 DEFNEW1D("Fuel Pressure Sensor Smoothing Factor",FuelPressureSensorSmoothingFactor);
 DEFNEW1D("Wideband Sensor Input Mode",WideBandLambdaInputMode);
 DEFNEW1D("Fuel Pressure Sensor Input Mode",FuelPressureInputMode);
+DEFNEW1D("Base Fuel Pressure",BaseFuelPressure);
 
 DEFINERAMVAR("Merpmod Fuel Pressure",FuelPressure,"float","E");
 DEFINERAMVAR("Merpmod Rear O2 Voltage",RearO2Volts,"float","E");
 DEFINERAMVAR("Merpmod Wideband",WideBandLambda,"float","E");
+DEFINERAMVAR("Merpmod Lean Boost Counter",LeanBoostCounter,"uint16","E");
+DEFINERAMVAR("Merpmod Fuel Pressure Delta",FuelPressureDelta,"float","E");
+DEFINERAMVAR("Merpmod Injector Duty Cycle",InjectorDutyCycle,"float","E");
+
 #if INJECTOR_HACKS
 DEFNEW2D("Map Blending Injector Scaling Multiplier",InjectorScalingMultiplierTable);
 DEFINERAMVAR("MerpMod Injector Scaling",InjectorScaling,"float","E1527");
@@ -408,6 +413,18 @@ DEFNEW3D("Primary Open Loop Fueling Table 1 Sport",FuelTable1s);
 DEFNEW3D("Primary Open Loop Fueling Table 2 Sport",FuelTable2s);
 DEFNEW3D("Primary Open Loop Fueling Table 1 Sport Sharp",FuelTable1ss);
 DEFNEW3D("Primary Open Loop Fueling Table 2 Sport Sharp",FuelTable2ss);
+DEFNEW1D("Failsafe Fuel Additive",FailSafeFuelAdditive);
+DEFNEW1D("Failsafe Fuel Additive Trigger - EGT",EGTFailSafeFuelAdditiveEnable);
+DEFNEW1D("Failsafe Fuel Additive Trigger - ECT",CoolantTempFailSafeFuelAdditiveEnable);
+DEFNEW1D("Failsafe Fuel Additive Trigger - Severe Knock",FBKCHiFailSafeFuelAdditiveEnable);
+DEFNEW1D("Failsafe Fuel Additive Trigger - Lean Boost",LeanBoostFailSafeFuelAdditiveEnable);
+
+DEFNEW1D("Failsafe Valet Mode Trigger - EGT",EGTFailSafeValetModeEnable);
+DEFNEW1D("Failsafe Valet Mode Trigger - ECT",CoolantTempFailSafeValetModeEnable);
+DEFNEW1D("Failsafe Valet Mode Trigger - Severe Knock",FBKCHiFailSafeValetModeEnable);
+DEFNEW1D("Failsafe Valet Mode Trigger - Lean Boost",LeanBoostFailSafeValetModeEnable);
+DEFNEW1D("Failsafe Valet Mode Trigger - Fuel Pressure Delta",FuelPressureDeltaFailSafeValetModeEnable); 
+DEFNEW1D("Failsafe Valet Mode Trigger - Injector Duty Cycle",InjectorDutyCycleFailSafeValetModeEnable);
 #else
 DEFNEW3D("Primary Open Loop Fueling Table 1",FuelTable1i);	
 DEFNEW3D("Primary Open Loop Fueling Table 2",FuelTable2i);	
@@ -437,6 +454,33 @@ DEFNEW1D("FBKC Load Threshold",FBKCLoadThreshold);
 DEFNEW1D("IAM Flash Threshold",IAMFlashThreshold);
 DEFNEW1D("IAM Flash Count",IAMFlashes);
 DEFNEW1D("IAM Flash Speed",IAMFlashSpeed);
+DEFNEW1D("Map Blend Out of Range Flash Speed",MapBlendFlashSpeed);
+DEFNEW1D("Map Blend Out of Range Flash Count",MapBlendFlashes);
+DEFNEW1D("Lean Boost Flash Speed",LeanBoostFlashSpeed);
+DEFNEW1D("Lean Boost Flash Count",LeanBoostFlashes);
+DEFNEW1D("Lean Boost AFR Threshold",LeanBoostAFRThreshold);
+DEFNEW1D("Lean Boost MRP Threshold",LeanBoostMRPThreshold);
+DEFNEW1D("Lean Boost Delay",LeanBoostDelay);
+DEFNEW1D("Fuel Pressure Delta Flash Speed",FuelPressureDeltaFlashSpeed);
+DEFNEW1D("Fuel Pressure Delta Flash Count",FuelPressureDeltaFlashes);
+
+DEFINERAMVAR("Merpmod Trigger Low FBKC",FailSafeFBKCLoSwitch,"uint8","E");
+#if !defined(NOAF1RES)
+DEFINERAMVAR("Merpmod Trigger Exhaust Gas Temperature",FailSafeEGTSwitch,"uint8","E");
+#endif
+DEFINERAMVAR("Merpmod Trigger Coolant Temperature",FailSafeCoolantTempSwitch,"uint8","E");
+DEFINERAMVAR("Merpmod Trigger IAM",FailSafeIAMSwitch,"uint8","E");
+
+DEFINERAMVAR("Merpmod Trigger Lean Boost",FailSafeLeanBoostSwitch,"uint8","E");
+DEFINERAMVAR("Merpmod Trigger Fuel Pressure Delta",FailSafeFuelPressureDeltaSwitch,"uint8","E");
+DEFINERAMVAR("Merpmod Trigger Injector Duty Cycle",FailSafeInjectorDutyCycleSwitch,"uint8","E");
+DEFINERAMVAR("Merpmod Action Fuel Additive Active",FailSafeFuelAdditiveSwitch,"uint8","E");
+
+
+
+DEFNEW1D("Fuel Pressure Delta Delay",FuelPressureDeltaDelay);
+DEFNEW1D("Fuel Pressure Delta Threshold",FuelPressureDeltaThreshold);
+DEFNEW1D("Fuel Pressure Delta - Minimum RPM",FuelPressureTriggerMinRPM);
 
 	
 #ifdef pAf1Res
@@ -455,10 +499,10 @@ DEFNEW1D("ECT Flash Temperature Threshold",ECTFlashThreshold);
 DEFNEW1D("IAM Recall Flash Speed",IAMFlashSpeed);
 #endif
 
-DEFINERAMVAR("MerpMod CEL Signal",CelSignal,"uint8","E803");
-DEFINERAM("MerpMod CEL Signal OEM",pCelSignalOem,"uint8","E1800");
-DEFINERAMVAR("MerpMod CEL Flash Counter",CelFlashCounter,"uint8","E1802");
-DEFINERAMVAR("MerpMod CEL Speed Counter",CelFlashSpeedCounter,"uint8","E1801");
+DEFNEW1D("Injector Duty Cycle Flash Speed",InjectorDutyCycleFlashSpeed);
+DEFNEW1D("Injector Duty Cycle Flash Count",InjectorDutyCycleFlashes);
+DEFNEW1D("Injector Duty Cycle Threshold",InjectorDutyCycleThreshold);
+
 	
 #endif
 

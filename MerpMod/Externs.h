@@ -98,7 +98,10 @@ void MapBlendFailSafeCount() ROMCODE;
 void UpdateMapBlendRatio(float inputVoltage) ROMCODE;
 void MapSwitchThresholdCheck(float input) ROMCODE;
 void UpdateFuelPressureInput(float InputVoltage) ROMCODE;
+void FuelPressureDeltaCount() ROMCODE;
 void UpdateWideBandLambdaInput(float InputVoltage) ROMCODE;
+void LeanBoostCount() ROMCODE;
+void UpdateFailSafes() ROMCODE;
 
 //////////////////////////
 //Extern Function Pointers
@@ -219,6 +222,19 @@ extern float FBKCRetardValue2;
 extern float FBKCRetardValueAlternate1;
 extern float FBKCRetardValueAlternate2;
 
+extern unsigned char FailSafeFuelAdditive;
+extern unsigned char FailSafeFuelAdditive;
+extern unsigned char EGTFailSafeFuelAdditiveEnable;
+extern unsigned char CoolantTempFailSafeFuelAdditiveEnable;
+extern unsigned char FBKCHiFailSafeFuelAdditiveEnable;
+extern unsigned char LeanBoostFailSafeFuelAdditiveEnable;
+
+extern unsigned char EGTFailSafeValetModeEnable;
+extern unsigned char CoolantTempFailSafeValetModeEnable;
+extern unsigned char FBKCHiFailSafeValetModeEnable;
+extern unsigned char LeanBoostFailSafeValetModeEnable;
+extern unsigned char FuelPressureDeltaFailSafeValetModeEnable;
+extern unsigned char InjectorDutyCycleFailSafeValetModeEnable;
 extern float RPMLockWGDC;
 extern float ThrottleLockWGDC;
 
@@ -267,6 +283,16 @@ extern unsigned char EGTFlashes;
 extern unsigned char EGTFlashSpeed;
 extern unsigned char IAMFlashSpeed;
 extern unsigned char IAMFlashes;
+extern unsigned char MapBlendFlashSpeed;
+extern unsigned char MapBlendFlashes;
+extern unsigned char LeanBoostFlashSpeed;
+extern unsigned char LeanBoostFlashes;
+extern unsigned char FuelPressureDeltaFlashSpeed;
+extern unsigned char FuelPressureDeltaFlashes;
+extern float FuelPressureTriggerMinRPM;
+extern unsigned char InjectorDutyCycleFlashSpeed;
+extern unsigned char InjectorDutyCycleFlashes;
+
 extern float IAMFlashThreshold;
 extern unsigned char ECTFlashes;
 extern unsigned char ECTFlashSpeed;
@@ -314,6 +340,7 @@ extern unsigned short MapBlendCount;
 extern float MapBlendSmoothingFactor;
 extern float MapSwitchSmoothingFactor;
 extern float MapBlendBoostContentLock;
+extern float BaseFuelPressure;
 
 unsigned char OpenLoopFuelingBlendCurveSwitch;
 unsigned char ClosedLoopFuelingBlendCurveSwitch;
@@ -343,6 +370,16 @@ extern unsigned char WideBandLambdaInputMode;
 extern unsigned char FuelPressureInputMode;
 extern float WidebandSensorSmoothingFactor;
 extern float FuelPressureSensorSmoothingFactor;
+
+extern unsigned short LeanBoostDelay;
+extern float LeanBoostAFRThreshold;
+extern float LeanBoostMRPThreshold;
+extern float InjectorDutyCycleThreshold;
+
+extern unsigned short FuelPressureDeltaDelay;
+extern float FuelPressureDeltaThreshold;
+
+
 extern TwoDTable WideBandScaling;
 extern TwoDTable FuelPressureScaling;
 #endif

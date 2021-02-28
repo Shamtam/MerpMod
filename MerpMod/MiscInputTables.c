@@ -18,9 +18,16 @@
 
 unsigned char WideBandLambdaInputMode SWITCHDATA = WideBandLambdaInputModeUndefined;
 float WidebandSensorSmoothingFactor SWITCHDATA = 1.0f;
+unsigned short LeanBoostDelay SWITCHDATA = 25;
+float LeanBoostAFRThreshold SWITCHDATA = 0.85f;
+float LeanBoostMRPThreshold SWITCHDATA = 220.0;
 
 unsigned char FuelPressureInputMode SWITCHDATA = FuelPressureInputModeUndefined;
 float FuelPressureSensorSmoothingFactor SWITCHDATA = 1.0f;
+float BaseFuelPressure SWITCHDATA = 2250;
+unsigned short FuelPressureDeltaDelay SWITCHDATA = 25;
+float FuelPressureDeltaThreshold SWITCHDATA = 700;
+float FuelPressureTriggerMinRPM SWITCHDATA = 3000.0f;
 
 float WIDEBAND_SCALING_ROWS[11] SWITCHDATA =
 {0,0.5,1,1.5,2,2.5,3,3.5,4,4.5,5};

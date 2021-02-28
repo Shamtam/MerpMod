@@ -88,6 +88,7 @@ void EcuHacksMain() //Constant Hz main routine, hooked into wgdc lookup
 
 #if SWITCH_HACKS
 	InputUpdate();
+	UpdateFailSafes();
 #endif
 
 #if TIMING_HACKS

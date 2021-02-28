@@ -65,17 +65,21 @@ void CelFlashUnitTests()
 	//Turn OEM Cel off, check for response
 	
 	*pCelSignalOem = 0;
+	UpdateFailSafes();
 	CelFlash();
 	Assert(pRamVariables.CelSignal == 0, "OEM cel is now gone, Cel signal should have dropped");
 	
 	//Trigger knock below load threshold
 	*pEngineLoad = 1.0f;
-	*pFBKC = -1.0f;
+	*pFBKC = -3.0f;
+	UpdateFailSafes();
 	CelFlash();
 	Assert(pRamVariables.CelSignal == 0, "below fbkc load threshold for cel, no light!");
 	
 	//Trigger knock above load threshold
 	*pEngineLoad = 3.0f;
+	pRamVariables.ProgModeStatus = ProgModeEnabled;
+	UpdateFailSafes();
 	CelFlash();
 	Assert(pRamVariables.CelFlashCounter > 0, "knocking! Flash counter should init");
 	Assert(pRamVariables.CelFlashSpeedCounter > 0, "knocking! Flash speed counter should init");

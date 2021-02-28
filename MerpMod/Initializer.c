@@ -86,6 +86,8 @@ pRamVariables.CruiseCoastLast = TestCruiseCoastSwitch();
 	pRamVariables.WideBandLambdaInputMode = WideBandLambdaInputMode;
 	pRamVariables.FuelPressureInputMode = FuelPressureInputMode;
 	pRamVariables.MapBlendOutOfRangeCounter = MapBlendCount;
+	pRamVariables.LeanBoostCounter = LeanBoostDelay;
+	pRamVariables.FuelPressureDeltaCounter = FuelPressureDeltaDelay;
 	pRamVariables.WideBandLambda = 0;
 	pRamVariables.FuelPressure = 0;
 #endif

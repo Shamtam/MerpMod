@@ -26,6 +26,15 @@ unsigned char EGTFlashSpeed CELFLASHDATA = 0x04;
 unsigned char EGTFlashes CELFLASHDATA = 0x02;
 unsigned char ECTFlashSpeed CELFLASHDATA = 0x10;
 unsigned char ECTFlashes CELFLASHDATA = 0x10;
+unsigned char MapBlendFlashSpeed CELFLASHDATA = 0x08;
+unsigned char MapBlendFlashes CELFLASHDATA = 0x03;
+unsigned char LeanBoostFlashSpeed CELFLASHDATA = 0x01;
+unsigned char LeanBoostFlashes CELFLASHDATA = 0x10;
+unsigned char FuelPressureDeltaFlashSpeed CELFLASHDATA = 0x01;
+unsigned char FuelPressureDeltaFlashes CELFLASHDATA = 0x18;
+unsigned char InjectorDutyCycleFlashSpeed CELFLASHDATA = 0x01;
+unsigned char InjectorDutyCycleFlashes CELFLASHDATA = 0x2;
+
 float ECTFlashThreshold CELFLASHDATA = 120.0f;
 float IAMFlashThreshold CELFLASHDATA = 0.5f;
 unsigned char IAMFlashes CELFLASHDATA = 0x20;
@@ -35,6 +44,7 @@ float FBKCHiThreshold CELFLASHDATA = -2.1f;
 float FBKCLoadThreshold CELFLASHDATA = 1.5f;
 float EGTCelLoadThreshold CELFLASHDATA = 1.5f;
 float EGTResistanceThreshold CELFLASHDATA = 25.0f;
+float InjectorDutyCycleThreshold CELFLASHDATA = 90.0;
 
 //TwoDTable LeanBoostThreshold CELFLASHDATA = //MAP axis, LAMBDA data
 //unsigned char LeanBoostInputMode CELFLASHDATA = LeanBoostInputModeOEM; //TODO EXTERN

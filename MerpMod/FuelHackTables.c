@@ -369,6 +369,15 @@ ThreeDTable FuelTable2ss FUELDATA = {
 	.tableType = UInt8Table3D,
 	.multiplier = 0.0078125,// = 2/255 (0-2 range, 8bit precision)
 	.offset = 0.0f };
+	
+	
+unsigned char FailSafeFuelAdditive FUELDATA = 0;	
+unsigned char EGTFailSafeFuelAdditiveEnable FUELDATA = 0;
+unsigned char CoolantTempFailSafeFuelAdditiveEnable FUELDATA = 0;
+unsigned char FBKCHiFailSafeFuelAdditiveEnable FUELDATA = 0;
+unsigned char LeanBoostFailSafeFuelAdditiveEnable FUELDATA = 0;
+
+	
 #endif
 
 #if POLF_RAMTUNING

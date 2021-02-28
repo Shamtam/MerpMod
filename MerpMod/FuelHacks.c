@@ -73,6 +73,11 @@ EcuHacksMain();
 		}
 		//Now run existing code!
 
+		if(pRamVariables.FailSafeFuelAdditiveSwitch == 1)
+		{
+			OutputValue += (FailSafeFuelAdditive * 0.0078125);
+		}
+	
 		pRamVariables.PolfTarget = OutputValue;
 
 		if(pRamVariables.PolfHackEnabled == HackEnabled)

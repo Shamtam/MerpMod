@@ -47,6 +47,13 @@ unsigned char DefaultBoostHackEnable BOOSTDATA = HackDisabled;
 float RPMLockWGDC BOOSTDATA = 3000.0f;
 float ThrottleLockWGDC BOOSTDATA = 85.0f;
 
+unsigned char EGTFailSafeValetModeEnable BOOSTDATA = 0;
+unsigned char CoolantTempFailSafeValetModeEnable BOOSTDATA = 0;
+unsigned char FBKCHiFailSafeValetModeEnable BOOSTDATA = 0;
+unsigned char LeanBoostFailSafeValetModeEnable BOOSTDATA = 0;
+unsigned char FuelPressureDeltaFailSafeValetModeEnable BOOSTDATA = 0; 
+unsigned char InjectorDutyCycleFailSafeValetModeEnable BOOSTDATA = 0;
+
 #if SWITCH_HACKS
 TableGroup PGWGTableGroup BOOSTDATA = {
 	{&PGWGTable1i,

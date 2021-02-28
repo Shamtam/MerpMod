@@ -107,28 +107,45 @@ void CelFlash()
 if(pRamVariables.ProgModeStatus == ProgModeEnabled)
 {
 #endif
-	if(*pFBKC <= FBKCHiThreshold && *pEngineLoad > FBKCLoadThreshold)
+	if(pRamVariables.FailSafeFBKCHiSwitch == 1)
 	{
 		CelFlashStart(FBKCHiFlashes,FBKCHiFlashSpeed,0,0);
 	}
-	else if(*pFBKC <= FBKCLoThreshold && *pEngineLoad > FBKCLoadThreshold)
+	else if(pRamVariables.FailSafeFBKCLoSwitch == 1)
 	{
 		CelFlashStart(FBKCLoFlashes,FBKCLoFlashSpeed,0,0);
 	}
 #if !defined(NOAF1RES)
-	else if(*pAf1Res < EGTResistanceThreshold && *pEngineLoad > EGTCelLoadThreshold)
+	else if(pRamVariables.FailSafeEGTSwitch == 1)
 	{
 		CelFlashStart(EGTFlashes,EGTFlashSpeed,0,0);
 	}
 #endif
-	else if (*pCoolantTemp > ECTFlashThreshold)
+	else if (pRamVariables.FailSafeCoolantTempSwitch == 1) // to-do, use switches and check elsewhere instead.
 	{
 		CelFlashStart(ECTFlashes,ECTFlashSpeed,64,0);
 	}
-	else if(IAM < IAMFlashThreshold)
+	else if(pRamVariables.FailSafeIAMSwitch == 1)
 	{
 		CelFlashStart(IAMFlashes,IAMFlashSpeed,64,0);
 	}
+	else if(pRamVariables.FailSafeMapBlendSwitch == 1)
+	{
+		CelFlashStart(MapBlendFlashes,MapBlendFlashSpeed,32,0);	
+	}
+	else if(pRamVariables.FailSafeLeanBoostSwitch == 1)
+	{
+		CelFlashStart(LeanBoostFlashes,LeanBoostFlashSpeed,32,0);		
+	}
+	else if(pRamVariables.FailSafeFuelPressureDeltaSwitch == 1)
+	{
+		CelFlashStart(FuelPressureDeltaFlashes,FuelPressureDeltaFlashSpeed,32,0);		
+	}
+	else if(pRamVariables.FailSafeInjectorDutyCycleSwitch ==1)
+	{
+		CelFlashStart(InjectorDutyCycleFlashes,InjectorDutyCycleFlashSpeed,32,0);		
+	}	
+
 #if PROG_MODE
 }
 #endif

@@ -59,12 +59,20 @@ typedef struct
 	float TGVRightVolts;
 	float WideBandLambda;
 	float FuelPressure;
+	float FuelPressureDelta;
 	float RearO2Volts;
 	float MAFSensorVolts;
 	float MapSwitchInputVoltage;
 	unsigned short MapBlendOutOfRangeCounter;
 	unsigned char FailSafeMapBlendSwitch;
 	unsigned char SIDriveMode;
+	unsigned short LeanBoostCounter;
+	unsigned char FailSafeLeanBoostSwitch;
+	unsigned short FuelPressureDeltaCounter;
+	unsigned char FailSafeFuelPressureDeltaSwitch;
+	unsigned char FailSafeFuelAdditiveSwitch;
+	float InjectorDutyCycle;
+	unsigned char FailSafeInjectorDutyCycleSwitch;
 	unsigned char FuelingLookupMAPLoad;
 	unsigned char TimingLookupMAPLoad;
 #endif
@@ -128,7 +136,13 @@ typedef struct
 	unsigned char CelFlashDelay;
 	unsigned char celunused;
 	
-
+	unsigned char FailSafeFBKCHiSwitch;
+	unsigned char FailSafeFBKCLoSwitch;
+#if !defined(NOAF1RES)
+	unsigned char FailSafeEGTSwitch;
+#endif
+	unsigned char FailSafeCoolantTempSwitch;
+	unsigned char FailSafeIAMSwitch;
 #endif
 
 #if PROG_MODE
