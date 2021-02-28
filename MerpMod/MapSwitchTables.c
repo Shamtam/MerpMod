@@ -19,15 +19,6 @@
 unsigned char DefaultMapSwitch SWITCHDATA = MapSwitch1;
 float DefaultMapBlendRatio SWITCHDATA = 0.0f;
 
-float LeftTGVInputSmoothingFactor SWITCHDATA = 1.0f;
-float RightTGVInputSmoothingFactor SWITCHDATA = 1.0f;
-
-float LeftTGVInputMultiplier SWITCHDATA = 1.0f;
-float RightTGVInputMultiplier SWITCHDATA = 1.0f;
-
-float LeftTGVInputOffset SWITCHDATA = 0.0f;
-float RightTGVInputOffset SWITCHDATA = 0.0f;
-
 float MapSwitchThresholdLo SWITCHDATA = 1.5f;
 float MapSwitchThresholdHi SWITCHDATA = 3.5f;
 
