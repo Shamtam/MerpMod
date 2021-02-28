@@ -149,6 +149,9 @@ extern unsigned char DefaultLCFuelMode;
 extern float DefaultLCFuelLock;
 extern float DefaultLCFuelEnrichMultiplier;
 
+extern TwoDTable FrontOxygenSensorScaling1;
+extern TwoDTable FrontOxygenSensorScaling2;
+
 extern unsigned char DefaultBoostHackEnable;
 extern TableGroup PGWGTableGroup;
 extern ThreeDTable PGWGTable1i;

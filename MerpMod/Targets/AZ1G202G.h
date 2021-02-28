@@ -46,6 +46,8 @@
 #define tStartupEnrich3_1B (0x88360)
 #define tStartupEnrich3_2A (0x88374)
 #define tStartupEnrich3_2B (0x88388)
+#define hPull2DFrontO2Scaling (0x4FF64)
+#define tFrontO2Scaling (0x8AB70)
 
 /////////////////////
 // Rev Limit Hack

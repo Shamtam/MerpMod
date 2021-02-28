@@ -426,6 +426,10 @@ DEFNEW1D("Failsafe Valet Mode Trigger - Lean Boost",LeanBoostFailSafeValetModeEn
 DEFNEW1D("Failsafe Valet Mode Trigger - Fuel Pressure Delta",FuelPressureDeltaFailSafeValetModeEnable); 
 DEFNEW1D("Failsafe Valet Mode Trigger - Injector Duty Cycle",InjectorDutyCycleFailSafeValetModeEnable);
 DEFNEW1D("Injector Pulse Width Calculation",UseInjectorLatency);
+
+DEFNEW2D("Front Oxygen Sensor Scaling Table 1",FrontOxygenSensorScaling1);
+DEFNEW2D("Front Oxygen Sensor Scaling Table 2",FrontOxygenSensorScaling2);
+
 #else
 DEFNEW3D("Primary Open Loop Fueling Table 1",FuelTable1i);	
 DEFNEW3D("Primary Open Loop Fueling Table 2",FuelTable2i);	

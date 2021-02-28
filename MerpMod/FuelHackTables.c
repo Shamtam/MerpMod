@@ -78,6 +78,38 @@ TableGroup FuelTableGroup FUELDATA = {
 };
 #endif
 
+float FRONT_OXYGEN_SENSOR_COLS[13] FUELDATA = 
+{-1.299999952316284,-0.8699999451637268,-0.4699999988079071,-0.1399999856948853,0,
+0.09999999403953552,0.239999994635582,0.3899999856948853,0.5299999713897705,
+0.6399999856948853,0.7399999499320984,0.7399999499320984,0.7399999499320984};
+
+
+float FRONT_OXYGEN_SENSOR_1_DATA[13] FUELDATA = 
+{0.7586,0.82758617,0.89655167,0.96551722,1.0,1.0344827,1.1034483,1.1724137,
+1.2413793,1.3103448,1.3793103,1.3793103,1.3793103};
+
+
+TwoDTable FrontOxygenSensorScaling1 FUELDATA = {
+	.columnCount = 13,
+	.tableType = FloatTable2D,
+	.columnHeaderArray = FRONT_OXYGEN_SENSOR_COLS,
+	.tableCells = FRONT_OXYGEN_SENSOR_1_DATA,
+	.multiplier = 1.0f,
+	.offset = 0.0f};
+
+
+float FRONT_OXYGEN_SENSOR_2_DATA[13] FUELDATA = 
+{0.7586,0.82758617,0.89655167,0.96551722,1.0,1.0344827,1.1034483,1.1724137,
+1.2413793,1.3103448,1.3793103,1.3793103,1.3793103};
+
+
+TwoDTable FrontOxygenSensorScaling2 FUELDATA = {
+	.columnCount = 13,
+	.tableType = FloatTable2D,
+	.columnHeaderArray = FRONT_OXYGEN_SENSOR_COLS,
+	.tableCells = FRONT_OXYGEN_SENSOR_2_DATA,
+	.multiplier = 1,
+	.offset = 0.0f};
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 //!! Launch Control Fuel Retard Table
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

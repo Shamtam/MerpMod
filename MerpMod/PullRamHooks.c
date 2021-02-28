@@ -104,6 +104,12 @@ float Pull2DRamHookStartupEnrich3(float* table, float xLookup)
 	table == tStartupEnrich3_2A ||
 	table == tStartupEnrich3_2B)//This hook is used by other tables!!
 		return Pull2DHooked((TwoDTable*)table, xLookup) * Pull2DHooked((TwoDTable*)&StartupEnrichMultiplier, xLookup);
+float Pull2DRamHookFrontO2Scaling(float* table, float xLookup)
+{
+	if((table == tFrontO2Scaling) && (pRamVariables.PolfHackEnabled == HackEnabled))//This hook is used by other tables!!
+		return BlendCurve(Pull2DHooked(&FrontOxygenSensorScaling1,xLookup),Pull2DHooked(&FrontOxygenSensorScaling2,xLookup),ClosedLoopFuelingBlendCurveSwitch);
+	return Pull2DHooked((TwoDTable*)table, xLookup);
+}
 	return Pull2DHooked((TwoDTable*)table, xLookup);
 }
 #endif

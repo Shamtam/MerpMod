@@ -686,6 +686,15 @@ const MetaReplace POLFHook METADATA =
 		name: STR(Startup Enrich 3 Pull2D Hook)
 	};
 
+	const MetaReplace FrontO2ScalingHookPull METADATA = 
+	{
+		op: OpReplace4Bytes,
+		address: hPull2DFrontO2Scaling,
+		oldval: sPull2DFloat,
+		newval: (int)Pull2DRamHookFrontO2Scaling,
+		name: STR(Front O2 Scaling Pull2D Hook)
+	};
+	
 #endif
 
 //////////////////////
