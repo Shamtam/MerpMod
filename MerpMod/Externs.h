@@ -1,6 +1,6 @@
 /*
 	Copyright (C) 2012-2013 Merrill A. Myers III merrillamyersiii@gmail.com
-	
+
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
@@ -13,8 +13,6 @@
 */
 
 #include "enums.h"
-
-extern RamVariables pRamVariables;
 
 //////////////////////////
 //Function Prototypes
@@ -58,17 +56,17 @@ void TargetBoostHack(void) ROMCODE;
 void InjectorHack() ROMCODE;
 void POLFHack()  ROMCODE;
 float TimingHack()  ROMCODE;
-float Pull2DRamHook(float* table, float xLookup) ROMCODE;
-float Pull2DRamHookTipInEnrich(float* table, float xLookup) ROMCODE;
-float Pull2DRamHookCrankingFuel(float* table, float xLookup) ROMCODE;
-float Pull2DRamHookStartupEnrich2(float* table, float xLookup) ROMCODE;
-float Pull2DRamHookStartupEnrich3(float* table, float xLookup) ROMCODE;
-float Pull2DRamHookFrontO2Scaling(float* table, float xLookup) ROMCODE;
-float Pull3DRamHook(float* table, float xLookup, float yLookup) ROMCODE;
-float Pull3DRamHookStartupEnrich1(float* table, float xLookup, float yLookup) ROMCODE;
-float Pull2DRamHookIntakeTempCompensation(float* table, float xLookup) ROMCODE;
+float Pull2DRamHook(TwoDTable *table, float xLookup) ROMCODE;
+float Pull2DRamHookTipInEnrich(TwoDTable *table, float xLookup) ROMCODE;
+float Pull2DRamHookCrankingFuel(TwoDTable *table, float xLookup) ROMCODE;
+float Pull2DRamHookStartupEnrich2(TwoDTable *table, float xLookup) ROMCODE;
+float Pull2DRamHookStartupEnrich3(TwoDTable *table, float xLookup) ROMCODE;
+float Pull2DRamHookFrontO2Scaling(TwoDTable *table, float xLookup) ROMCODE;
+float Pull3DRamHook(ThreeDTable *table, float xLookup, float yLookup) ROMCODE;
+float Pull3DRamHookStartupEnrich1(ThreeDTable *table, float xLookup, float yLookup) ROMCODE;
+float Pull2DRamHookIntakeTempCompensation(TwoDTable *table, float xLookup) ROMCODE;
 float Pull3DHookReqTorque(ThreeDTable* table, float xLookup, float yLookup) ROMCODE;
-float Pull3DRamHookAVCSLookup(float* table, float xLookup, float yLookup) ROMCODE;
+float Pull3DRamHookAVCSLookup(ThreeDTable *table, float xLookup, float yLookup) ROMCODE;
 void VinCheck() ROMCODE;
 
 void ProgModeListener()  ROMCODE;
@@ -106,6 +104,21 @@ void FuelPressureDeltaCount() ROMCODE;
 void UpdateWideBandLambdaInput(float InputVoltage) ROMCODE;
 void LeanBoostCount() ROMCODE;
 void UpdateFailSafes() ROMCODE;
+
+//////////////////////////
+//Dynamic RAM Tuning
+//////////////////////////
+#if DYN_RAMTUNING
+
+#define _MAX_RAM_TABLES_ 10 //arbitrary number for now...
+#define DefaultRAMTableRomAddr 0xFFFFFFFF
+#define DefaultRAMTableRamAddr 0x00000000
+extern void Pull2DFloatDynRamHook(TwoDTable* table);
+extern unsigned long RAMTableHeaders_ROMStart;
+extern unsigned long RAMTableHeaders_RAMStart;
+extern unsigned short MaxRAMTableHeaders;
+
+#endif
 
 //////////////////////////
 //Extern Function Pointers

@@ -1,6 +1,6 @@
 /*
 	Copyright (C) 2012-2013 Merrill A. Myers III merrillamyersiii@gmail.com
-	
+
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
@@ -67,7 +67,7 @@ void ClearRamVariables(long *start, long *end)
 
 void PopulateRamVariables()
 {
-	
+
 #if CRUISE_CONTROL
 pRamVariables.CruiseResumeLast = TestCruiseResumeSwitch();
 pRamVariables.CruiseCoastLast = TestCruiseCoastSwitch();
@@ -119,8 +119,8 @@ pRamVariables.CruiseCoastLast = TestCruiseCoastSwitch();
 	pRamVariables.ClutchSwitchLast = *pClutchFlags & ClutchBitMask;
 #if !AUTO_TRANS
 	RevLimReset();
-#endif	
-#endif 
+#endif
+#endif
 
 #if VIN_HACKS
 	VinCheck();
@@ -166,6 +166,19 @@ pRamVariables.CruiseCoastLast = TestCruiseCoastSwitch();
 #if AVCS_HACKS
 	pRamVariables.AVCSLookupMAPLoad = DefaultAVCSLookupMAPLoad;
 #endif
+#if DYN_RAMTUNING
+    unsigned long *p;
+    p = &(pRamVariables.RAMTableHeaderROMAddr[_MAX_RAM_TABLES_]);
+    while(--p >= pRamVariables.RAMTableHeaderROMAddr){
+        *p = DefaultRAMTableRomAddr;
+    }
+
+    p = &(pRamVariables.RAMTableHeaderRAMAddr[_MAX_RAM_TABLES_]);
+    while(--p >= pRamVariables.RAMTableHeaderRAMAddr){
+        *p = DefaultRAMTableRamAddr;
+    }
+#endif
+
 pRamVariables.ECUIdentifier = *(long*)dEcuId;
 pRamVariables.HardResetFlag = HardResetFlagDisabled;
 
@@ -175,7 +188,7 @@ pRamVariables.HardResetFlag = HardResetFlagDisabled;
 
 void VinCheck()
 {
-	//Init VIN	
+	//Init VIN
 }
 
 #endif

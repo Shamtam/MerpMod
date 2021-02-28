@@ -178,6 +178,21 @@ modinfo	:	ModInfo OpDelim
 	};
 #endif
 
+#if DYN_RAMTUNING
+//////////////////////
+//					//
+//DYNAMIC RAMTUNING	//
+//					//
+//////////////////////
+	const MetaPatch Pull2DFloatRamInjectStart METADATA =
+	{
+		op: OpPatch,
+		startaddress: hPull2DFloatRamInjectStart,
+		endaddress: hPull2DFloatRamInjectEnd - 1,
+		name: STR(Pull2DFloat Dynamic Ramtuning)
+	};
+#endif
+
 #if REVLIM_HACKS
 //////////////////////
 //					//
@@ -540,7 +555,7 @@ const MetaReplace POLFHook METADATA =
 	{
 		op: OpReplace4Bytes,
 		address: hFBKCRetardValue,
-		oldval: dFBKCRetardValue,
+		oldval: (long) dFBKCRetardValue,
 		newval: (int)&(pRamVariables.FBKCRetardValue),
 		name: STR(Timing FBKC Retard Hook)
 	};
@@ -549,7 +564,7 @@ const MetaReplace POLFHook METADATA =
 	{
 		op: OpReplace4Bytes,
 		address: hFBKCRetardValueAlternate,
-		oldval: dFBKCRetardValueAlternate,
+		oldval: (long) dFBKCRetardValueAlternate,
 		newval: (int)&(pRamVariables.FBKCRetardValueAlternate),
 		name: STR(Timing FBKC Retard Alternate Hook)
 	};	

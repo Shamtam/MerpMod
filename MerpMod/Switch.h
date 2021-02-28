@@ -43,12 +43,13 @@
 //		RAMTUNING FLAGS		//
 //////////////////////////////
 							//
-#define RAM_PERSIST 1		//
+#define RAM_PERSIST 0		//
 #define VE_RAMTUNING 0		//
 #define POLF_RAMTUNING 0	//
 #define TIMING_RAMTUNING 0	//
 #define PGWG_RAMTUNING 0	//
 #define WGDC_RAMTUNING 0	//
-#define AVCS_RAMTUNING 1	//
+#define AVCS_RAMTUNING 0	//
+#define DYN_RAMTUNING 1		//
 							//
 //////////////////////////////	
