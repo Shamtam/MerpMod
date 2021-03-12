@@ -2,9 +2,6 @@ language: minimal
 
 services:
   - docker
-
-git:
-  quiet: true
   
 before_install:
 - docker pull shamtam/merpmod
