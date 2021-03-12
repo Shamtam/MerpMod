@@ -15,7 +15,7 @@
 #ifndef __EXTERNS__
 #define __EXTERNS__
 
-#include "enums.h"
+#include "Enums.h"
 
 //////////////////////////
 //Function Prototypes
