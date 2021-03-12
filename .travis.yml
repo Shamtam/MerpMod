@@ -1,0 +1,13 @@
+language: minimal
+
+services:
+  - docker
+
+git:
+  quiet: true
+  
+before_install:
+- docker pull shamtam/merpmod
+
+script:
+- docker run -v "$PWD":/data -w /data/MerpMod/MerpMod make TARGETROM=A2UI001L all
