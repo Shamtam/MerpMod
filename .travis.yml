@@ -7,4 +7,4 @@ before_install:
 - docker pull shamtam/merpmod
 
 script:
-- docker run -v "$PWD":/data -w /data/MerpMod/MerpMod make TARGETROM=A2UI001L all
+- docker run -v "$PWD":/data/MerpMod -w /data/MerpMod/MerpMod "make TARGETROM=A2UI001L all"
