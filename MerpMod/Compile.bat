@@ -29,8 +29,8 @@ set BUILDDIR=%PROJDIR%\build\%CONFIGNAME%\work
 @REM echo %WORKSPDIR% >> %BUILDDIR%\compile.log
 
 REM check for a custom flags file for the current file and use those
-if exist %FILEDIR%\%FILENAME%.flags (
-    set /P FLAGS=<%FILEDIR%\%FILENAME%.flags
+if exist %FILEDIR%\%FILENAME%.winflags (
+    set /P FLAGS=<%FILEDIR%\%FILENAME%.winflags
 ) ELSE (
 REM use default flags
     set FLAGS=^

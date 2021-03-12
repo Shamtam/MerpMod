@@ -1,0 +1,1 @@
+-Wall -c -x c -m2e -mrenesas -mieee -I $TCDIR/sh-elf/sh-elf/optlibinc -I $TCDIR/sh-elf/lib/gcc/sh-elf/4.7-GNUSH_v13.01/optlibinc -I $PROJDIR/include -I $PROJDIR/Targets/$TARGETROM -D _TARGET_HEADER_=$TARGETROM.h -nostdinc -S
