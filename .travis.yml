@@ -8,3 +8,13 @@ before_install:
 
 script:
 - docker run --rm -v "$PWD":/data/MerpMod -w /data/MerpMod/MerpMod shamtam/merpmod:latest make TARGETROM=A2UI001L all
+
+deploy:
+  provider: releases
+  api_key:
+    secure: "UBWJ2yna2muiVNcdNm/SSxUu8CAZUO9ejbI8Guc6iGJOhfLKlU4VqiIeidOjaAF8atjaMlBXYyhZ0897iHmDV24EeUYtS7JvTwoL87uRQFjxSw0pGTB5R2LOxBsA9pYYmCrS9X3vbnJ/ZBtvK0RikRgnSy488QBudR/NL5sFVGvHDpW+t6D2xf3pHYhEcx1LvC7diTKya5/JpRtE9tdZTO2hah2Be6H7r6ucGrjizdzIWMFO4q+N3KnOdskGPPVRK8Cy+H4IOCzXPAsbGqTTl1wr91GgHOqxiLtH8xnKfHuLUs2RJsAnoZZqVdqZoFunsINPuyqFqpUCYHpS4sNIVQxfhXa9bJtTzht0LdoS525sFrVxCk9pyAfKFT8vP4yZs8IwiXN54zqIfJg7QMaruLceHIwT6dEm+0fhxcw/8mJdVheLcfObBw+fv/jwo0+LvS7Y+p9N1ydmF8gN/iOv6IndHiF0fO5ksvE+bkom5XOApJt4rEEClhZ4YIc8lalxSgw7Yddc436rw4sVokR6aB/L+65GoKun52kp4YXRRiO/AYYgssbIiOIpCWI8ndunypu5A0ZCEO2SlsZFtF+OAOAp2an9ZHqTahb57KixuQWfvk8wu/3TSe8kOK/nRaB7KoAqAHqx+EpvzGw1wtscZ3CHkHJXY1+97mbswC273VM="
+  file:
+    - "./MerpMod/build/A2UI001L/MerpMod.mot"
+    - "./MerpMod/build/A2UI001L/work/DynamicRamtune.s"
+  skip_cleanup: true
+  draft: true
