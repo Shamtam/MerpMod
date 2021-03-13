@@ -23,6 +23,7 @@
 #define CONCAT_THREE_STR(x,y,z) CONCAT_STR(CONCAT_STR(x,y),z)
 #define STRINGIFY(x) #x
 #define STRI(x) STRINGIFY(x)
+#define JOIN(x, y, symbol) x STRI(symbol) y
 
 //Section Macros
 #define ROMCODE  __attribute__ ((section ("RomHole_Code"),aligned(4)))
@@ -58,6 +59,12 @@
 
 //Select ECU Target!!
 #include STRI(_TARGET_HEADER_)
+
+//define identifiers after loading ECU target
+#define MOD_DATE CONCAT_THREE(MOD_YEAR, MOD_MONTH, MOD_DAY)
+#define MOD_CALIBRATION_ID CONCAT(ECU_CALID_BASE, MOD_VERSION)
+#define MOD_ALT_ID JOIN(STRI(ECU_CALIBRATION_ID),JOIN(STRI(MOD_CALIBRATION_ID),STRI(MOD_DATE),.),.)
+#define MOD_ALT_ID_CHARS (24)
 
 #if defined(pResumeFlags) && defined(pCoastFlags)
 #if LC_ADJUST || CEL_HACKS || PROG_MODE
@@ -186,12 +193,6 @@
 #else
 #define SdInfo
 #define SdLabel
-#endif
-
-#if MOD_RELEASE
-#define MOD_CONFIG_ID STRI(MOD_CONFIG)
-#else
-#define MOD_CONFIG_ID CONCAT_STR(STRI(MOD_CONFIG),STRI(.MOD_BUILD))
 #endif
 
 #define ModInfo \

@@ -25,7 +25,7 @@ A_OBJS=$(A_SRC:%.s=$(BUILDDIR)/%.o)
 
 OBJS=$(C_OBJS) $(A_OBJS) $(LIBS)
 
-OUT_FILE=$(OUTDIR)/$(PROJNAME).mot
+OUT_FILE=$(OUTDIR)/$(TARGETROM).mot
 
 set-env:
     export PATH:=$(TCDIR)/bin:$(PATH)
@@ -34,7 +34,10 @@ set-env:
     export OUTDIR:=$(PROJDIR)/build/$(TARGETROM)
 
 build-dir: set-env
-	mkdir -p $(BUILDDIR)
+	@echo
+	@echo "Building $(TARGETROM)"
+	@echo
+	@mkdir -p $(BUILDDIR)
 
 $(LIBS): LGFLAGS=$\
     --compiler-options=-m2e,$\
@@ -137,6 +140,6 @@ default:
 
 .PHONY: clean-all
 clean-all:
-	rm -rf $(PROJDIR)/build/
+	@rm -rf $(PROJDIR)/build/
 
 endif

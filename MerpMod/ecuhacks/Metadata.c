@@ -130,7 +130,7 @@ pad2:  OpDelim,
 //Alternate Identifier (in ROM HOLE, uniquely identifies this rom!)
 modidop:	OpModId,
 modidoffset: (int)&(ModIdentifier),
-modid:		STRI(MOD_ALT_ID),
+modid:		MOD_ALT_ID,
 padmod:		OpDelim,
 
 //ECU ID -- using original ECUID, this shouldn't be modified
