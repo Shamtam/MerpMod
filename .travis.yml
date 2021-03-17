@@ -10,12 +10,11 @@ script:
 deploy:
   provider: releases
   token:
-    secure: fGgQs5JXv6yeSHvpRIZABRdp6EXk+EiRAMJLEEvAlg0kX8FuU1J9D4qLRlGGf9Vqo+tSs9h9CBXMIzRq7NRsxPYwuedqfusQUklSNcANiyZqTlrrLKs07+S5hKqxF7NFlzfiYxgiKL+PQX55N9Vm1kbF2Kwd6Ek3Z5An0r4n5zfbSQ0gsDYSVp0rnOaGRlXmhWABrTkvxpqol9N7KfoYBP6LM+mbbEMtUE9b8H2TvMM0GuiXggxbN3W7Vi9YA6RTeCks9cd1IPxqehHU2qMhDMPZGKyub/ictwCCYUBGwf12tqoA758YjYWjoZIgVQfSZhK3YZ3/t5mJ53B67so3P6AwstdHTw9MmJt/vYxhnFDS+IJbmsdoahiRg3oWH9bbo4qCP9YZZ5c0iTVisvim4/pqOOme6631c9eVCePftZR2TXcUA/0BcQlzGpiNEQzfXfA5y+vcMpsPQpqM0f4C6/SAHST7dwh+6utt+uWVQuSD6+EOX8KEMvifcR07yHVt+ZS9R8XUZqZ1TJUD+LbqGTkkoQ0cf4uuXd1LdbLzawJaNe3GKOVONQj3tqzkW4xwqcg0+2Nm+9vDRRWIJ49TVu/QaWfNFpCJmvDGNJC9A/56Ynv1g0AfODKNseclrdqw84NNWJv/mLrnDZIrClqjz2Nvi3t1qZ+MfMnH2KUH3+8=
-  file: ./MerpMod/build/**/*.mot
+    secure: kvjE3TULoerV0wt38i8iRtTHYzjMg4zsMSXOfYnC6lQrjvxJvgKTe5t9/X+Vlu5vQqR9zQyHRtSU22GDVCzyFiCYj5uJi9xX/fU+VyUpTGlYfHdpJ2HiomXe+T7Nu9SixWt6DhU24P7N39hGQTph8d9MxLKG54XPVT1WR09e7r1vF8ggGHPiBE6aYhIhwlvV2QYZZEm8B4kypqLgN7LjluwreQJcc2NdmrzxtcpgSaJ7khpuznhsgcs440dTcrxhP6HqmOKfg02BSTlDV5IvJ0tjGd4Qc+l9wZmQNkuxaqtObDcSrhdaOfmXgyInDlhgYMUfVNnmm7YUX0g2ENhoP+vyvV92ewfqeagfR7squxkwDIaKjtmmOzlTxD8Og6AZbjFuTA5uMN6OtPJLvg3NBXDRxJIm5MBpMsGBhWvtsmikhyTizRLG8/tAogTqs+Yobfpdt0iQ9aHTfLoSs5YVEZ1Oy17dZgBK6EkxfMDyiemJ7CRQcrbgQ+WCozTwwLPtg+syQD8vNGfWEuI3SjScHV1Gcogd5nFbS5CA7nlqPCaPkvcXqNCMhqkhoUNNbbO0+u+UWTUOMQKOpMk05JIr0ejITrUzufgLl/I5GoajD5Y0Kj995oMLPp3/v+mElQXfiY06GsBq2BmrQ3VfZs8jPEwxiC6sMEWRVY4crYhY0u0=
+  file: "./MerpMod/build/**/*.mot"
   overwrite: true
-  draft: true
   edge: true
   on:
     repo: Shamtam/MerpMod
-    all_branches: true
+    branches: aijmod
     tags: true
