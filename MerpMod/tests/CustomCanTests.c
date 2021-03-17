@@ -12,13 +12,11 @@
     GNU General Public License for more details.
 */
 
-//Tests for CEL Flashing Code
-//TODO test for normal/severe knock behavior, implement interrupt when lowknock -> hi
 #include "EcuHacks.h"
-// Test the rev limiter hack.
+#include "Tests.h"
+
 #if CAN_HACKS
 
-void TestCustomCan(int c) __attribute__ ((section ("Misc")));
 void TestCustomCan(int c)
 {
 	int i;
@@ -28,7 +26,6 @@ void TestCustomCan(int c)
 	}
 }
 
-unsigned long getMailBoxId(unsigned short mailbox, unsigned short bus) __attribute__ ((section ("Misc")));
 unsigned long getMailBoxId(unsigned short mailbox, unsigned short bus)
 {
 	unsigned short* ptr;	
@@ -68,7 +65,6 @@ unsigned char dt3[8]  = {4,0,0,0,0,0,0,0};
 unsigned char dtAEM[8] ROMCODE = {4,2,5,2,0,0,0,0};
 unsigned char dte85[8] ROMCODE = {1,2,45,0,0x38,0x52,7,8};
 
-void CustomCanUnitTests() __attribute__ ((section ("Misc")));
 void CustomCanUnitTests()
 {
 	PopulateRamVariables();
@@ -130,40 +126,40 @@ void CustomCanUnitTests()
 	cmDTccm[0] = 0;	
 	cmDTaddr[0] = 0xFFFF0000;	
 	ccm00.mailBox = 19; //Force to Mailbox 19 for now
-	cmDTtypeIn[0] = 1;
-	cmDTtypeOut[0] = 1;
+	cmDTtypeIn[0] = dtChar;
+	cmDTtypeOut[0] = dtChar;
 	*((unsigned char*)cmDTaddr[0]) = 0x55;
 	updateCanDT(0);
 	Assert(*(unsigned char*)(0xFFFFD100+0x08+19*0x20) == 0x55, "DT U8 Check Failed");
 	
-	cmDTtypeIn[0] = 2;
-	cmDTtypeOut[0] = 2;
+	cmDTtypeIn[0] = dtShort;
+	cmDTtypeOut[0] = dtShort;
 	*((unsigned short*)cmDTaddr[0]) = 0x1234;
 	updateCanDT(0);
 	Assert(*(unsigned short*)(0xFFFFD100+0x08+19*0x20) == 0x1234, "DT U16 Check Failed");
 	
-	cmDTtypeIn[0] = 3;
-	cmDTtypeOut[0] = 3;
+	cmDTtypeIn[0] = dtLong;
+	cmDTtypeOut[0] = dtLong;
 	*((unsigned long*)cmDTaddr[0]) = 0x87654321;
 	updateCanDT(0);
 	Assert(*(unsigned long*)(0xFFFFD100+0x08+19*0x20) == 0x87654321, "DT U32 Check Failed");
 	
-	cmDTtypeIn[0] = 4;
-	cmDTtypeOut[0] = 4;
+	cmDTtypeIn[0] = dtFloat;
+	cmDTtypeOut[0] = dtFloat;
 	*((float*)cmDTaddr[0]) = 3.1415f;
 	updateCanDT(0);
 	Assert(*(float*)(0xFFFFD100+0x08+19*0x20) == 3.1415f, "DT float Check Failed");
 	
-	cmDTtypeIn[0] = 4;
-	cmDTtypeOut[0] = 4;
+	cmDTtypeIn[0] = dtFloat;
+	cmDTtypeOut[0] = dtFloat;
 	cmDTscale[0] = 3;
 	cmDToffset[0] = 0;
 	*((float*)cmDTaddr[0]) = 3.1415f;
 	updateCanDT(0);
 	Assert(*(float*)(0xFFFFD100+0x08+19*0x20) == 3.1415f*3, "DT float scale Check Failed");
 	
-	cmDTtypeIn[0] = 4;
-	cmDTtypeOut[0] = 4;
+	cmDTtypeIn[0] = dtFloat;
+	cmDTtypeOut[0] = dtFloat;
 	cmDTscale[0] = 3;
 	cmDToffset[0] = 2.25f;
 	*((float*)cmDTaddr[0]) = 3.1415f;
@@ -172,8 +168,8 @@ void CustomCanUnitTests()
 	
 	
 	//Float to U8
-	cmDTtypeIn[0] = 4;
-	cmDTtypeOut[0] = 1;
+	cmDTtypeIn[0] = dtFloat;
+	cmDTtypeOut[0] = dtChar;
 	*((float*)cmDTaddr[0]) = 3.1415f;
 	cmDTscale[0] = 1;
 	cmDToffset[0] = 0;
@@ -181,24 +177,24 @@ void CustomCanUnitTests()
 	Assert(*(unsigned char*)(0xFFFFD100+0x08+19*0x20) == 3, "DT float u8 Check Failed");
 	
 	//this should round up
-	cmDTtypeIn[0] = 4;
-	cmDTtypeOut[0] = 1;
+	cmDTtypeIn[0] = dtFloat;
+	cmDTtypeOut[0] = dtChar;
 	*((float*)cmDTaddr[0]) = 3.50001f;
 	cmDTscale[0] = 1;
 	cmDToffset[0] = 0;
 	updateCanDT(0);
 	Assert(*(unsigned char*)(0xFFFFD100+0x08+19*0x20) == 4, "DT float u8 Check Failed");
 	
-	cmDTtypeIn[0] = 4;
-	cmDTtypeOut[0] = 1;
+	cmDTtypeIn[0] = dtFloat;
+	cmDTtypeOut[0] = dtChar;
 	cmDTscale[0] = 3;
 	cmDToffset[0] = 0;
 	*((float*)cmDTaddr[0]) = 3.1415f;
 	updateCanDT(0);
 	Assert(*(unsigned char*)(0xFFFFD100+0x08+19*0x20) == 9, "DT float u8 scale Check Failed");
 	
-	cmDTtypeIn[0] = 4;
-	cmDTtypeOut[0] = 1;
+	cmDTtypeIn[0] = dtFloat;
+	cmDTtypeOut[0] = dtChar;
 	cmDTscale[0] = 4;
 	cmDToffset[0] = 2;
 	*((float*)cmDTaddr[0]) = 3;
@@ -206,8 +202,8 @@ void CustomCanUnitTests()
 	Assert(*(unsigned char*)(0xFFFFD100+0x08+19*0x20) == 20, "DT float u8 scale offset Check Failed");
 	
 		//Float to U16
-	cmDTtypeIn[0] = 4;
-	cmDTtypeOut[0] = 2;
+	cmDTtypeIn[0] = dtFloat;
+	cmDTtypeOut[0] = dtShort;
 	*((float*)cmDTaddr[0]) = 257.49;
 	cmDTscale[0] = 1;
 	cmDToffset[0] = 0;
@@ -215,24 +211,24 @@ void CustomCanUnitTests()
 	Assert(*(unsigned short*)(0xFFFFD100+0x08+19*0x20) == 257, "DT float u16 Check Failed");
 	
 	//this should round up
-	cmDTtypeIn[0] = 4;
-	cmDTtypeOut[0] = 2;
+	cmDTtypeIn[0] = dtFloat;
+	cmDTtypeOut[0] = dtShort;
 	*((float*)cmDTaddr[0]) = 257.501;
 	cmDTscale[0] = 1;
 	cmDToffset[0] = 0;
 	updateCanDT(0);
 	Assert(*(unsigned short*)(0xFFFFD100+0x08+19*0x20) == 258, "DT float u16 Check Failed");
 	
-	cmDTtypeIn[0] = 4;
-	cmDTtypeOut[0] = 2;
+	cmDTtypeIn[0] = dtFloat;
+	cmDTtypeOut[0] = dtShort;
 	cmDTscale[0] = 3;
 	cmDToffset[0] = 0;
 	*((float*)cmDTaddr[0]) = 100;
 	updateCanDT(0);
 	Assert(*(unsigned short*)(0xFFFFD100+0x08+19*0x20) == 300, "DT float u16 scale Check Failed");
 	
-	cmDTtypeIn[0] = 4;
-	cmDTtypeOut[0] = 2;
+	cmDTtypeIn[0] = dtFloat;
+	cmDTtypeOut[0] = dtShort;
 	cmDTscale[0] = 4;
 	cmDToffset[0] = 2;
 	*((float*)cmDTaddr[0]) = 100;
@@ -240,61 +236,62 @@ void CustomCanUnitTests()
 	Assert(*(unsigned short*)(0xFFFFD100+0x08+19*0x20) == 408, "DT float u16 scale offset Check Failed");
 	
 	//Float to U8 OVERFLOWS
-	cmDTtypeIn[0] = 4;
-	cmDTtypeOut[0] = 1;
+	cmDTtypeIn[0] = dtFloat;
+	cmDTtypeOut[0] = dtChar;
 	*((float*)cmDTaddr[0]) = -3;
 	cmDTscale[0] = 0;
 	cmDToffset[0] = 0;
 	updateCanDT(0);
 	Assert(*(unsigned char*)(0xFFFFD100+0x08+19*0x20) == 0, "DT float u8 Check Failed");
 	
-	cmDTtypeIn[0] = 4;
-	cmDTtypeOut[0] = 1;
+	cmDTtypeIn[0] = dtFloat;
+	cmDTtypeOut[0] = dtChar;
 	*((float*)cmDTaddr[0]) = 300;
 	cmDTscale[0] = 0;
 	cmDToffset[0] = 0;
 	updateCanDT(0);
-	Assert(*(unsigned char*)(0xFFFFD100+0x08+19*0x20) == 255, "DT float u8 Check Failed");
+	Assert(*(unsigned char*)(0xFFFFD100+0x08+19*0x20) == 0xFF, "DT float u8 Check Failed");
 	
 	//Float to U16 OVERFLOWS
-	cmDTtypeIn[0] = 4;
-	cmDTtypeOut[0] = 2;
+	cmDTtypeIn[0] = dtFloat;
+	cmDTtypeOut[0] = dtShort;
 	*((float*)cmDTaddr[0]) = -3;
 	cmDTscale[0] = 0;
 	cmDToffset[0] = 0;
 	updateCanDT(0);
 	Assert(*(unsigned short*)(0xFFFFD100+0x08+19*0x20) == 0, "DT float u8 Check Failed");
 	
-	cmDTtypeIn[0] = 4;
-	cmDTtypeOut[0] = 2;
+	cmDTtypeIn[0] = dtFloat;
+	cmDTtypeOut[0] = dtShort;
 	*((float*)cmDTaddr[0]) = 65536;
 	cmDTscale[0] = 0;
 	cmDToffset[0] = 0;
 	updateCanDT(0);
-	Assert(*(unsigned short*)(0xFFFFD100+0x08+19*0x20) == 65535, "DT float u8 Check Failed");
+	Assert(*(unsigned short*)(0xFFFFD100+0x08+19*0x20) == 0xFFFF, "DT float u8 Check Failed");
 	
 	//Float to U32 OVERFLOWS
-	cmDTtypeIn[0] = 4;
-	cmDTtypeOut[0] = 3;
+	cmDTtypeIn[0] = dtFloat;
+	cmDTtypeOut[0] = dtLong;
 	*((float*)cmDTaddr[0]) = -3;
 	cmDTscale[0] = 0;
 	cmDToffset[0] = 0;
 	updateCanDT(0);
 	Assert(*(unsigned long*)(0xFFFFD100+0x08+19*0x20) == 0, "DT float u8 Check Failed");
 	
-	cmDTtypeIn[0] = 4;
-	cmDTtypeOut[0] = 3;
+	cmDTtypeIn[0] = dtFloat;
+	cmDTtypeOut[0] = dtLong;
 	*((float*)cmDTaddr[0]) = 4294967296;
 	cmDTscale[0] = 0;
 	cmDToffset[0] = 0;
-	Assert(*(unsigned long*)(0xFFFFD100+0x08+19*0x20) == 4294967295, "DT float u8 Check Failed");
+	updateCanDT(0);
+	Assert(*(unsigned long*)(0xFFFFD100+0x08+19*0x20) == 0xFFFFFFFF, "DT float u8 Check Failed");
 	
 	CustomCanService();
 	
 	pRamVariables.initFunctionRun = 0;
 	
-		cmDTtypeIn[0] = 4;
-	cmDTtypeOut[0] = 4;
+	cmDTtypeIn[0] = dtFloat;
+	cmDTtypeOut[0] = dtFloat;
 	updateCanDT(0);
 	updateCanDT(1);
 	

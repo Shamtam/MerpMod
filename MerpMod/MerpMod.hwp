@@ -377,7 +377,6 @@
 "C:\Dev\MerpMod\MerpMod\tests\ProgModeTests.c" "User" "C source file|tests" 2 
 "C:\Dev\MerpMod\MerpMod\tests\RevLimiterTests.c" "User" "C source file|tests" 2 
 "C:\Dev\MerpMod\MerpMod\tests\SpeedDensityTests.c" "User" "C source file|tests" 2 
-"C:\Dev\MerpMod\MerpMod\tests\SwitchTests.c" "User" "C source file|tests" 2 
 "C:\Dev\MerpMod\MerpMod\tests\TableHackTests.c" "User" "C source file|tests" 2 
 "C:\Dev\MerpMod\MerpMod\tests\TestUtilities.c" "User" "C source file|tests" 2 
 [FOLDER]
@@ -509,11 +508,10 @@
 "C:\Dev\MerpMod\MerpMod\tests\ProgModeTests.c" "0e3443d895fc6d10" 10 
 "C:\Dev\MerpMod\MerpMod\tests\RevLimiterTests.c" "0e3443d895fc6d10" 10 
 "C:\Dev\MerpMod\MerpMod\tests\SpeedDensityTests.c" "0e3443d895fc6d10" 10 
-"C:\Dev\MerpMod\MerpMod\tests\SwitchTests.c" "0e3443d895fc6d10" 10 
 "C:\Dev\MerpMod\MerpMod\tests\TableHackTests.c" "0e3443d895fc6d10" 10 
 "C:\Dev\MerpMod\MerpMod\tests\TestUtilities.c" "0e3443d895fc6d10" 10 
 [OPTIONS_A2UI001L_CreateEnv]
-"Single Shot" "09bf9e7fa5317d10" 8 
+"Single Shot" "0972defb7aa17d10" 8 
 [OPTIONS_A2UI001L_GNU Assembler]
 "Assembly source file" "00d2355d11fc6d10" 5 
 "C:\Dev\MerpMod\MerpMod\asm\DynamicRamtunePatch.s" "0ef927b8b1fc6d10" 5 
@@ -563,24 +561,23 @@
 "C:\Dev\MerpMod\MerpMod\tests\ProgModeTests.c" "0c261254f1fc6d10" 2 
 "C:\Dev\MerpMod\MerpMod\tests\RevLimiterTests.c" "0c261254f1fc6d10" 2 
 "C:\Dev\MerpMod\MerpMod\tests\SpeedDensityTests.c" "0c261254f1fc6d10" 2 
-"C:\Dev\MerpMod\MerpMod\tests\SwitchTests.c" "0c261254f1fc6d10" 2 
 "C:\Dev\MerpMod\MerpMod\tests\TableHackTests.c" "0c261254f1fc6d10" 2 
 "C:\Dev\MerpMod\MerpMod\tests\TestUtilities.c" "0c261254f1fc6d10" 2 
 "Preprocess Assembly file" "0c261254f1fc6d10" 3 
 [OPTIONS_A2UI001L_GNU Library Generator]
-"Single Shot" "09bf9e7fa5317d10" 7 
+"Single Shot" "0972defb7aa17d10" 7 
 [OPTIONS_A2UI001L_GNU Linker]
-"Single Shot" "09bf9e7fa5317d10" 6 
+"Single Shot" "0972defb7aa17d10" 6 
 [OPTIONS_A2UI001L_Git Hash]
-"Single Shot" "09bf9e7fa5317d10" 0 
+"Single Shot" "0972defb7aa17d10" 0 
 [OPTIONS_A2UI001L_LibGen]
-"Single Shot" "09bf9e7fa5317d10" 9 
+"Single Shot" "0972defb7aa17d10" 9 
 [OPTIONS_A2UI001L_Link]
-"Single Shot" "09bf9e7fa5317d10" 9 
+"Single Shot" "0972defb7aa17d10" 9 
 [OPTIONS_A2UI001L_TargetSelection]
 "Single Shot" "0de1faed18ec6d10" 1 
 [OPTIONS_A2UI001L_UpdateTestRom]
-"Single Shot" "09bf9e7fa5317d10" 12 
+"Single Shot" "0972defb7aa17d10" 12 
 [OPTIONS_A2UI001L]
 "" 0 
 "$(CONFIGNAME) $(BUILDCONFIG) $(MMVERSION)" 1 
@@ -661,7 +658,6 @@
 "C:\Dev\MerpMod\MerpMod\tests\ProgModeTests.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
 "C:\Dev\MerpMod\MerpMod\tests\RevLimiterTests.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
 "C:\Dev\MerpMod\MerpMod\tests\SpeedDensityTests.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
-"C:\Dev\MerpMod\MerpMod\tests\SwitchTests.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
 "C:\Dev\MerpMod\MerpMod\tests\TableHackTests.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
 "C:\Dev\MerpMod\MerpMod\tests\TestUtilities.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
 [OUTPUT_FILES_A2UI001L_CreateEnv]
@@ -725,11 +721,10 @@
 "C:\Dev\MerpMod\MerpMod\tests\ProgModeTests.c" "0e3443d895fc6d10" 10 
 "C:\Dev\MerpMod\MerpMod\tests\RevLimiterTests.c" "0e3443d895fc6d10" 10 
 "C:\Dev\MerpMod\MerpMod\tests\SpeedDensityTests.c" "0e3443d895fc6d10" 10 
-"C:\Dev\MerpMod\MerpMod\tests\SwitchTests.c" "0e3443d895fc6d10" 10 
 "C:\Dev\MerpMod\MerpMod\tests\TableHackTests.c" "0e3443d895fc6d10" 10 
 "C:\Dev\MerpMod\MerpMod\tests\TestUtilities.c" "0e3443d895fc6d10" 10 
 [OPTIONS_AZ1G202G_CreateEnv]
-"Single Shot" "09bf9e7fa5317d10" 8 
+"Single Shot" "0972defb7aa17d10" 8 
 [OPTIONS_AZ1G202G_GNU Assembler]
 "Assembly source file" "00d2355d11fc6d10" 5 
 "C:\Dev\MerpMod\MerpMod\asm\DynamicRamtunePatch.s" "0ef927b8b1fc6d10" 5 
@@ -779,24 +774,23 @@
 "C:\Dev\MerpMod\MerpMod\tests\ProgModeTests.c" "0c261254f1fc6d10" 2 
 "C:\Dev\MerpMod\MerpMod\tests\RevLimiterTests.c" "0c261254f1fc6d10" 2 
 "C:\Dev\MerpMod\MerpMod\tests\SpeedDensityTests.c" "0c261254f1fc6d10" 2 
-"C:\Dev\MerpMod\MerpMod\tests\SwitchTests.c" "0c261254f1fc6d10" 2 
 "C:\Dev\MerpMod\MerpMod\tests\TableHackTests.c" "0c261254f1fc6d10" 2 
 "C:\Dev\MerpMod\MerpMod\tests\TestUtilities.c" "0c261254f1fc6d10" 2 
 "Preprocess Assembly file" "0c261254f1fc6d10" 3 
 [OPTIONS_AZ1G202G_GNU Library Generator]
-"Single Shot" "09bf9e7fa5317d10" 7 
+"Single Shot" "0972defb7aa17d10" 7 
 [OPTIONS_AZ1G202G_GNU Linker]
-"Single Shot" "09bf9e7fa5317d10" 6 
+"Single Shot" "0972defb7aa17d10" 6 
 [OPTIONS_AZ1G202G_Git Hash]
-"Single Shot" "09bf9e7fa5317d10" 0 
+"Single Shot" "0972defb7aa17d10" 0 
 [OPTIONS_AZ1G202G_LibGen]
-"Single Shot" "09bf9e7fa5317d10" 9 
+"Single Shot" "0972defb7aa17d10" 9 
 [OPTIONS_AZ1G202G_Link]
-"Single Shot" "09bf9e7fa5317d10" 9 
+"Single Shot" "0972defb7aa17d10" 9 
 [OPTIONS_AZ1G202G_TargetSelection]
 "Single Shot" "0de1faed18ec6d10" 1 
 [OPTIONS_AZ1G202G_UpdateTestRom]
-"Single Shot" "09bf9e7fa5317d10" 12 
+"Single Shot" "0972defb7aa17d10" 12 
 [OPTIONS_AZ1G202G]
 "" 0 
 "$(CONFIGNAME) $(BUILDCONFIG) $(MMVERSION)" 1 
@@ -877,7 +871,6 @@
 "C:\Dev\MerpMod\MerpMod\tests\ProgModeTests.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
 "C:\Dev\MerpMod\MerpMod\tests\RevLimiterTests.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
 "C:\Dev\MerpMod\MerpMod\tests\SpeedDensityTests.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
-"C:\Dev\MerpMod\MerpMod\tests\SwitchTests.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
 "C:\Dev\MerpMod\MerpMod\tests\TableHackTests.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
 "C:\Dev\MerpMod\MerpMod\tests\TestUtilities.c" "$(PROJDIR)\build\$(CONFIGNAME)\work\$(FILELEAF).o" "UnknownCustom" 0 
 [OUTPUT_FILES_AZ1G202G_CreateEnv]

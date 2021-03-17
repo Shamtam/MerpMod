@@ -13,12 +13,9 @@
 */
 
 #include "EcuHacks.h"
-#if SD_HACKS
-// All test functions must be explicitly put into the Misc section, otherwise
-// the compiler/linker will put them in an address range that conflicts with
-// ECU code.
-extern long SpeedDensityIntegration;
+#include "Tests.h"
 
+#if SD_HACKS
 float CallSpeedDensityHook()
 {
 	void (*func)() = (void(*)()) sMafCalc;
@@ -27,10 +24,7 @@ float CallSpeedDensityHook()
 	return *pMassAirFlow;
 }
 
-
-
 // Unit tests for the speed density hack.
-void SpeedDensityUnitTests() __attribute__ ((section ("Misc")));
 void SpeedDensityUnitTests()
 {
 	pRamVariables.MafMode = MafModeUndefined;

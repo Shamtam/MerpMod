@@ -14,18 +14,14 @@
 
 //Tests for Dynamic RAM Tuning
 #include "EcuHacks.h"
+#include "Tests.h"
 
 #if DYN_RAMTUNING
-
-extern void ClearRam();
 
 //the test below assumes:
 // - the `MerpMod.x` patch file is downloaded into HEW first,
 // - the patched ROM is downloaded immediately after
 // - the PC is manually set to the first line of the function manually
-
-void Pull2DFloatTests() __attribute__ ((section ("Misc")));
-void Pull3DFloatTests() __attribute__ ((section ("Misc")));
 
 //-----------------------------------------------------------------------------
 //  Check Pull2DFloat

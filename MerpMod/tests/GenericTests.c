@@ -13,23 +13,14 @@
 */
 
 #include "EcuHacks.h"
-
-void BrickBuster() __attribute__ ((section ("Misc")));
-void CallMemoryReset() __attribute__ ((section ("Misc")));
-void GenericTests() __attribute__ ((section ("Misc")));
-
+#include "Tests.h"
 
 #ifdef sMemoryReset
-
 void CallMemoryReset()
 {
-	void (*func)() = (void(*)()) sMemoryReset;
-	(*func)();//(*pMafSensorVoltage);
-	//return *pMassAirFlow;
+	((void(*)()) sMemoryReset)();
 }
 #endif
-
-
 
 void GenericTests() 
 {
@@ -74,7 +65,6 @@ void GenericTests()
 
 	BrickBuster();
 }
-
 
 void BrickBuster()
 {
@@ -127,7 +117,6 @@ Assert(0,"error in ram hole!");
 #endif
 unsigned long ArchStackPointer __attribute__ ((section ("RomHole_Misc"),aligned(8))) = ARCH_STACK_POINTER;
 
-void SetValues() __attribute__ ((section ("Misc")));
 void SetValues() 
 {
 	// These are just here to clarify the boundary between the prologue and the

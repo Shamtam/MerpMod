@@ -22,12 +22,11 @@ extern void** KnockCorrectionRetardBlendGroup;
 
 void (*BaseTimingHooked)() __attribute__ ((section ("RomHole_Functions"))) = (void(*)()) sBaseTiming;
 
-float TimingHack()
+void TimingHack()
 {
 	float OutputValue;
 	
 	float subIam;
-	float iam;
 	float timingLookup;
 
 	subIam = HighPass(1 - IAM, 0.0f);

@@ -76,7 +76,7 @@ void WGDCHack(void) ROMCODE;
 void TargetBoostHack(void) ROMCODE;
 void InjectorHack() ROMCODE;
 void POLFHack()  ROMCODE;
-float TimingHack()  ROMCODE;
+void TimingHack()  ROMCODE;
 float Pull2DRamHook(TwoDTable *table, float xLookup) ROMCODE;
 float Pull2DRamHookTipInEnrich(TwoDTable *table, float xLookup) ROMCODE;
 float Pull2DRamHookCrankingFuel(TwoDTable *table, float xLookup) ROMCODE;

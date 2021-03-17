@@ -13,8 +13,8 @@
 */
 
 #include "EcuHacks.h"
+#include "Tests.h"
 
-void TestFailed(char *message) __attribute__ ((section ("Misc")));
 void TestFailed(char *message)
 {
 	// This just provides a place to set a breakpoint.
@@ -32,13 +32,11 @@ void Assert(int condition, char *message)
 	}
 }
 
-void DemonstrateAssertionFailure() __attribute__ ((section ("Misc")));
 void DemonstrateAssertionFailure()
 {
 	Assert(0, "Just to prove that assertions can fail.");
 }
 
-void ClearRam() __attribute__ ((section ("Misc")));
 void ClearRam()
 {
 	long* lpoint = (long*)pRamHoleStart;
@@ -48,6 +46,7 @@ void ClearRam()
 		*lpoint = 0;
 	}
 }
+
 // It's hard to express a floating point number with enough precision to use
 // the == operator.  Or impossible: http://en.wikipedia.org/wiki/Machine_epsilon
 // Should be sufficient to ensure difference of squares is less than some tolerance

@@ -13,7 +13,7 @@
 */
 
 #include "EcuHacks.h"
-
+#include "Tests.h"
 
 // All test functions must be explicitly put into the Misc section, otherwise
 // the compiler/linker will put them in an address range that conflicts with
@@ -53,7 +53,6 @@ void SetBrake(int value)
 
 // Gets the bit of the 'rev limit flags' ECU variable.
 // Or returns value when using value flags.
-unsigned char GetFuelCutFlag() __attribute__ ((section ("Misc")));
 unsigned char GetFuelCutFlag()
 {
 	// The SH2E compiler implements this correctly.
@@ -63,8 +62,6 @@ unsigned char GetFuelCutFlag()
 	return 1;
 }
 
-
-void RevLimUnitTest(unsigned char flag, int brake, int clutch, float throttle, float mph, float rpm) __attribute__ ((section ("Misc")));
 void RevLimUnitTest(unsigned char flag, int brake, int clutch, float throttle, float mph, float rpm){
 	
 	ClearRam();
@@ -94,7 +91,6 @@ void RevLimUnitTest(unsigned char flag, int brake, int clutch, float throttle, f
 }
 
 // Test the rev limiter hack.
-void RevLimUnitTests() __attribute__ ((section ("Misc")));
 void RevLimUnitTests()
 {
 

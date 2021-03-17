@@ -15,6 +15,7 @@
 //Tests for TableHack Code
 //
 #include "EcuHacks.h"
+#include "Tests.h"
 
 // All test functions must be explicitly put into the Misc section, otherwise
 // the compiler/linker will put them in an address range that conflicts with
@@ -22,7 +23,7 @@
 
 // Test the rev limiter hack.
 #if TIMING_HACKS
-void TimingHackUnitTests() __attribute__ ((section ("Misc")));
+
 void TimingHackUnitTests()
 {
 	PopulateRamVariables();
@@ -30,45 +31,41 @@ void TimingHackUnitTests()
 	*pEngineSpeed = 3000;
 	*pEngineLoad = 1.0;
 	*pVehicleSpeed = 1.0;
+
+#if SWITCH_HACKS
+
+//TODO: Write switch unit tests
+
+#else
 	
 	pRamVariables.MapSwitchingInputMode = MapSwitchingInputModeSiDrive;
 	pRamVariables.TGVLeftVolts = 1;
 	InputUpdate();
 	pRamVariables.TimingHackEnabled = HackEnabled;
-	pRamVariables.TimingHackInitFlag = 0x00;
-	pRamVariables.MapBlendRatio = 0.5;				//default is 0
-	pRamVariables.LCTimingLock = 10;		//default is 20
-	
-	TimingHack();
-	
-	float DefaultBlend = 0.0f;
-	float DefaultLCTimingLock = 20.0f;
+	pRamVariables.LCTimingLock = 20;
 
-	Assert(pRamVariables.LCTimingLock == DefaultLCTimingLock, "check timing lock default value");
-	Assert(pRamVariables.MapBlendRatio == DefaultBlend, "Check default blending value");
-	Assert(pRamVariables.TimingHackInitFlag == 0x01, "Check Timing init flag is set");
+	pRamVariables.MapBlendRatio = 0;
+	TimingHack();
 	Assert(AreCloseEnough(pRamVariables.TimingOutput, -12.96875), "check timing map 1 is used");
 	
 	pRamVariables.MapBlendRatio = 1;
 	TimingHack();
-	Assert(pRamVariables.TimingOutput == -20, "check timing map 1 is used");
-	
+	Assert(pRamVariables.TimingOutput == -20, "check timing map 2 is used");
 	
 	pRamVariables.MapBlendRatio = 0.5;
 	TimingHack();
-	Assert(pRamVariables.TimingOutput == ((-12.96875 - 20)/2), "check timing map 1 is used");
+	Assert(pRamVariables.TimingOutput == (0.5*(-12.96875 - 20)), "check blended value between timing maps 1 and 2 is used");
 	
 	pRamVariables.LCTimingMode = LCTimingModeLocked;		//Set locked timing, default is +20
-	
-	
-	
+
+#endif
+
 }
 #endif
 
 
 // Test the primary open loop fuel table hack.
 #if POLF_HACKS
-void PolfHackUnitTests() __attribute__ ((section ("Misc")));
 void PolfHackUnitTests()
 {
 	PopulateRamVariables();

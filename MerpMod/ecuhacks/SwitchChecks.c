@@ -92,7 +92,6 @@ void TestCruiseControlToggles()
 		if(resume != 0 && coast != 0)
 		{
 			//Cruise lever was pulled backwards
-			int i = 0;
 		} 
 	}
 	else if(pRamVariables.CruiseResumeLast != resume)

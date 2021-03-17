@@ -15,10 +15,11 @@
 //Tests for CEL Flashing Code
 //TODO test for normal/severe knock behavior, implement interrupt when lowknock -> hi
 #include "EcuHacks.h"
+#include "Tests.h"
+
 // Test the rev limiter hack.
 #if CEL_HACKS
 
-void TestCelFlash(int c) __attribute__ ((section ("Misc")));
 void TestCelFlash(int c)
 {
 	int i;
@@ -28,7 +29,6 @@ void TestCelFlash(int c)
 	}
 }
 
-void CelFlashUnitTests() __attribute__ ((section ("Misc")));
 void CelFlashUnitTests()
 {
 	PopulateRamVariables();
@@ -89,6 +89,7 @@ void CelFlashUnitTests()
 	//remove knock conditions
 	*pEngineLoad = 1.0f;
 	*pFBKC = 0.0f;
+    UpdateFailSafes();
 	
 	//run cel flash a few times to clear everything out
 	TestCelFlash(200);

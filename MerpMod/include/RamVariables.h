@@ -191,10 +191,8 @@ typedef struct
 
 #if TIMING_HACKS
 	//Timing Hack params
-	unsigned char 	TimingHackInitFlag;		//97
 	unsigned char 	LCTimingMode;
 	unsigned char	TimingHackEnabled;
-	unsigned char	Tempty1;
 	float	BaseTiming;
 	float 	FinalTiming;	//97
 	float	TimingOutput;
@@ -213,7 +211,6 @@ typedef struct
 	unsigned char 	POLFuelHackInitFlag;	//97
 	unsigned char 	LCFuelMode;
 	unsigned char	PolfHackEnabled;
-	unsigned char	Fempty1;
 	float PolfTarget;
 	float PolfOutput;		//97
 	float LCFuelEnrich;			//97
